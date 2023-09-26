@@ -1,11 +1,14 @@
 
 
-import { Inter } from 'next/font/google'
+import HeroApp from '@/components/HeroApp'
+import Navbar from '@/components/NavbarApp'
 
-const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
-<>
-</>
+    <>
+        <Navbar/>
+        <HeroApp/>
+    </>
+
   )
 }
