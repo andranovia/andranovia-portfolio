@@ -116,11 +116,8 @@ function HeroApp() {
   ));
 
   return (
-    <div className="relative flex justify-center items-center h-[80vh] font-Poppins overflow-hidden">
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-#EEEEEE opacity-0 animate-opacity-80"
-      />
-      <div className="text-9xl text-gray-700 font-bold font-Poppins flex flex-col items-center justify-center text-#272828 text-center z-1">
+    <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen">
+      <div className="sm:text-9xl text-7xl text-gray-700 font-bold font-Poppins flex flex-col items-center justify-center text-#272828 text-center z-1">
         <motion.div
           className="heroTitle"
           variants={{

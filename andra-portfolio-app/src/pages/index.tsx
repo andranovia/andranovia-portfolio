@@ -1,14 +1,16 @@
+import HeroApp from "@/components/HeroApp";
+import Navbar from "@/components/NavbarApp";
+import ProfileApp from "@/components/ProfileApp";
 
-
-import HeroApp from '@/components/HeroApp'
-import Navbar from '@/components/NavbarApp'
 
 export default function Home() {
   return (
     <>
-        <Navbar/>
-        <HeroApp/>
+    <div className="overflow-hidden">
+      <Navbar />
+      <HeroApp />
+      <ProfileApp/>
+      </div>
     </>
-
-  )
+  );
 }
