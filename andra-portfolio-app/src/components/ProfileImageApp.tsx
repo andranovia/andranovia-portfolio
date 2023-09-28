@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const cssLogo =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/544px-CSS3_logo_and_wordmark.svg.png";
+import FloatingImage from "./ProfileFloatingImageApp";
+const tailwindLogo =
+  "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg";
 const jsLogo =
   "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png";
 const reactLogo =
@@ -45,32 +45,12 @@ const ProfileImage = () => {
     },
   };
 
-  const floatingImageAnimation = {
-    floating: {
-      x: {
-        type: "spring",
-        from: "-100%",
-        to: 0,
-      },
-      opacity: {
-        type: "spring",
-        from: 0,
-        to: 1,
-      },
-      transition: {
-        duration: 3,
-        repeat: isInView ? Infinity : 0,
-        repeatType: "mirror",
-      },
-    },
-  };
-
   return (
     <div
       id="about-container"
-      className="w-screen h-screen flex justify-center items-center bg-eeeeee "
+      className="relative sm:w-[42rem] sm:left-[18rem] flex justify-center sm:justify-start items-center bg-eeeeee  "
     >
-      <div className="relative w-screen h-auto flex justify-center items-center  ">
+      <div className="relative w-screen flex justify-center items-center sm:justify-start   ">
         <AnimatePresence>
           {isInView && (
             <motion.img
@@ -84,62 +64,29 @@ const ProfileImage = () => {
         </AnimatePresence>
       </div>
 
-      <AnimatePresence>
       {isAnimated && (
-        <motion.div
-          className="absolute w-[10rem] h-full flex flex-row perspective-800 justify-end items-center mb-[20rem] "
-          initial={{ opacity: 0, y: "150%" }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
-        >
-          <motion.img
-            className="absolute w-[4.5rem] sm:w-[8rem]  right-56 sm:left-40 h-auto rounded-full bg-white shadow-md"
-            src={jsLogo}
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ ...floatingImageAnimation, opacity: 1 }}
-            style={{ padding: "2px" }}
-          />
-        </motion.div>
-           )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-      {isAnimated && (
-        <motion.div
-          className="absolute w-[10rem] h-full flex flex-row justify-start items-center mt-350 ml-40 sm:ml-0 sm:left-64"
-          initial={{ opacity: 0, y: "150%" }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
-        >
-          <motion.img
-            className="absolute sm:w-[4rem] w-[3.5rem] left-24 mb-40 sm:left-0   h-auto rounded-full bg-white shadow-md"
-            src={cssLogo}
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ ...floatingImageAnimation, opacity: 1 }}
-            style={{ padding: "2px" }}
-          />
-        </motion.div>
+        <FloatingImage
+          divClassName="absolute w-[10rem] h-full flex flex-row justify-start  "
+          imgClassName="absolute w-[6rem] sm:w-[8rem] right-48 top-32 sm:top-40 sm:mr-32 h-auto rounded-full bg-white shadow-md"
+          src={tailwindLogo}
+        />
       )}
-      </AnimatePresence>
 
-      <AnimatePresence>
       {isAnimated && (
-        <motion.div
-          className="absolute w-[10rem] h-full flex flex-row justify-start items-center"
-          initial={{ opacity: 0, y: "150%" }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
-        >
-          <motion.img
-            className="absolute w-[6.5rem] left-14 sm:left-72 mb-[25rem] sm:w-[17rem] sm:top-64 h-auto rounded-full bg-white shadow-md"
-            src={reactLogo}
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ ...floatingImageAnimation, opacity: 1 }}
-            style={{ padding: "2px" }}
-          />
-        </motion.div>
+        <FloatingImage
+          divClassName="absolute w-[10rem] h-full flex flex-row justify-end    "
+          imgClassName="absolute w-[4.5rem] sm:w-[5.4rem]  right-56 sm:left-36 h-auto rounded-full bg-white shadow-md"
+          src={jsLogo}
+        />
       )}
-      </AnimatePresence>
+
+      {isAnimated && (
+        <FloatingImage
+          divClassName="absolute w-[10rem] h-full sm:top-44 flex flex-row justify-end "
+          imgClassName="absolute w-[6.5rem] left-12 sm:left-20 mb-[25rem] sm:w-[8rem] sm h-auto rounded-full bg-white shadow-md"
+          src={reactLogo}
+        />
+      )}
     </div>
   );
 };

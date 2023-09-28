@@ -10,14 +10,11 @@ function HeroApp() {
     controlsTwo.start("animate");
   }, [textControls, controlsTwo]);
 
-  const animatedTextOne = "Andra";
-  const animatedTextTwo = "Renandra";
+  const animatedTextOne = "ANDRA";
+  const animatedTextTwo = "RENANDRA";
 
   const titleOne = animatedTextOne.split(" ").map((word, wordIndex) => (
-    <motion.div
-      key={wordIndex}
-      className="inline-block"
-    >
+    <motion.div key={wordIndex} className="inline-block">
       {word.split("").map((char, charIndex) => (
         <motion.span
           key={charIndex}
@@ -33,28 +30,11 @@ function HeroApp() {
               },
             },
           }}
-          className="inline-block w-[1ch]"
+          className="inline-block w-[1.2ch]"
         >
           {char}
         </motion.span>
       ))}
-      {wordIndex !== animatedTextOne.split(" ").length - 1 && (
-        <motion.span
-          key={`space-${wordIndex}`}
-          variants={{
-            hidden: { opacity: 0, y: 0 },
-            animate: {
-              opacity: 1,
-              transition: {
-                duration: 0.1,
-              },
-            },
-          }}
-          className="inline-block w-[0.5ch]"
-        >
-          &nbsp;
-        </motion.span>
-      )}
     </motion.div>
   ));
 
@@ -95,29 +75,12 @@ function HeroApp() {
           {letter}
         </motion.span>
       ))}
-      {wordIndex !== animatedTextTwo.split(" ").length - 1 && (
-        <motion.span
-          key={`space-${wordIndex}`}
-          variants={{
-            hidden: { opacity: 0, y: 0 },
-            animate: {
-              opacity: 1,
-              transition: {
-                duration: 0.1,
-              },
-            },
-          }}
-          className="inline-block w-[0.5ch]"
-        >
-          &nbsp;
-        </motion.span>
-      )}
     </motion.div>
   ));
 
   return (
     <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen">
-      <div className="sm:text-9xl text-7xl text-gray-700 font-bold font-Poppins flex flex-col items-center justify-center text-#272828 text-center z-1">
+      <div className="sm:text-9xl text-6xl text-gray-700 font-bold font-Poppins flex flex-col items-center justify-center text-#272828 text-center z-1">
         <motion.div
           className="heroTitle"
           variants={{

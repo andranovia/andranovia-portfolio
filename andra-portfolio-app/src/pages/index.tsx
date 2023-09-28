@@ -1,6 +1,8 @@
-import HeroApp from "@/components/HeroApp";
-import Navbar from "@/components/NavbarApp";
-import ProfileApp from "@/components/ProfileApp";
+import dynamic from "next/dynamic";
+
+const HeroApp = dynamic(() => import('@/components/HeroApp'));
+const Navbar = dynamic(() => import('@/components/NavbarApp'));
+const ProfileApp = dynamic(() => import('@/components/ProfileApp'));
 
 
 export default function Home() {
