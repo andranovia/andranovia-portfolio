@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 
-
-interface props{
-    src: string;
-    divClassName: string;
-    imgClassName:string;
+interface props {
+  src: string;
+  divClassName: string;
+  imgClassName: string;
 }
-
 
 const FloatingImage = ({
   src,

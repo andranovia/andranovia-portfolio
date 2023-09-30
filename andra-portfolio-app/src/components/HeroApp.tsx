@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import HeroAppText from "./HeroAppText";
+import HeroButtons from "./HeroButtons";
 
 function HeroApp() {
   const textControls = useAnimation();
@@ -11,110 +13,37 @@ function HeroApp() {
   }, [textControls, controlsTwo]);
 
   const animatedTextOne = "ANDRA";
-  const animatedTextTwo = "RENANDRA";
-
-  const titleOne = animatedTextOne.split(" ").map((word, wordIndex) => (
-    <motion.div key={wordIndex} className="inline-block">
-      {word.split("").map((char, charIndex) => (
-        <motion.span
-          key={charIndex}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                type: "spring",
-                damping: 8,
-                stiffness: 100,
-              },
-            },
-          }}
-          className="inline-block w-[1.2ch]"
-        >
-          {char}
-        </motion.span>
-      ))}
-    </motion.div>
-  ));
-
-  const titleTwo = animatedTextTwo.split(" ").map((word, wordIndex) => (
-    <motion.div
-      key={wordIndex}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        animate: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: "spring",
-            damping: 8,
-            stiffness: 100,
-            staggerChildren: 0.04,
-          },
-        },
-      }}
-      className="inline-block"
-    >
-      {word.split("").map((letter, letterIndex) => (
-        <motion.span
-          key={letterIndex}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                type: "spring",
-                damping: 8,
-                stiffness: 100,
-              },
-            },
-          }}
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </motion.div>
-  ));
+  const animatedTextTwo = "we should know each other👋";
 
   return (
-    <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen">
-      <div className="sm:text-9xl text-6xl text-gray-700 font-bold font-Poppins flex flex-col items-center justify-center text-#272828 text-center z-1">
+    <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen mt-8">
+      <div className="mx-10   font-bold font-Poppins flex flex-col sm:items-center justify-center text-#272828 z-1">
         <motion.div
-          className="heroTitle"
+          initial="hidden"
+          animate="visible"
           variants={{
-            hidden: { opacity: 1 },
-            animate: {
+            hidden: { y:30, opacity: 0  },
+            visible: {
+              y: 0,
               opacity: 1,
               transition: {
-                staggerChildren: 0.04,
+                duration: 0.6,
+                ease: "easeInOut",
               },
             },
           }}
-          initial="hidden"
-          animate={controlsTwo}
+          className="text-2xl sm:text-3xl text-gray-500 mb-3 "
         >
-          {titleOne}
+          <h2>Hello there, im</h2>
         </motion.div>
-        <motion.div
-          className="heroTitleTwo"
-          variants={{
-            hidden: { opacity: 1 },
-            animate: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.04,
-              },
-            },
-          }}
-          initial="hidden"
+        <HeroAppText
           animate={controlsTwo}
-        >
-          {titleTwo}
-        </motion.div>
+          text={animatedTextOne}
+          textTwo={animatedTextTwo}
+        />
+
         <motion.div
-          className="bg-cyan-600 w-80 h-2 mt-20"
+          className="bg-gradient-to-r from-cyan-400 to-cyan-200 w-80 sm:w-[40rem] h-2 mt-14 rounded-md"
           initial="hidden"
           animate="visible"
           variants={{
@@ -128,6 +57,7 @@ function HeroApp() {
             },
           }}
         />
+        <HeroButtons />
       </div>
     </div>
   );

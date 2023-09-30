@@ -1,3 +1,4 @@
+import ExperienceApp from "@/components/ExperienceApp";
 import dynamic from "next/dynamic";
 
 const HeroApp = dynamic(() => import('@/components/HeroApp'));
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <HeroApp />
       <ProfileApp/>
+      <ExperienceApp/>
       </div>
     </>
   );

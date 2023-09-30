@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import FloatingImage from "./ProfileFloatingImageApp";
+
 const tailwindLogo =
   "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg";
 const jsLogo =
@@ -9,7 +10,6 @@ const reactLogo =
   "https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png";
 
 const ProfileImage = () => {
-  const [isInView, setIsInView] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
 
   const handleAnimationComplete = () => {
@@ -19,7 +19,9 @@ const ProfileImage = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          handleAnimationComplete(); 
+        }
       },
       {
         threshold: 0.1,
@@ -51,17 +53,12 @@ const ProfileImage = () => {
       className="relative sm:w-[42rem] sm:left-[18rem] flex justify-center sm:justify-start items-center bg-eeeeee  "
     >
       <div className="relative w-screen flex justify-center items-center sm:justify-start   ">
-        <AnimatePresence>
-          {isInView && (
-            <motion.img
-              src="/img/profile1.jpg"
-              alt="Profile"
-              className="w-[8rem] h-auto sm:w-[12rem] rounded-full left-10 cursor-pointer bg-blue-500 text-white"
-              animate={animation}
-              onAnimationComplete={handleAnimationComplete}
-            />
-          )}
-        </AnimatePresence>
+        <motion.img
+          src="/img/profile1.jpg"
+          alt="Profile"
+          className="w-[8rem] h-auto sm:w-[12rem] rounded-full left-10 cursor-pointer "
+          animate={animation}
+        />
       </div>
 
       {isAnimated && (
