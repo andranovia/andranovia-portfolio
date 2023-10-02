@@ -9,7 +9,7 @@ export default function ExperienceApp() {
           <h1 className="font-bold text-5xl text-gray-600">Work Project</h1>
           <p className="font-semibold text-[1rem] sm:text-xl text-gray-600 top-20 mt-10">
             this section provides a comprehensive
-            <span className="text-gray-500 ">overview of my work project.</span>
+            <span className="text-gray-500 "> overview of my work project.</span>
           </p>
         </div>
         <div className="flex justify-center ">

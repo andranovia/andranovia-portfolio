@@ -16,7 +16,7 @@ function HeroApp() {
   const animatedTextTwo = "we should know each other👋";
 
   return (
-    <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen mt-8">
+    <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen mt-14">
       <div className="mx-10   font-bold font-Poppins flex flex-col sm:items-center justify-center text-#272828 z-1">
         <motion.div
           initial="hidden"
