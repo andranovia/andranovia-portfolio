@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FloatingImage from "./ProfileFloatingImageApp";
+import Image from "next/image";
 
 const tailwindLogo =
   "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg";
@@ -53,12 +54,16 @@ const ProfileImage = () => {
       className="relative sm:w-[42rem] sm:left-[18rem] flex justify-center sm:justify-start items-center bg-eeeeee  "
     >
       <div className="relative w-screen flex justify-center items-center sm:justify-start   ">
-        <motion.img
+        <motion.div  animate={animation}>
+        <Image
           src="/img/profile1.jpg"
           alt="Profile"
+          width={420}
+          height={420}
           className="w-[8rem] h-auto sm:w-[12rem] rounded-full left-10 cursor-pointer "
-          animate={animation}
+         
         />
+        </motion.div>
       </div>
 
       {isAnimated && (

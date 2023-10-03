@@ -1,33 +1,48 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import Image from "next/image";
 
 interface props {
   imgLogo: string;
   text: string;
+  isMobile: boolean;
 }
 
-const NavbarLinkAnimated = ({ imgLogo, text }: props) => {
+const NavbarLinkAnimated = ({ imgLogo, text, isMobile }: props) => {
   const [isHovered, setHovered] = useState(false);
 
   return (
-    <motion.li className="cursor-pointer text-center  ">
+    <motion.li className={`cursor-pointer text-center     `}>
       <motion.div
         initial={false}
         animate={{ y: isHovered ? 0 : 10, scale: isHovered ? 1.2 : 1 }}
       >
-        <div className="flex justify-center opacity-70">
-          <motion.img
-            width="14"
-            height="14"
-            src={imgLogo}
-            alt="home-page"
-            animate={{
-              y: isHovered ? 0 : 10,
-              scale: isHovered ? 1.2 : 1,
-              opacity: isHovered ? 1 : 0,
-            }}
-          />
+        <div className="flex justify-center opacity-70 relative  hover:opacity-100 ">
+          <motion.div
+            initial={
+              isMobile
+                ? {
+                    y: 0,
+                    scale: 0,
+                  }
+                : {}
+            }
+            animate={
+              isMobile
+                ? {
+                    y: 10,
+                    scale: 2,
+                  }
+                : {
+                    y: isHovered ? 0 : 10,
+                    scale: isHovered ? 1.2 : 1,
+                    opacity: isHovered ? 1 : 0,
+                  }
+            }
+          >
+            <Image width={24} height={24} src={imgLogo} alt="home-page" className="w-4" />
+          </motion.div>
         </div>
         <Link
           activeClass="active"
@@ -42,7 +57,8 @@ const NavbarLinkAnimated = ({ imgLogo, text }: props) => {
                           isHovered
                             ? "hover:before:w-full hover:before:left-0 hover:before:bg-cyan-400"
                             : ""
-                        }`}
+                        }
+                        ${isMobile ? "hidden" : ""}`}
         >
           {text}
         </Link>

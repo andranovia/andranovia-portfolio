@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
 
 interface props {
   src: string;

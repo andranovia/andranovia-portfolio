@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
 
-const AnimatedTextLetter = dynamic(() => import("./TextAnimationLetter"));
-const AnimatedTextWords = dynamic(() => import("./textAnimationWords"));
+import AnimatedTextLetter from "./TextAnimationLetter";
+import AnimatedTextWords from "./textAnimationWords";
 
 interface props {
   animate: any;
