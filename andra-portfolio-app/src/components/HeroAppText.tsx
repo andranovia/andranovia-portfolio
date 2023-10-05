@@ -29,6 +29,23 @@ const HeroAppText = ({ animate, textTwo, text }: props) => {
       >
         <AnimatedTextLetter text={text} charDelay={0.04} />
       </motion.div>
+      <div className="flex justify-start">
+        <motion.div
+          className=" bg-gradient-to-r from-cyan-400 to-cyan-200 w-40 sm:w-[30rem] h-2 sm:mt-14 mt-4 rounded-md"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { scaleX: 0 },
+            visible: {
+              scaleX: 1,
+              transition: {
+                duration: 0.6,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        />
+      </div>
       <motion.div
         className="text-2xl sm:text-6xl text-gray-500 mt-4"
         variants={{

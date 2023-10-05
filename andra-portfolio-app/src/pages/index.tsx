@@ -2,9 +2,7 @@ import ExperienceApp from "@/components/ExperienceApp";
 
 import dynamic from "next/dynamic";
 
-
-
-const LayoutApp = dynamic(() => import('@/layouts/LayoutApp'))
+const LayoutApp = dynamic(() => import("@/layouts/LayoutApp"));
 const HeroApp = dynamic(() => import("@/components/HeroApp"));
 const ProfileApp = dynamic(() => import("@/components/ProfileApp"));
 

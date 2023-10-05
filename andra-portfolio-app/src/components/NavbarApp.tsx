@@ -16,11 +16,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-12  pt-10  flex justify-center text-black  ">
+    <div className="h-12 sm:fixed sm:right-0 sm:left-0 pt-10  flex justify-center text-black z-20  ">
       <div className="flex justify-center  items-center font-semibold ">
         <div className="relative flex justify-center ">
           {isMobile && (
-            <div>
+            <div className="">
               <NavbarLinkApp isMobile={isMobile} />
             </div>
           )}
