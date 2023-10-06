@@ -1,5 +1,8 @@
 import React from "react";
-import NavbarLinkAnimated from "./NavbarLinkAnimated";
+import dynamic from "next/dynamic";
+
+const NavbarLinkAnimated = dynamic(() => import('./NavbarLinkAnimated'));
+
 
 interface props {
   isMobile: boolean;

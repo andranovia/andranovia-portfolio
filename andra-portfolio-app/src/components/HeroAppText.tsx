@@ -29,7 +29,7 @@ const HeroAppText = ({ animate, textTwo, text }: props) => {
       >
         <AnimatedTextLetter text={text} charDelay={0.04} />
       </motion.div>
-      <div className="flex justify-start">
+      <div className="flex justify-start sm:justify-center">
         <motion.div
           className=" bg-gradient-to-r from-cyan-400 to-cyan-200 w-40 sm:w-[30rem] h-2 sm:mt-14 mt-4 rounded-md"
           initial="hidden"

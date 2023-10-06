@@ -4,11 +4,17 @@ import { motion } from "framer-motion";
 
 interface props {
   text: string;
+  imgSrc: string;
+  position: string;
 }
 
-export default function HeroCard({ text }: props) {
+export default function HeroCard({ text, imgSrc, position }: props) {
   return (
-    <div className="relative mt-10">
+    <div
+      className={`relative mt-10 ${
+        position
+      }`}
+    >
       <div className="flex justify-center">
         <motion.div
           className="relative -bottom-8 bg-white rounded-full border-2 border-cyan-400 flex justify-center p-3 z-10"
@@ -26,9 +32,7 @@ export default function HeroCard({ text }: props) {
           }}
         >
           <Image
-            src={
-              "https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"
-            }
+            src={imgSrc}
             width={24}
             height={24}
             alt=""

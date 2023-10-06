@@ -1,5 +1,8 @@
 import React from "react";
-import NavbarLinkApp from "./NavbarLinkApp";
+import dynamic from "next/dynamic";
+
+const NavbarLinkApp = dynamic(() => import('./NavbarLinkApp'));
+
 
 const Navbar: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
