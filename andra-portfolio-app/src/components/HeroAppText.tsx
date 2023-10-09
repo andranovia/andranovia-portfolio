@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
-import AnimatedTextLetter from "./TextAnimationLetter";
-import AnimatedTextWords from "./textAnimationWords";
+const AnimatedTextLetter = dynamic(() => import('./TextAnimationLetter'));
+const AnimatedTextWords = dynamic(() => import('./textAnimationWords'));
+
 
 interface props {
   animate: any;
@@ -31,7 +33,7 @@ const HeroAppText = ({ animate, textTwo, text }: props) => {
       </motion.div>
       <div className="flex justify-start sm:justify-center">
         <motion.div
-          className=" bg-gradient-to-r from-cyan-400 to-cyan-200 w-40 sm:w-[30rem] h-2 sm:mt-14 mt-4 rounded-md"
+          className="bg-black sm:bg-gradient-to-r from-cyan-400 to-cyan-200 w-40 sm:w-[30rem] h-1 sm:mt-14 mt-4 rounded-md"
           initial="hidden"
           animate="visible"
           variants={{

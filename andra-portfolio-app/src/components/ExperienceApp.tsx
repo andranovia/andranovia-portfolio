@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ExperienceApp() {
   return (
-    <div className="w-screen h-screen relative top-32 sm:mt-40 mb-40 bottom-0">
+    <div className="w-screen h-screen relative top-32 sm:mt-[20%] mb-40 bottom-0">
       <div className="flex justify-center flex-col">
         <div className="mb-20 flex flex-col justify-center text-center mx-10">
           <h1 className="font-bold text-5xl text-gray-600">Work Project</h1>
@@ -15,13 +15,14 @@ export default function ExperienceApp() {
         <div className="flex justify-center ">
           <div className="mx-10 w-[20rem] sm:w-[50rem] flex flex-col  items-center justify-center h-auto bg-gradient-to-r from-cyan-500 to-cyan-300 rounded-md p-1 ">
             <div className="h-full w-full bg-white p-6 sm:grid sm:grid-cols-2">
-              <div className="sm:mt-20">
+              <div className="sm:mt-6">
                 <div className="flex justify-center ">
                   <Image
-                    src="https://via.placeholder.com/150"
+                    src="/img/projectImg/noir1.webp"
                     alt=""
-                    width={64}
-                    height={63}
+                    width={350}
+                    height={350}
+                    className="w-[40rem]"
                   />
                 </div>
                 <div className="text-gray-600 ">
@@ -37,10 +38,13 @@ export default function ExperienceApp() {
               <div className="relative sm:bottom-8">
                 <div className="mt-10 text-1xl font-medium text-gray-700 sm:mx-10 ">
                   <ul className=" space-y-1 text-gray-500 list-disc list-inside">
-                    <li>Add items to cart </li>
-                    <li>Find products effortlessly</li>
-                    <li>Product details</li>
-                    <li>Auth system</li>
+                    <li>Add items to cart using contextAPI </li>
+                    <li>Find products</li>
+                    <li>Product details for each product</li>
+                    <li>About page next-route</li>
+                    <li>Contact page using next-route</li>
+                    <li>Mobile responsive with tailwindcss</li>
+                    
                   </ul>
                 </div>
                 <div className="mt-7 flex flex-col justify-center sm:mx-10 ">
@@ -60,6 +64,12 @@ export default function ExperienceApp() {
                     />
                     <Image
                       src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
+                      alt=""
+                      width={64}
+                      height={63}
+                    />
+                     <Image
+                      src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg"
                       alt=""
                       width={64}
                       height={63}

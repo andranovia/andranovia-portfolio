@@ -1,13 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import dynamic from "next/dynamic";
+import CircleType from "circletype";
 
 const HeroAppText = dynamic(() => import("./HeroAppText"));
-const HeroCardContainer  = dynamic(() => import("./HeroCardContainer"));
-
+const HeroCardContainer = dynamic(() => import("./HeroCardContainer"));
 
 function HeroApp() {
   const controlsTwo = useAnimation();
+  const circleTypeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const circleType = new CircleType(document.getElementById("textCircular"));
+
+    const handleScroll = () => {
+      const offset = window.scrollY * 0.4;
+
+      if (circleType.element) {
+        circleType.element.style.transform = `rotate(${offset}deg)`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     controlsTwo.start("animate");
@@ -28,8 +47,9 @@ function HeroApp() {
               y: 0,
               opacity: 1,
               transition: {
-                duration: 0.4,
-                ease: "easeInOut",
+                duration: 1,
+                delay: 0.8,
+                ease: "linear"
               },
             },
           }}
@@ -42,6 +62,76 @@ function HeroApp() {
           text={animatedTextOne}
           textTwo={animatedTextTwo}
         />
+        <div className="absolute -right-1 top-[20vh] sm:-right-20 sm:-bottom-[90%] flex justify-center flex-col gap-[8vh] sm:gap-32">
+          <p className="rotate-90 font-semibold text-gray-700 sm:text-2xl sm:font-bold">my profile</p>
+          <div className="bg-black w-24 sm:w-[42rem] h-0.5 rounded-md rotate-90 "></div>
+          <div
+            className={
+              "overflow-hidden flex items-center justify-center text-center "
+            }
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 1,
+              }}
+              className=" rounded-full bg-white  absolute flex items-center -bottom-14 justify-center text-sm sm:text-2xl sm:-bottom-5   "
+            >
+              <div
+                className="circular-text"
+                ref={circleTypeRef}
+                id="textCircular"
+              >
+                <div
+                  className={
+                    "overflow-hidden flex items-center justify-center text-center "
+                  }
+                >
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      ease: "easeInOut",
+                      duration: 1,
+                    }}
+                    className=" rounded-full  absolute flex items-center justify-center  mr-40  "
+                  >
+                    <div
+                      className="circular-text"
+                      ref={circleTypeRef}
+                      id="textCircular"
+                    >
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 1,
+                          delay: 1.8,
+                        }}
+                      >
+                        &#8226; look &#8226;
+                      </motion.span>
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 1,
+                          delay: 1.8,
+                        }}
+                      >
+                        around
+                      </motion.span>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
 
         <div className="absolute w-screen  right-0">
           <div className="bg-[#1ab8f2] h-24 relative top-[22vh] sm:top-[50vh] ">
