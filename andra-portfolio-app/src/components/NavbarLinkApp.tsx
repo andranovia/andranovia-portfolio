@@ -10,10 +10,10 @@ interface props {
 
 const NavbarLinkApp = ({ isMobile }: props) => {
   return (
-    <div className="flex justify-center ml-28 items-center font-semibold ">
-      <div className="relative flex justify-center ">
+    <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold sm:bg-gradient-to-r from-cyan-500 opacity-60 to-cyan-300 rounded-full p-1 ">
+      <div className="relative flex justify-center w-full h-full bg-white rounded-full ">
         {!isMobile && (
-          <ul className="list-none flex gap-8 mr-20 text-lg ">
+          <ul className="list-none flex gap-8  text-lg relative bottom-4 ">
             <NavbarLinkAnimated
               imgLogo={
                 "https://img.icons8.com/sf-regular-filled/48/home-page.png"

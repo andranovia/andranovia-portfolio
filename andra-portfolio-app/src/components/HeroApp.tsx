@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import dynamic from "next/dynamic";
 import CircleType from "circletype";
+import Image from "next/image";
 
 const HeroAppText = dynamic(() => import("./HeroAppText"));
 const HeroCardContainer = dynamic(() => import("./HeroCardContainer"));
@@ -36,7 +37,7 @@ function HeroApp() {
   const animatedTextTwo = "we should know each other👋";
 
   return (
-    <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen  sm:mt-[29vh]">
+    <div className="relative flex justify-center items-center h-[80vh] font-Poppins w-screen mt-[10rem]  sm:mt-[15rem]">
       <div className="mx-10   font-bold font-Poppins flex flex-col sm:items-center justify-center text-#272828 z-1">
         <motion.div
           initial="hidden"
@@ -49,7 +50,7 @@ function HeroApp() {
               transition: {
                 duration: 1,
                 delay: 0.8,
-                ease: "linear"
+                ease: "linear",
               },
             },
           }}
@@ -62,9 +63,19 @@ function HeroApp() {
           text={animatedTextOne}
           textTwo={animatedTextTwo}
         />
-        <div className="absolute -right-1 top-[20vh] sm:-right-20 sm:-bottom-[90%] flex justify-center flex-col gap-[8vh] sm:gap-32">
-          <p className="rotate-90 font-semibold text-gray-700 sm:text-2xl sm:font-bold">my profile</p>
-          <div className="bg-black w-24 sm:w-[42rem] h-0.5 rounded-md rotate-90 "></div>
+        <div className="absolute -right-10 top-[2vh]  sm:-right-44 sm:-bottom-[90%] flex justify-center flex-col gap-[8vh] sm:gap-48">
+          <div className="rotate-90 flex gap-4 items-center justify-center sm:mb-[15rem] ">
+            <Image
+              src={"https://img.icons8.com/ios-filled/50/search--v1.png"}
+              width={32}
+              height={32}
+              alt=""
+            />
+            <p className=" font-semibold text-gray-700 sm:text-2xl sm:font-bold">
+              my profile
+            </p>
+          </div>
+          <div className="bg-black w-24 sm:w-[42rem] h-0.5 rounded-md rotate-90 m-10 sm:m-0 relative "></div>
           <div
             className={
               "overflow-hidden flex items-center justify-center text-center "
@@ -77,7 +88,7 @@ function HeroApp() {
                 ease: "easeInOut",
                 duration: 1,
               }}
-              className=" rounded-full bg-white  absolute flex items-center -bottom-14 justify-center text-sm sm:text-2xl sm:-bottom-5   "
+              className=" rounded-full bg-white  absolute flex items-center -bottom-8 justify-center text-sm sm:text-2xl sm:-bottom-20   "
             >
               <div
                 className="circular-text"
