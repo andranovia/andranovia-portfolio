@@ -1,5 +1,5 @@
 
-import HomeApp from "@/components/Home";
+import HomeApp from "@/components/HomeApp";
 
 
 

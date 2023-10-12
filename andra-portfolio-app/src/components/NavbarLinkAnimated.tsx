@@ -18,7 +18,7 @@ const NavbarLinkAnimated = ({ imgLogo, text, isMobile }: props) => {
         initial={false}
         animate={{ y: isHovered ? 0 : 10, scale: isHovered ? 1.2 : 1 }}
       >
-        <div className="flex justify-center opacity-70 relative  hover:opacity-100 bottom-2 sm:bottom-3 ">
+        <div className="flex justify-center opacity-70 relative  hover:opacity-100 bottom-2 sm:bottom-3  ">
           <motion.div
             initial={
               isMobile

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import ProfileSkillCard from "./ProfileSkillCardApp";
-import ProfileSkillCardContainer from "./ProfileSkillCardContainer";
+import React from "react";
+import ProfileSkillCardContainer from "./ProfileSkillCardContainerApp";
 
 export default function ProfileSkillAnimation() {
  

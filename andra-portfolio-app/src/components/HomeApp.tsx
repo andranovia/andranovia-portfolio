@@ -1,10 +1,12 @@
-import ExperienceApp from "@/components/ExperienceApp";
 
+import React from "react";
 import dynamic from "next/dynamic";
+
 
 const LayoutApp = dynamic(() => import("@/layouts/LayoutApp"));
 const HeroApp = dynamic(() => import("@/components/HeroApp"));
 const ProfileApp = dynamic(() => import("@/components/ProfileApp"));
+const WorkProject = dynamic(() => import("@/components/WorkProjectApp"));
 
 export default function HomeApp() {
   return (
@@ -20,7 +22,7 @@ export default function HomeApp() {
             <HeroApp />
           </div>
           <ProfileApp />
-          <ExperienceApp />
+          <WorkProject />
         </div>
       </LayoutApp>
     </>

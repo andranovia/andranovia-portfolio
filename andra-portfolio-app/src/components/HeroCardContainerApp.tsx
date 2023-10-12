@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import HeroCard from "./HeroCard";
+import React from "react";
+import HeroCard from './HeroCardApp';
 
 const HeroCardContainer = () => {
   const [isMobile, setIsMobile] = React.useState(false);
