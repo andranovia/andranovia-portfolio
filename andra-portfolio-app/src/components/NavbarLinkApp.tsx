@@ -1,14 +1,11 @@
 import React from "react";
-import dynamic from "next/dynamic";
-
-const NavbarLinkAnimated = dynamic(() => import('./NavbarLinkAnimated'));
-
+import NavbarLinkAnimated from "./NavbarLinkAnimated";
 
 interface props {
   isMobile: boolean;
 }
 
-const NavbarLinkApp = ({ isMobile }: props) => {
+const NavbarLinkApp = React.memo(({ isMobile }: props) => {
   return (
     <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold sm:bg-gradient-to-r from-cyan-500 opacity-60 to-cyan-300 rounded-full p-1 ">
       <div className="relative flex justify-center w-full h-full bg-white rounded-full ">
@@ -79,6 +76,7 @@ const NavbarLinkApp = ({ isMobile }: props) => {
       </div>
     </div>
   );
-};
+});
 
 export default NavbarLinkApp;
+NavbarLinkApp.displayName = "NavbarLinkApp";

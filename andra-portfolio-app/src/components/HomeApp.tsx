@@ -6,7 +6,8 @@ import dynamic from "next/dynamic";
 const LayoutApp = dynamic(() => import("@/layouts/LayoutApp"));
 const HeroApp = dynamic(() => import("@/components/HeroApp"));
 const ProfileApp = dynamic(() => import("@/components/ProfileApp"));
-const WorkProject = dynamic(() => import("@/components/WorkProjectApp"));
+const MyWork = dynamic(() => import('@/components/MyWorkApp'));
+
 
 export default function HomeApp() {
   return (
@@ -22,7 +23,7 @@ export default function HomeApp() {
             <HeroApp />
           </div>
           <ProfileApp />
-          <WorkProject />
+          <MyWork />
         </div>
       </LayoutApp>
     </>

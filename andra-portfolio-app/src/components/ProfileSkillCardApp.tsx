@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface props {
@@ -11,7 +11,7 @@ interface props {
 
 }
 
-export default function ProfileSkillCard({ img, text, delay, isMobile  }: props) {
+const ProfileSkillCard = React.memo(({ img, text, delay, isMobile  }: props) => {
   const [isVisible, setIsVisible] = useState(false);
   const controls = useAnimation();
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -70,7 +70,7 @@ export default function ProfileSkillCard({ img, text, delay, isMobile  }: props)
         initial={isMobile? "" : "default"}
         animate={controls}
         variants={{
-          default: { x: isMobile? 0 : 650, y: isMobile? 650 : 0 },
+          default: { x: isMobile? 0 : 650, y: isMobile? 350 : 0 },
           scrolled: { x: isMobile? 0 : 0, y: isMobile? 0 : 0 },
         }}
         transition={{ duration: 3, ease: "easeInOut", delay: delay }}
@@ -85,4 +85,7 @@ export default function ProfileSkillCard({ img, text, delay, isMobile  }: props)
      
 
   );
-}
+});
+
+export default ProfileSkillCard;
+ProfileSkillCard.displayName = "ProfileSkillCard"

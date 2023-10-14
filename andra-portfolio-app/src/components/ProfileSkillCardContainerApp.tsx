@@ -1,12 +1,8 @@
 import React from "react";
-import dynamic from "next/dynamic";
-import { useState } from "react";
+import ProfileSkillCard from "@/components/ProfileSkillCardApp";
 
-const ProfileSkillCard = dynamic(
-  () => import("@/components/ProfileSkillCardApp")
-);
 
-export default function ProfileSkillCardContainer({ isMobile }: any) {
+const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
   const topSkillData = [
     {
       img: "/img/techLogo/framer-motion-Icon.svg",
@@ -79,4 +75,7 @@ export default function ProfileSkillCardContainer({ isMobile }: any) {
       </div>
     </div>
   );
-}
+})
+
+export default ProfileSkillCardContainer;
+ProfileSkillCardContainer.displayName = 'ProfileSkillCardContainer'

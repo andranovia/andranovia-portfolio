@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-
-interface props{
-    text: string;
-    charDelay: number;
+interface props {
+  text: string;
+  charDelay: number;
 }
 
-
-const AnimatedTextWords = ({ text, charDelay }:props) => {
+const AnimatedTextWords = React.memo(({ text, charDelay }: props) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -55,6 +53,7 @@ const AnimatedTextWords = ({ text, charDelay }:props) => {
       ))}
     </motion.div>
   );
-};
+});
 
 export default AnimatedTextWords;
+AnimatedTextWords.displayName = "AnimatedTextWord";

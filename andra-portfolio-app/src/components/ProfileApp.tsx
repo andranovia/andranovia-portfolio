@@ -1,10 +1,7 @@
 import React from "react";
-import dynamic from "next/dynamic";
-import ProfileImage from "./ProfileImageApp";
-import ProfileSkillAnimation from "./ProfileSkillAnimationApp";
-
-const ProfileApptext = dynamic(() => import("@/components/ProfileTextApp"));
-
+import ProfileSkillAnimation from "@/components/ProfileSkillAnimationApp";
+import ProfileImage from "@/components/ProfileImageApp";
+import ProfileApptext from "@/components/ProfileTextApp";
 
 export default function ProfileApp() {
 

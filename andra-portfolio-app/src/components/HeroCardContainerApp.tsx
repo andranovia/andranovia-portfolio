@@ -1,5 +1,5 @@
 import React from "react";
-import HeroCard from './HeroCardApp';
+import HeroCard from "@/components/HeroCardApp";
 
 const HeroCardContainer = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -24,7 +24,7 @@ const HeroCardContainer = () => {
     {
       text: "LinkedIn",
       imgSrc:
-        "https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg",
+        "/img/socialLogo/linkedin-icon.svg",
       position: isMobile? "top-12" : "right-10"
     },
     {

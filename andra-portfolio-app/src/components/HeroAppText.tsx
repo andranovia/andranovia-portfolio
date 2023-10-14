@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
-
-const AnimatedTextLetter = dynamic(() => import('./TextAnimationLetter'));
-const AnimatedTextWords = dynamic(() => import('./textAnimationWords'));
-
+import AnimatedTextLetter from "./TextAnimationLetter";
+import AnimatedTextWords from "./textAnimationWords";
 
 interface props {
   animate: any;
@@ -12,7 +9,7 @@ interface props {
   text: string;
 }
 
-const HeroAppText = ({ animate, textTwo, text }: props) => {
+const HeroAppText = React.memo(({ animate, textTwo, text }: props) => {
   return (
     <div className="sm:text-center ">
       <motion.div
@@ -66,6 +63,8 @@ const HeroAppText = ({ animate, textTwo, text }: props) => {
       </motion.div>
     </div>
   );
-};
+});
+
+HeroAppText.displayName = "HeroAppText";
 
 export default HeroAppText;

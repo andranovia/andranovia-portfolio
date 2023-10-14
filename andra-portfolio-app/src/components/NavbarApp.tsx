@@ -1,7 +1,5 @@
 import React from "react";
-import dynamic from "next/dynamic";
-
-const NavbarLinkApp = dynamic(() => import('./NavbarLinkApp'));
+import NavbarLinkApp from "./NavbarLinkApp";
 
 
 const Navbar: React.FC = () => {

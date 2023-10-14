@@ -8,7 +8,9 @@ interface props {
   position: string;
 }
 
-export default function HeroCard({ text, imgSrc, position }: props) {
+
+
+const HeroCard = React.memo(({ text, imgSrc, position }: props) => {
   return (
     <div
       className={`relative mt-10 ${
@@ -66,4 +68,8 @@ export default function HeroCard({ text, imgSrc, position }: props) {
       </motion.div>
     </div>
   );
-}
+
+});
+
+export default HeroCard;
+HeroCard.displayName = "HeroCard";

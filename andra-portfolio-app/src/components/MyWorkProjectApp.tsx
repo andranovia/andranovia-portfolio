@@ -1,33 +1,21 @@
 import React from "react";
 import Image from "next/image";
 
-interface props {
+interface TechDataItem {
   imgSrc: string;
 }
 
-const techData = [
-  {
-    imgSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/f/f5/Typescript.svg",
-  },
-  {
-    imgSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
-  },
-  {
-    imgSrc:
-      "https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg",
-  },
-  {
-    imgSrc: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
-  },
-];
-
-function TechUsed({ imgSrc }: props) {
-  return <Image src={imgSrc} alt="" width={34} height={34} />;
+interface MyWorkProps {
+  techData: TechDataItem[];
 }
 
-export default function WorkProject() {
+const TechUsed = React.memo(({ imgSrc }: TechDataItem) => {
+  return <Image src={imgSrc} alt="" width={34} height={34} />;
+});
+
+TechUsed.displayName = "TechUsed";
+
+const MyWork = React.memo(({ techData }: MyWorkProps) => {
   const techUsed = techData.map((item, index) => (
     <TechUsed key={index} imgSrc={item.imgSrc} />
   ));
@@ -79,4 +67,7 @@ export default function WorkProject() {
       </div>
     </div>
   );
-}
+});
+
+export default MyWork;
+MyWork.displayName = "MyWork";
