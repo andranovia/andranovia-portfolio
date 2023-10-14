@@ -21,7 +21,9 @@ const techData = [
 
 export default function MyWork() {
   return (
-  <MyWorkProject techData={techData} />
-  
+    <div>
+      
+      <MyWorkProject techData={techData} />
+    </div>
   );
 }

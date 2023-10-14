@@ -74,7 +74,7 @@ function HeroApp() {
               my profile
             </p>
           </div>
-          <div className="bg-black w-24 sm:w-[38rem] h-0.5 rounded-md rotate-90 m-10 sm:m-0 relative "></div>
+          <div className="bg-slate-600 w-24 sm:w-[38rem] h-0.5 rounded-md rotate-90 m-10 sm:m-0 relative "></div>
           <div
             className={
               "overflow-hidden flex items-center justify-center text-center "
@@ -134,7 +134,7 @@ function HeroApp() {
         </div>
 
         <div className="absolute w-screen  right-0">
-        <div className="h-24 relative top-[22vh] sm:top-[50vh]" style={{ background: "linear-gradient(to right, #ac5bbe, #00FFFF)" }}>
+        <div className="h-24 relative top-[22vh] sm:top-[50vh]" >
            <HeroAppSvg/>
           </div>
         </div>
