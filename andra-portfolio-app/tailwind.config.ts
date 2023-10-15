@@ -16,7 +16,11 @@ const config: Config = {
       },
       boxShadow: {
         'ShadowCard': '0px 0px 0px 2px rgba(6, 24, 44, 0.4), 0px 4px 6px -1px rgba(6, 24, 44, 0.65), 0px 1px 0px inset rgba(255, 255, 255, 0.08)',
+        'ShadowCardCyan': '0px 0px 0px 2px rgba(173, 216, 230, 1), 0px 4px 6px -1px rgba(0, 255, 255, 1), 0px 1px 0px inset rgba(0, 255, 255, 0.8)'
+
       },
+      
+      
       animation: {
         blob: "blob 7s infinite",
       },

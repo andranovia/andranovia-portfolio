@@ -70,8 +70,8 @@ const ProfileSkillCard = React.memo(({ img, text, delay, isMobile  }: props) => 
         initial={isMobile? "" : "default"}
         animate={controls}
         variants={{
-          default: { x: isMobile? 0 : 650, y: isMobile? 350 : 0 },
-          scrolled: { x: isMobile? 0 : 0, y: isMobile? 0 : 0 },
+          default: { x: isMobile? 0 : 650, y: isMobile? 150 : 0, opacity: 0 },
+          scrolled: { x: isMobile? 0 : 0, y: isMobile? 0 : 0, opacity: 1 },
         }}
         transition={{ duration: 3, ease: "easeInOut", delay: delay }}
         className={`bg-white rounded-md shadow-ShadowCard w-16 p-2 sm:w-52 sm:p-2 flex justify-center sm:gap-4 `}

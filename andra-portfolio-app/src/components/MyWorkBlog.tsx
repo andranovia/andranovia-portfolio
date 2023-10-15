@@ -25,7 +25,7 @@ const MyWork = React.memo(({ techData }: MyWorkProps) => {
     <div className="w-screen h-screen relative  mb-40 bottom-0 ">
       <div className="flex justify-center flex-col ">
         <div className=" flex flex-col justify-center text-center mx-10 sm:text-left ">
-          <h1 className="font-bold text-2xl text-gray-600">My Project</h1>
+          <h1 className="font-bold text-2xl text-gray-600">My blog</h1>
           <p className="font-semibold text-[1rem] sm:text-xl text-gray-600 top-20 mt-4">
             this section provides a comprehensive
             <span className="text-gray-500 ">
