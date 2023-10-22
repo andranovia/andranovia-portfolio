@@ -11,7 +11,7 @@ const MyWork = dynamic(() => import('@/components/MyWorkApp'));
 
 export default function HomeApp() {
   return (
-    <>
+    
       <LayoutApp>
         <div className="relative w-full max-w-lg ">
             <div className="absolute left-[32rem] -top-20 opacity-25">
@@ -26,6 +26,6 @@ export default function HomeApp() {
           <MyWork />
         </div>
       </LayoutApp>
-    </>
+    
   );
 }
