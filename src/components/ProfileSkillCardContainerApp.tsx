@@ -46,25 +46,26 @@ const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
     },
   ];
 
-
   return (
-    <Marquee>
-    <div className="flex flex-col justify-center  ">
-
-        <div className="flex justify-center ">
-          {SkillData.map((skill, index) => (
-            <ProfileSkillCard
-              key={index}
-              img={skill.img}
-              text={skill.text}
-              delay={skill.delay}
-              isMobile={isMobile}
-            />
-          ))}
-        </div>
-  
-    </div>
-    </Marquee>
+    <>
+<div className="w-screen px-14 rounded-full ">
+        <Marquee>
+          <div className="flex flex-col justify-center  ">
+            <div className="flex  justify-center ">
+              {SkillData.map((skill, index) => (
+                <ProfileSkillCard
+                  key={index}
+                  img={skill.img}
+                  text={skill.text}
+                  delay={skill.delay}
+                  isMobile={isMobile}
+                />
+              ))}
+            </div>
+          </div>
+        </Marquee>
+        </div>  
+    </>
   );
 });
 

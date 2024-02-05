@@ -37,7 +37,7 @@ const HeroCardContainer = () => {
       text: "Whatsapp",
       imgSrc:
         "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
-        position: isMobile? "bottom-12" :"left-10"
+        position: isMobile? "bottom-12" :"left-10 top-32"
     },
   ];
   const heroCards = heroData.map((item, index) => (
