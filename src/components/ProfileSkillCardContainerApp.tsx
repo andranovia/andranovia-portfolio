@@ -1,9 +1,9 @@
 import React from "react";
 import ProfileSkillCard from "@/components/ProfileSkillCardApp";
-
+import Marquee from "react-fast-marquee";
 
 const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
-  const topSkillData = [
+  const SkillData = [
     {
       img: "/img/techLogo/framer-motion-Icon.svg",
       text: "Framer-motion",
@@ -24,9 +24,6 @@ const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
       text: "PHP",
       delay: 0.5,
     },
-  ];
-
-  const bottomSkillData = [
     {
       img: "/img/techLogo/React-icon.svg",
       text: "ReactJs",
@@ -43,39 +40,33 @@ const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
       delay: 0.3,
     },
     {
-        img: "/img/techLogo/Nextjs-logo.svg",
-        text: "NextJs",
-        delay: 0.2,
-      },
+      img: "/img/techLogo/Nextjs-logo.svg",
+      text: "NextJs",
+      delay: 0.2,
+    },
   ];
 
+
   return (
-    <div className="flex flex-col justify-center sm:ml-[10rem]">
-      <div className="flex justify-center gap-4">
-        {topSkillData.map((skill, index) => (
-          <ProfileSkillCard
-            key={index}
-            img={skill.img}
-            text={skill.text}
-            delay={skill.delay}
-            isMobile={isMobile}
-          />
-        ))}
-      </div>
-      <div className="relative sm:right-[8rem] top-6 flex justify-center gap-4">
-        {bottomSkillData.map((skill, index) => (
-          <ProfileSkillCard
-            key={index}
-            img={skill.img}
-            text={skill.text}
-            delay={skill.delay}
-            isMobile={isMobile}
-          />
-        ))}
-      </div>
+    <Marquee>
+    <div className="flex flex-col justify-center  ">
+
+        <div className="flex justify-center ">
+          {SkillData.map((skill, index) => (
+            <ProfileSkillCard
+              key={index}
+              img={skill.img}
+              text={skill.text}
+              delay={skill.delay}
+              isMobile={isMobile}
+            />
+          ))}
+        </div>
+  
     </div>
+    </Marquee>
   );
-})
+});
 
 export default ProfileSkillCardContainer;
-ProfileSkillCardContainer.displayName = 'ProfileSkillCardContainer'
+ProfileSkillCardContainer.displayName = "ProfileSkillCardContainer";

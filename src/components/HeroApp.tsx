@@ -62,8 +62,8 @@ function HeroApp() {
           text={animatedTextOne}
           textTwo={animatedTextTwo}
         />
-        <div className="absolute -right-10 top-[2vh]  sm:-right-44 sm:-bottom-[70%] flex justify-center flex-col gap-[8vh] sm:gap-48">
-          <div className="rotate-90 flex gap-4 items-center justify-center sm:mb-[12rem] ">
+        <div className="absolute -right-16 top-[5vh] sm:top-10 sm:-right-2 flex justify-center flex-col gap-[8vh] sm:gap-10">
+          <div className="rotate-90 flex gap-4 items-center justify-center sm:mb-[7.5rem] ">
             <Image
               src={"https://img.icons8.com/ios-filled/50/search--v1.png"}
               width={32}
@@ -73,11 +73,13 @@ function HeroApp() {
             <p className=" font-semibold text-gray-700 sm:text-2xl sm:font-bold">
               my profile
             </p>
+            <div className="bg-slate-600 w-24  sm:w-[10rem] h-0.5 rounded-md  relative sm:m-0"></div>
           </div>
-          <div className="bg-slate-600 w-24 sm:w-[38rem] h-0.5 rounded-md rotate-90 m-10 sm:m-0 relative "></div>
+      
+          
           <div
             className={
-              "overflow-hidden flex items-center justify-center text-center "
+              "overflow-hidden flex items-center sm:mt-10 mt-20 justify-center text-center "
             }
           >
             <motion.div

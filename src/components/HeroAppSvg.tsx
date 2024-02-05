@@ -13,9 +13,9 @@ export default function HeroAppSvg() {
         >
           <defs>
             <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-              <stop stop-color="rgba(255, 255, 255, 0)" offset="0%"></stop>
+              <stop stopColor="rgba(255, 255, 255, 0)" offset="0%"></stop>
               <stop
-                stop-color="rgba(6.695, 213.779, 255, 1)"
+                stopColor="rgba(6.695, 213.779, 255, 1)"
                 offset="100%"
               ></stop>
             </linearGradient>
