@@ -8,11 +8,11 @@ import MyWorkProject from "@/components/MyWorkProjectApp";
 
 export default function MyWork() {
   return (
-    <div className="w-screen mb-[20rem]">
-      <div className="relative top-[2rem] sm:top-[10rem] sm:justify-start sm:grid grid-cols-2 sm:mx-40">
+    <div className="w-screen mb-[10rem]">
+      <div className="relative top-[10rem] sm:justify-start sm:grid grid-cols-2 sm:mx-40">
         <div className="flex flex-col justify-start">
           <div className="sm:w-[30rem] font-poppins sm:mb-20 mx-10 text-left mt-12 sm:mt-0">
-            <div className="sm:mt-20 items-center ">
+            <div className="sm:mt-48 items-center ">
               <div className="flex gap-4">
                 <div className="relative sm:text-[2.5rem] text-4xl font-bold text-gray-700 flex   ">
                   <h1>Project</h1>
@@ -45,7 +45,7 @@ export default function MyWork() {
             </div>
           </div>
         </div>
-        <div className="relative sm:top-32 top-10">
+        <div className="relative sm:top-64 top-10">
           <MyWorkProject techData={techData} />
         </div>
       </div>

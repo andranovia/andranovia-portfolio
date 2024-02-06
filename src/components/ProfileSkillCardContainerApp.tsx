@@ -48,9 +48,9 @@ const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
 
   return (
     <>
-<div className="w-screen px-14 rounded-full ">
+      <div className="w-screen px-14 sm:px-40 rounded-full ">
         <Marquee>
-          <div className="flex flex-col justify-center  ">
+          <div className="flex flex-col  justify-center  ">
             <div className="flex  justify-center ">
               {SkillData.map((skill, index) => (
                 <ProfileSkillCard
@@ -64,7 +64,7 @@ const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
             </div>
           </div>
         </Marquee>
-        </div>  
+      </div>
     </>
   );
 });

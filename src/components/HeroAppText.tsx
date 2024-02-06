@@ -2,68 +2,76 @@ import React from "react";
 import { motion } from "framer-motion";
 import AnimatedTextLetter from "./TextAnimationLetter";
 import AnimatedTextWords from "./textAnimationWords";
+import Image from "next/image";
+import HeroRoundedSpan from "./HeroRoundedSpan";
 
 interface props {
   animate: any;
   textTwo: string;
   text: string;
+  textThree: string;
 }
 
-const HeroAppText = React.memo(({ animate, textTwo, text }: props) => {
-  return (
-    <div className="sm:text-center ">
-      <motion.div
-        className="text-5xl sm:text-9xl text-gray-800"
-        variants={{
-          hidden: { opacity: 1 },
-          animate: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.04,
-            },
-          },
-        }}
-        initial="hidden"
-        animate={animate}
-      >
-        <AnimatedTextLetter text={text} charDelay={0.04} />
-      </motion.div>
-      <div className="flex justify-start sm:justify-center">
+const HeroAppText = React.memo(
+  ({ animate, textTwo, text, textThree }: props) => {
+    return (
+      <div className="sm:mx-20 mx-10 sm:w-full w-72  ">
         <motion.div
-          className="bg-black sm:bg-gradient-to-r from-cyan-400 to-cyan-200 w-40 sm:w-[30rem] h-1 sm:mt-14 mt-4 rounded-md"
-          initial="hidden"
-          animate="visible"
+          className="text-5xl sm:text-9xl text-center mb-10 text-gray-500"
           variants={{
-            hidden: { scaleX: 0 },
-            visible: {
-              scaleX: 1,
+            hidden: { opacity: 1 },
+            animate: {
+              opacity: 1,
               transition: {
-                duration: 0.6,
-                ease: "easeInOut",
+                staggerChildren: 0.04,
               },
             },
           }}
-        />
-      </div>
-      <motion.div
-        className="text-2xl sm:text-6xl text-gray-500 mt-4"
-        variants={{
-          hidden: { opacity: 1 },
-          animate: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.04,
+          initial="hidden"
+          animate={animate}
+        >
+          <AnimatedTextLetter text={text} charDelay={0.04} />
+        </motion.div>
+        <motion.div
+          className="text-5xl sm:text-8xl mt-4  "
+          variants={{
+            hidden: { opacity: 1 },
+            animate: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.04,
+              },
             },
-          },
-        }}
-        initial="hidden"
-        animate={animate}
-      >
-        <AnimatedTextWords text={textTwo} charDelay={0.04} />
-      </motion.div>
-    </div>
-  );
-});
+          }}
+          initial="hidden"
+          animate={animate}
+        >
+          <AnimatedTextWords text={textTwo} charDelay={0.04} />
+        </motion.div>
+        <motion.div
+          className="text-5xl sm:text-8xl mt-4 sm:flex justify-center items-center gap-4"
+          variants={{
+            hidden: { opacity: 1 },
+            animate: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.04,
+              },
+            },
+          }}
+          initial="hidden"
+          animate={animate}
+        >
+          <AnimatedTextWords text={textThree} charDelay={0.04} />
+        </motion.div>
+
+        <div className="flex justify-start sm:justify-start relative -bottom-10 sm:mt-10 ">
+          <HeroRoundedSpan/>
+        </div>
+      </div>
+    );
+  }
+);
 
 HeroAppText.displayName = "HeroAppText";
 
