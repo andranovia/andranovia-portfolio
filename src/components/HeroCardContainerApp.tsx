@@ -14,6 +14,8 @@ const HeroCardContainer = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  
   const heroData = [
     {
       text: "Github",
