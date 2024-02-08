@@ -48,7 +48,7 @@ const TiltCard = () => {
         rotateY,
       }}
       whileHover={{ scale: 1.05 }} 
-      className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-yellow-300 to-yellow-100"
+      className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-gray-800 to-gray-200"
     >
       <div
         style={{
@@ -59,7 +59,7 @@ const TiltCard = () => {
       >
         <div className="flex flex-col justify-center items-center h-full">
           <div className="font-semibold flex justify-center flex-col text-start p-9 -mt-8">
-            <div className="border-2 p-1  w-32 mb-4 text-gray-200 text-center bg-slate-700 rounded-xl">
+            <div className="border-2 p-1  w-32 mb-4 text-gray-700 text-center bg-yellow-400 rounded-xl">
               <p>Mark Manson</p>
             </div>
             <h1 >
