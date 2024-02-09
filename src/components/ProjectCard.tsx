@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const MyWorkProjectCard = ({ techUsed }: any) => {
+const ProjectCard = ({ techUsed }: any) => {
   return (
     <div className="mx-10 w-[20rem] sm:w-[28rem] flex flex-col   items-center justify-center h-auto sm:h-full bg-gradient-to-r from-cyan-700 to-cyan-500 rounded-md p-1  ">
            
@@ -35,4 +35,4 @@ const MyWorkProjectCard = ({ techUsed }: any) => {
   );
 };
 
-export default MyWorkProjectCard;
+export default ProjectCard;

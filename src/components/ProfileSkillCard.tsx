@@ -1,16 +1,16 @@
 
 import React from "react";
 import Image from "next/image";
+import { useResize } from "@/hooks/useResize";
 
 interface props {
   img: string;
   text: string;
   delay: number;
-  isMobile: boolean;
 }
 
-const ProfileSkillCard = React.memo(({ img, text, delay, isMobile }: props) => {
- 
+const ProfileSkillCard = React.memo(({ img, text }: props) => {
+  const {isMobile} = useResize();
   return (
     <>
       <div

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import MyWorkProjectCard from "./MyWorkProjectCardApp";
+import ProjectCard from "./ProjectCard";
+import techData from "./TechData";
 
 interface TechDataItem {
   imgSrc: string;
@@ -16,7 +17,7 @@ const TechUsed = React.memo(({ imgSrc }: TechDataItem) => {
 
 TechUsed.displayName = "TechUsed";
 
-const MyWork = React.memo(({ techData }: MyWorkProps) => {
+const ProjectList = () => {
   const techUsed = techData.map((item, index) => (
     <TechUsed key={index} imgSrc={item.imgSrc} />
   ));
@@ -29,18 +30,18 @@ const MyWork = React.memo(({ techData }: MyWorkProps) => {
           <p className="font-semibold text-[1rem] sm:text-xl text-gray-600 top-20 mt-4">
             this section provides a comprehensive
             <span className="text-gray-500 ">
-              {" "}
+
               overview of my work project.
             </span>
           </p>
         </div>
         <div className="flex justify-center relative mt-10 sm:justify-start">
-          <MyWorkProjectCard techUsed={techUsed} />
+          <ProjectCard techUsed={techUsed} />
         </div>
       </div>
     </div>
   );
-});
+};
 
-export default MyWork;
-MyWork.displayName = "MyWork";
+export default ProjectList;
+ProjectList.displayName = "ProjectList";

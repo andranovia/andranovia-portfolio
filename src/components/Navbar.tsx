@@ -1,22 +1,12 @@
 import React, { useState } from "react";
-import NavbarLinkApp from "./NavbarLinkApp";
 import Image from "next/image";
+import { useResize } from "@/hooks/useResize";
+import NavbarLink from "./NavbarLink";
 
 const Navbar: React.FC = () => {
-  const [isMobile, setIsMobile] = React.useState(false);
+  const {isMobile} = useResize();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
-  React.useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className="h-12 sm:fixed sm:right-0 sm:left-0 pt-10 top-10  flex justify-center text-black z-50  ">
@@ -40,7 +30,7 @@ const Navbar: React.FC = () => {
 
           {!isMobile && (
             <div>
-              <NavbarLinkApp isMobile={isMobile} />
+              <NavbarLink isMobile={isMobile} />
             </div>
           )}
         </div>

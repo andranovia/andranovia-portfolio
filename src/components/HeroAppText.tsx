@@ -12,7 +12,7 @@ interface props {
   textThree: string;
 }
 
-const HeroAppText = React.memo(
+const HeroText = React.memo(
   ({ animate, textTwo, text, textThree }: props) => {
     return (
       <div className="sm:mx-20 mx-10 sm:w-fit w-72  sm:-mt-20">
@@ -73,6 +73,6 @@ const HeroAppText = React.memo(
   }
 );
 
-HeroAppText.displayName = "HeroAppText";
+HeroText.displayName = "HeroText";
 
-export default HeroAppText;
+export default HeroText;

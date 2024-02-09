@@ -3,23 +3,14 @@ import { motion, useAnimation } from "framer-motion";
 import CircleType from "circletype";
 import Image from "next/image";
 import HeroAppText from "./HeroAppText";
+import { useResize } from "@/hooks/useResize";
 
-function HeroApp() {
+
+function Hero() {
   const controlsTwo = useAnimation();
   const circleTypeRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = React.useState(false);
+  const { isMobile } = useResize();
 
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
-  React.useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   useEffect(() => {
     const circleType = new CircleType(document.getElementById("textCircular"));
 
@@ -38,17 +29,16 @@ function HeroApp() {
     };
   }, []);
 
-
-
   useEffect(() => {
     controlsTwo.start("animate");
   }, [controlsTwo]);
 
   const animatedTextOne = "";
-  const animatedTextTwo = !isMobile? "We Should 🔆 Know " : "We Should Know Each Other🔆 ";
+  const animatedTextTwo = !isMobile
+    ? "We Should 🔆 Know "
+    : "We Should Know Each Other🔆 ";
 
-  
-  const animatedTextThree = !isMobile? "Each Other, Im Andra" : "Im Andra";
+  const animatedTextThree = !isMobile ? "Each Other, Im Andra" : "Im Andra";
 
   return (
     <>
@@ -128,11 +118,9 @@ function HeroApp() {
             </div>
           </div>
         </div>
-      
       </div>
-     
     </>
   );
 }
 
-export default HeroApp;
+export default Hero;

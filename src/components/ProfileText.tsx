@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProfileApptext() {
+export default function ProfileText() {
   return (
     <div className="sm:w-[30rem] font-poppins mb-20 mx-10 text-center sm:text-left mt-20 sm:mt-0">
       <div className="sm:mt-20 items-center">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import FloatingImage from "@/components/ProfileFloatingImageApp";
+import FloatingImage from "@/components/FloatingImage";
 import Image from "next/image";
 
 

@@ -1,8 +1,8 @@
 import React from "react";
-import ProfileSkillCard from "@/components/ProfileSkillCardApp";
+import ProfileSkillCard from "@/components/ProfileSkillCard";
 import Marquee from "react-fast-marquee";
 
-const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
+const ProfileSkillCardContainer = () => {
   const SkillData = [
     {
       img: "/img/techLogo/framer-motion-Icon.svg",
@@ -58,7 +58,6 @@ const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
                   img={skill.img}
                   text={skill.text}
                   delay={skill.delay}
-                  isMobile={isMobile}
                 />
               ))}
             </div>
@@ -67,7 +66,7 @@ const ProfileSkillCardContainer = React.memo(({ isMobile }: any) => {
       </div>
     </>
   );
-});
+};
 
 export default ProfileSkillCardContainer;
 ProfileSkillCardContainer.displayName = "ProfileSkillCardContainer";

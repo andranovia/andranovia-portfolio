@@ -1,10 +1,9 @@
 import React from "react";
 
-import techData from "./MyWorkTechData";
-
 import Image from "next/image";
 
-import MyWorkProject from "@/components/MyWorkProjectApp";
+
+import ProjectList from "./ProjectList";
 
 export default function MyWork() {
   return (
@@ -46,7 +45,7 @@ export default function MyWork() {
           </div>
         </div>
         <div className="relative sm:top-64 top-10">
-          <MyWorkProject techData={techData} />
+          <ProjectList/>
         </div>
       </div>
     </div>

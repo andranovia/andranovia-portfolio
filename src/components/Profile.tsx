@@ -1,9 +1,9 @@
 import React from "react";
-import ProfileSkillAnimation from "@/components/ProfileSkillAnimationApp";
-import ProfileImage from "@/components/ProfileImageApp";
-import ProfileApptext from "@/components/ProfileTextApp";
+import ProfileSkillAnimation from "@/components/ProfileSkillAnimation";
+import ProfileImage from "@/components/ProfileImage";
+import ProfileText from "@/components/ProfileText";
 
-export default function ProfileApp() {
+export default function Profile() {
 
   
   return (
@@ -14,7 +14,7 @@ export default function ProfileApp() {
           {<ProfileImage />}
     
           <div className="relative flex justify-center border-2 w-[40rem] rounded-xl ">
-            <ProfileApptext />
+            <ProfileText />
           </div>
           <ProfileSkillAnimation/>
         </div>

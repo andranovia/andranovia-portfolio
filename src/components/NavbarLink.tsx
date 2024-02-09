@@ -5,7 +5,7 @@ interface props {
   isMobile: boolean;
 }
 
-const NavbarLinkApp = React.memo(({ isMobile }: props) => {
+const NavbarLink = React.memo(({ isMobile }: props) => {
   return (
     <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold sm:bg-gradient-to-r from-cyan-500 opacity-60 to-cyan-300 rounded-full p-1 ">
       <div className="relative flex justify-center w-full h-full bg-white rounded-full ">
@@ -78,5 +78,5 @@ const NavbarLinkApp = React.memo(({ isMobile }: props) => {
   );
 });
 
-export default NavbarLinkApp;
-NavbarLinkApp.displayName = "NavbarLinkApp";
+export default NavbarLink;
+NavbarLink.displayName = "NavbarLink";
