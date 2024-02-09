@@ -5,9 +5,9 @@ import Image from "next/image";
 
 import ProjectList from "./ProjectList";
 
-export default function MyWork() {
+export default function Projects() {
   return (
-    <div className="w-screen mb-[10rem]">
+    <div className="w-screen mb-[10rem] mt-52 sm:mt-0">
       <div className="relative top-[10rem] sm:justify-start sm:grid grid-cols-2 sm:mx-40">
         <div className="flex flex-col justify-start">
           <div className="sm:w-[30rem] font-poppins sm:mb-20 mx-10 text-left mt-12 sm:mt-0">

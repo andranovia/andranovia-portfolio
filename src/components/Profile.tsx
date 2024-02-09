@@ -13,7 +13,7 @@ export default function Profile() {
             
           {<ProfileImage />}
     
-          <div className="relative flex justify-center border-2 w-[40rem] rounded-xl ">
+          <div className="relative flex justify-center sm:border-2 sm:w-[40rem] rounded-xl ">
             <ProfileText />
           </div>
           <ProfileSkillAnimation/>

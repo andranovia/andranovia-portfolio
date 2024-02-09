@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import AnimatedTextLetter from "./TextAnimationLetter";
 import AnimatedTextWords from "./textAnimationWords";
-import Image from "next/image";
 import HeroRoundedSpan from "./HeroRoundedSpan";
 
 interface props {
@@ -15,7 +14,7 @@ interface props {
 const HeroText = React.memo(
   ({ animate, textTwo, text, textThree }: props) => {
     return (
-      <div className="sm:mx-20 mx-10 sm:w-fit w-72  sm:-mt-20">
+      <div className="sm:mx-20 mx-10 sm:w-fit w-72   sm:-mt-20">
         <motion.div
           className="text-5xl sm:text-9xl text-center mb-10 text-gray-500"
           variants={{
@@ -33,7 +32,7 @@ const HeroText = React.memo(
           <AnimatedTextLetter text={text} charDelay={0.04} />
         </motion.div>
         <motion.div
-          className="text-5xl sm:text-8xl mt-4  "
+          className="text-4xl sm:text-8xl mt-4  "
           variants={{
             hidden: { opacity: 1 },
             animate: {
@@ -49,7 +48,7 @@ const HeroText = React.memo(
           <AnimatedTextWords text={textTwo} charDelay={0.04} />
         </motion.div>
         <motion.div
-          className="text-5xl sm:text-8xl mt-4 sm:flex justify-center items-center gap-4"
+          className="text-4xl sm:text-8xl  sm:flex justify-center items-center gap-4"
           variants={{
             hidden: { opacity: 1 },
             animate: {

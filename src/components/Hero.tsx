@@ -5,7 +5,6 @@ import Image from "next/image";
 import HeroAppText from "./HeroAppText";
 import { useResize } from "@/hooks/useResize";
 
-
 function Hero() {
   const controlsTwo = useAnimation();
   const circleTypeRef = useRef<HTMLDivElement>(null);
@@ -42,17 +41,16 @@ function Hero() {
 
   return (
     <>
-      <div className="relative flex justify-start sm:justify-start items-center h-[20vh]  font-Poppins w-screen mt-[4rem]  sm:mt-[12rem]">
-        <div className="  font-bold font-Poppins flex flex-col sm:items-center justify-start text-#272828 z-1">
-          <HeroAppText
+      <div className="relative flex justify-start sm:justify-start items-center h-[20vh] top-10 font-Poppins w-screen mt-[4rem]  sm:mt-[12rem]">
+        <div className=" font-bold font-Poppins flex flex-col gap-20 sm:items-center justify-start text-#272828 z-1">
+        <HeroAppText
             animate={controlsTwo}
             text={animatedTextOne}
             textTwo={animatedTextTwo}
             textThree={animatedTextThree}
           />
-
-          <div className="absolute -right-10 sm:top-[16vh] -top-8 sm:-right-2 flex justify-center flex-col gap-[8vh] sm:-mt-20 sm:gap-10">
-            <div className="rotate-90 flex gap-4 items-center justify-center sm:mb-[7.5rem] ">
+          <div className="sm:absolute  sm:top-[16vh]    sm:-right-2 flex justify-center sm:flex-col gap-[6vh] sm:-mt-20 sm:gap-10">
+            <div className="rotate-0 sm:rotate-90 flex gap-4 items-center justify-center sm:mb-[7.5rem] ">
               <Image
                 src={"https://img.icons8.com/ios-filled/50/search--v1.png"}
                 width={32}
@@ -62,12 +60,12 @@ function Hero() {
               <p className=" font-semibold text-gray-700 sm:text-2xl sm:font-bold">
                 my profile
               </p>
-              <div className="bg-slate-600 w-10  sm:w-[10rem] h-0.5 rounded-md  relative sm:m-0"></div>
+              <div className="bg-slate-600 w-24  sm:w-[10rem] h-0.5 rounded-md  relative sm:m-0"></div>
             </div>
 
             <div
               className={
-                "overflow-hidden flex items-center sm:mt-10 mt-14 justify-center text-center "
+                "overflow-hidden flex items-center sm:mt-10 justify-center text-center "
               }
             >
               <motion.div
@@ -77,7 +75,7 @@ function Hero() {
                   ease: "easeInOut",
                   duration: 1,
                 }}
-                className=" rounded-full bg-white  absolute flex items-center -bottom-8 justify-center text-sm sm:text-2xl sm:-bottom-24   "
+                className=" rounded-full bg-white  absolute flex items-center justify-center text-sm sm:text-2xl sm:-bottom-24   "
               >
                 <div
                   className="circular-text"
@@ -96,7 +94,7 @@ function Hero() {
                         ease: "easeInOut",
                         duration: 1,
                       }}
-                      className=" rounded-full  absolute flex items-center justify-center  mr-40  "
+                      className=" rounded-full  "
                     >
                       <div className="circular-text" ref={circleTypeRef}>
                         <motion.span
@@ -117,6 +115,7 @@ function Hero() {
               </motion.div>
             </div>
           </div>
+         
         </div>
       </div>
     </>

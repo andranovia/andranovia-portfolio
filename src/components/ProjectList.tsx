@@ -24,12 +24,12 @@ const ProjectList = () => {
 
   return (
     <div className="w-screen h-screen relative  mb-40 bottom-0 ">
-      <div className="flex justify-center flex-col ">
-        <div className=" flex flex-col justify-center text-center mx-10 sm:text-left ">
+      <div className="flex justify-center flex-col  mx-4 sm:mx-0">
+        <div className=" flex flex-col justify-center text-left mx-16 sm:mx-10  ">
           <h1 className="font-bold text-2xl text-gray-600">My Project</h1>
           <p className="font-semibold text-[1rem] sm:text-xl text-gray-600 top-20 mt-4">
             this section provides a comprehensive
-            <span className="text-gray-500 ">
+            <span className="text-gray-500 "> 
 
               overview of my work project.
             </span>
