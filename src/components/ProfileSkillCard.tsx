@@ -1,4 +1,3 @@
-
 import React from "react";
 import Image from "next/image";
 import { useResize } from "@/hooks/useResize";
@@ -10,7 +9,7 @@ interface props {
 }
 
 const ProfileSkillCard = React.memo(({ img, text }: props) => {
-  const {isMobile} = useResize();
+  const { isMobile } = useResize();
   return (
     <>
       <div
@@ -22,7 +21,7 @@ const ProfileSkillCard = React.memo(({ img, text }: props) => {
           alt=""
           width={54}
           height={54}
-          className="w-8 sm:w-11"
+          className="w-8 h-8 sm:w-11"
         />
         <div className="flex flex-col items-center justify-center">
           {isMobile ? (

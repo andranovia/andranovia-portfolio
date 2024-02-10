@@ -5,7 +5,7 @@ const Navbar = dynamic(() => import("@/components/Navbar"));
 function LayoutApp({ children }: any) {
   return (
     <>
-      
+      <Navbar/>
       <main>{children}</main>
     </>
   );

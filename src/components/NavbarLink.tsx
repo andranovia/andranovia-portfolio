@@ -1,13 +1,15 @@
 import React from "react";
 import NavbarLinkAnimated from "./NavbarLinkAnimated";
+import { useResize } from "@/hooks/useResize";
 
-interface props {
-  isMobile: boolean;
-}
 
-const NavbarLink = React.memo(({ isMobile }: props) => {
+
+const NavbarLink = () => {
+
+
+  const { isMobile } = useResize();
   return (
-    <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold sm:bg-gradient-to-r from-cyan-500 opacity-60 to-cyan-300 rounded-full p-1 ">
+    <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold sm:bg-gradient-to-r from-gray-800 opacity-60 to-gray-500 rounded-full p-1 ">
       <div className="relative flex justify-center w-full h-full bg-white rounded-full ">
         {!isMobile && (
           <ul className="list-none flex gap-8  text-lg relative bottom-4 ">
@@ -76,7 +78,7 @@ const NavbarLink = React.memo(({ isMobile }: props) => {
       </div>
     </div>
   );
-});
+};
 
 export default NavbarLink;
 NavbarLink.displayName = "NavbarLink";

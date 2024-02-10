@@ -7,12 +7,8 @@ interface TechDataItem {
   imgSrc: string;
 }
 
-interface MyWorkProps {
-  techData: TechDataItem[];
-}
-
 const TechUsed = React.memo(({ imgSrc }: TechDataItem) => {
-  return <Image src={imgSrc} alt="" width={34} height={34} />;
+  return <Image src={imgSrc} alt="" width={34} height={34} className="w-8 h-8"/>;
 });
 
 TechUsed.displayName = "TechUsed";

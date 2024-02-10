@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import CircleType from "circletype";
 import Image from "next/image";
-import HeroAppText from "./HeroAppText";
+import HeroAppText from "./HeroText";
 import { useResize } from "@/hooks/useResize";
 
 function Hero() {

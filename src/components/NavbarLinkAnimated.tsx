@@ -38,8 +38,8 @@ const NavbarLinkAnimated = React.memo(({ imgLogo, text, isMobile }: props) => {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           className={`p-1 rounded-md relative transition-all w-min-content
-                        before:w-0 before:h-1 before:absolute before:bottom-0 before:right-0 before:bg-cyan-300 before:transition-all before:duration-500
-                        ${isHovered ? "hover:before:w-full hover:before:left-0 hover:before:bg-cyan-400" : ""}
+                        before:w-0 before:h-1 before:absolute before:bottom-0 before:right-0 before:bg-yellow-100 before:transition-all before:duration-500
+                        ${isHovered ? "hover:before:w-full hover:before:left-0 hover:before:bg-yellow-400" : ""}
                         ${isMobile ? "hidden" : ""}`}
         >
           {text}

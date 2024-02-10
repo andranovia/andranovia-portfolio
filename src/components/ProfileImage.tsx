@@ -57,7 +57,7 @@ const ProfileImage = () => {
       <div className="relative w-screen flex justify-center items-center sm:justify-start   ">
         <motion.div animate={animation}>
           <Image
-            src="/img/profile1.jpg"
+            src="/img/assets/profile-image.jpg"
             alt="Profile"
             width={420}
             height={420}

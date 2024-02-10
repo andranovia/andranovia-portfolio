@@ -1,12 +1,14 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useResize } from "@/hooks/useResize";
 
 const ROTATION_RANGE = 32.5;
 const HALF_ROTATION_RANGE = 32.5 / 2;
 
 const TiltCard = () => {
   const ref = useRef<HTMLInputElement>(null);
+  const { isMobile } = useResize();
 
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
@@ -36,49 +38,80 @@ const TiltCard = () => {
   };
 
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transformStyle: "preserve-3d",
-      }}
-      animate={{
-        rotateX,
-        rotateY,
-      }}
-      whileHover={{ scale: 1.05 }} 
-      className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-gray-800 mt-20 sm:mt-0 to-gray-200"
-    >
-      <div
-        style={{
-          transform: "translateZ(75px)",
-          transformStyle: "preserve-3d",
-        }}
-        className="absolute inset-1 sm:inset-2  grid place-content-center rounded-xl bg-white sm:-right-10 shadow-lg"
-      >
-        <div className="flex flex-col justify-center items-center h-full">
-          <div className="font-semibold flex justify-center flex-col text-start p-9 -mt-4">
-            <div className="border-2 p-1  w-32 mb-4 text-gray-700 text-center bg-yellow-400 rounded-xl">
-              <p>Mark Manson</p>
+    <>
+      {!isMobile ? (
+        <motion.div
+          ref={ref}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            transformStyle: "preserve-3d",
+          }}
+          animate={{
+            rotateX,
+            rotateY,
+          }}
+          whileHover={{ scale: 1.05 }}
+          className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-gray-800 mt-20 sm:mt-0 to-gray-200"
+        >
+          <div
+            style={{
+              transform: "translateZ(75px)",
+              transformStyle: "preserve-3d",
+            }}
+            className="absolute inset-1 sm:inset-2  grid place-content-center rounded-xl bg-white sm:-right-10 shadow-lg"
+          >
+            <div className="flex flex-col justify-center items-center h-full">
+              <div className="font-semibold flex justify-center flex-col text-start p-9 -mt-4">
+                <div className="border-2 p-1  w-32 mb-4 text-gray-700 text-center bg-yellow-400 rounded-xl">
+                  <p>Mark Manson</p>
+                </div>
+                <h1>
+                  &quot;Action isnt just the effect of motivation, its the cause
+                  of it.&quot;
+                </h1>
+              </div>
+              <div className="">
+                <Image
+                  src={"/img/heroImage.jpg"}
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="w-full sm:px-8 p-4 -mt-6 rounded-md "
+                />
+              </div>
             </div>
-            <h1 >
-              &quot;Action isnt just the effect of motivation, its the cause of
-              it.&quot;
-            </h1>
           </div>
-          <div className="">
-          <Image
-            src={"/img/heroImage.jpg"}
-            alt=""
-            width={200}
-            height={200}
-            className="w-full sm:px-8 p-4 -mt-6 rounded-md "
-          />
+        </motion.div>
+      ) : (
+        <>
+          <div className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-gray-800 mt-20 sm:mt-0 to-gray-200">
+            <div className="absolute inset-1 sm:inset-2  grid place-content-center rounded-xl bg-white sm:-right-10 shadow-lg">
+              <div className="flex flex-col justify-center items-center h-full">
+                <div className="font-semibold flex justify-center flex-col text-start p-9 -mt-4">
+                  <div className="border-2 p-1  w-32 mb-4 text-gray-700 text-center bg-yellow-400 rounded-xl">
+                    <p>Mark Manson</p>
+                  </div>
+                  <h1>
+                    &quot;Action isnt just the effect of motivation, its the
+                    cause of it.&quot;
+                  </h1>
+                </div>
+                <div className="">
+                  <Image
+                    src={"/img/assets/quote-image.jpg"}
+                    alt=""
+                    width={200}
+                    height={200}
+                    className="w-full sm:px-8 p-4 -mt-6 rounded-md "
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </motion.div>
+        </>
+      )}
+    </>
   );
 };
 
