@@ -1,26 +1,26 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "card-background-image": "",
       },
       boxShadow: {
-        'ShadowCard': '0px 0px 0px 2px rgba(6, 24, 44, 0.4), 0px 4px 6px -1px rgba(6, 24, 44, 0.65), 0px 1px 0px inset rgba(255, 255, 255, 0.08)',
-        'ShadowCardCyan': '0px 0px 0px 2px rgba(173, 216, 230, 1), 0px 4px 6px -1px rgba(0, 255, 255, 1), 0px 1px 0px inset rgba(0, 255, 255, 0.8)'
-
+        ShadowCard:
+          "0px 0px 0px 2px rgba(6, 24, 44, 0.4), 0px 4px 6px -1px rgba(6, 24, 44, 0.65), 0px 1px 0px inset rgba(255, 255, 255, 0.08)",
+        ShadowCardCyan:
+          "0px 0px 0px 2px rgba(173, 216, 230, 1), 0px 4px 6px -1px rgba(0, 255, 255, 1), 0px 1px 0px inset rgba(0, 255, 255, 0.8)",
       },
-      
-      
+
       animation: {
         blob: "blob 7s infinite",
       },
@@ -40,11 +40,8 @@ const config: Config = {
           },
         },
       },
-      
     },
   },
-  plugins: [
-    
-  ],
-}
-export default config
+  plugins: [],
+};
+export default config;
