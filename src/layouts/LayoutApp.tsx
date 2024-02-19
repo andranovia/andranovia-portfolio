@@ -4,10 +4,10 @@ const Navbar = dynamic(() => import("@/components/Navbar"));
 
 function LayoutApp({ children }: any) {
   return (
-    <>
+    <div className="bg-gray-400">
       <Navbar/>
       <main>{children}</main>
-    </>
+    </div>
   );
 }
 

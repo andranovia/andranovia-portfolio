@@ -2,27 +2,64 @@ import React from "react";
 import AnimatedCard from "./AnimatedCard";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
+const textArray = [
+  {
+    text: "Work",
+  },
+  {
+    text: "Travail",
+  },
+  {
+    text: "Werk",
+  },
+  {
+    text: "일하다",
+  },
+  {
+    text: "Lavoro",
+  },
+];
 
 const GridCard = () => {
-
-
-
-
-
   return (
-    <div className="flex flex-col items-center justify-center w-screen    ">
-      <div className="font-bold text-2xl sm:text-5xl w-52 sm:w-[30rem] sm:text-center">
-        <h1>Wait, did we met before? Your look familliar!</h1>
+    <div className="flex flex-col sm:items-center sm:justify-center w-screen    ">
+      <div className="sm:font-bold text-2xl mx-14 sm:mx-0 sm:text-5xl w-52 sm:w-[30rem] sm:text-center">
+        <h1>Aight, here is somethin more about me!</h1>
       </div>
       <div className="container p-6 sm:w-[65rem] sm:flex justify-center items-center gap-10  mt-4 sm:mt-32">
         <div className="flex flex-col justify-center sm:w-full sm:items-end items-center gap-36 sm:gap-6">
           <div className="w-[38rem]  h-[11.5rem] rounded-xl">
             <div className="font-semibold text-2xl w-[38rem] rounded-xl items-center flex flex-col sm:flex-row justify-start  text-center sm:text-start gap-4 pt-4">
-              <h1 className="w-1/2 rounded-lg border-gray-800 border-2 p-7 sm:p-4">
-                What about <br className="hidden sm:block" /> some talk in
-                <br className="hidden sm:block" /> my social app👏
-              </h1>
+              <div className="flex justify-center items-center border-2 overflow-hidden h-32  rounded-lg  ">
+                <motion.div className="font-normal w-[24rem] h-32 text-4xl  ">
+                  <h1 className="opacity-10 text-">
+                    Aight, here ecco qualcosa more about me, きなもの that i
+                    like the most!
+                  </h1>
+                  <h1 className="relative left-14 rotate-6 -top-32 w-40 text-black p-2 rounded-md  font-bold  ">
+                    My Fav
+                  </h1>
+                  <div className="rotate-6 -ml-4 ">
+                    <Marquee
+                      autoFill={true}
+                      direction="up"
+                      className="p-20 relative flex justify-start  -left-20 h-20 text-start font-bold"
+                    >
+                      {textArray.map((text, index) => (
+                        <h1
+                          key={index}
+                          className="leading-snug -mx-4 bg-black   p-2 rounded-md text-white  "
+                        >
+                          {text.text}
+                        </h1>
+                      ))}
+                    </Marquee>
+                  </div>
+                </motion.div>
+              </div>
+
               <div className="flex justify-center flex-col items-center border-2 w-1/2 py-6 rounded-lg bg-black">
                 <Image
                   src={"/img/assets/folder-image.png"}
@@ -48,9 +85,7 @@ const GridCard = () => {
                   Ecommerce, dashboard, portfolio, and more..
                 </span>
               </div>
-       
             </div>
-          
           </div>
         </div>
         <AnimatedCard />

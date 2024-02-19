@@ -70,15 +70,15 @@ const TiltCard = () => {
               transform: "translateZ(75px)",
               transformStyle: "preserve-3d",
             }}
-            className="absolute inset-1 sm:inset-2 grid place-content-center rounded-xl bg-white sm:-right-10 "
+            className="absolute inset-1 sm:inset-2 grid place-content-center rounded-xl bg-white  "
           >
             <motion.div
               animate={controls}
               className="w-40 h-40 relative z-20 left-14 bottom-0 top-20 rounded-full bg-white mix-blend-difference"
             ></motion.div>
-            <div className="flex flex-col justify-center items-center h-full bg-black mix-blend-difference rounded-xl">
+            <div className="flex flex-col justify-center items-center h-full  mix-blend-difference rounded-xl">
               <div className="font-semibold flex justify-center flex-col text-start p-9 -mt-4">
-                <div className="border-2 p-1 w-32 mb-4 text-gray-800 text-center bg-white rounded-xl">
+                <div className="border-2 p-1 w-32 mb-4 text-gray-800 text-center  bg-white rounded-xl">
                   <p className="text-white mix-blend-difference">Mark Manson</p>
                 </div>
                 <h1 className="text-2xl text-white mix-blend-difference">
@@ -86,7 +86,7 @@ const TiltCard = () => {
                   it.
                 </h1>
               </div>
-              <div>{/* Additional content */}</div>
+       
             </div>
           </div>
         </motion.div>
@@ -99,7 +99,7 @@ const TiltCard = () => {
                   <div className="border-2 p-1  w-32 mb-4 text-gray-700 text-center bg-yellow-400 rounded-xl">
                     <p>Mark Manson</p>
                   </div>
-                  <h1>
+                  <h1 className="">
                     &quot;Action isnt just the effect of motivation, its the
                     cause of it.&quot;
                   </h1>

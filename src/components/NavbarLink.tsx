@@ -9,8 +9,8 @@ const NavbarLink = () => {
 
   const { isMobile } = useResize();
   return (
-    <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold sm:bg-gradient-to-r from-gray-800 opacity-60 to-gray-500 rounded-full p-1 ">
-      <div className="relative flex justify-center w-full h-full bg-white rounded-full ">
+    <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold  rounded-full p-1 ">
+      <div className="relative flex justify-center w-full h-full bg-white backdrop-filter backdrop-blur-sm  bg-opacity-25 rounded-full ">
         {!isMobile && (
           <ul className="list-none flex gap-8  text-lg relative bottom-4 ">
             <NavbarLinkAnimated

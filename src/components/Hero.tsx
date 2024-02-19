@@ -75,7 +75,7 @@ function Hero() {
                   ease: "easeInOut",
                   duration: 1,
                 }}
-                className=" rounded-full bg-white  absolute flex items-center justify-center text-sm sm:text-2xl sm:-bottom-24   "
+                className=" rounded-full   absolute flex items-center justify-center text-sm sm:text-2xl sm:-bottom-24   "
               >
                 <div
                   className="circular-text"
@@ -96,7 +96,7 @@ function Hero() {
                       }}
                       className=" rounded-full  "
                     >
-                      <div className="circular-text" ref={circleTypeRef}>
+                      <div className="circular-text " ref={circleTypeRef}>
                         <motion.span
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
@@ -105,6 +105,7 @@ function Hero() {
                             duration: 1,
                             delay: 1.8,
                           }}
+                          className=""
                         >
                           &#8226; look &#8226; around
                         </motion.span>

@@ -7,7 +7,6 @@ import { debounce } from "lodash";
 
 const Navbar: React.FC = () => {
   const { isMobile } = useResize();
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -53,8 +52,8 @@ const Navbar: React.FC = () => {
           )}
 
           {!isMobile && (
-            <motion.div animate={{ y: show ? -80 : 1, opacity: show ? 0 : 1 }}>
-              <div className="h-full w-full bg-gray-300  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full">
+            <motion.div animate={{ y: show ? 1 : -110, opacity: show ? 1 : 1 }}>
+              <div className="h-full w-full  shadow-[rgba(0.1,_0.1,_0.1,_0.1)_0px_30px_90px]  bg-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full">
                 <NavbarLink/>
               </div>
             </motion.div>

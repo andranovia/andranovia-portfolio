@@ -10,14 +10,16 @@ const Hero = dynamic(() => import("@/components/Hero"));
 
 export default function HomeApp() {
   return (
+    
     <LayoutApp>
-      <div className="relative w-full max-w-lg  ">
+      <div className="relative w-full max-w-lg bg- ">
         <div className="relative mt-32">
           <Hero />
         </div>
         <div className="relative bottom-0 top-64 mt-40">
-        <GridCard/>
+        
         <Profile />
+        <GridCard/>
         </div>
         <Projects />
       </div>
