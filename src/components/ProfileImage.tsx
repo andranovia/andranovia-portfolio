@@ -52,9 +52,9 @@ const ProfileImage = () => {
   return (
     <div
       id="about-container"
-      className="relative sm:w-[42rem] sm:left-[18rem] flex justify-center sm:justify-start items-center bg-eeeeee  "
+      className="relative left-0 sm:w-[42rem]  flex justify-center sm:justify-center items-center bg-eeeeee  "
     >
-      <div className="relative w-screen flex justify-center items-center sm:justify-start   ">
+      <div className="relative w-screen flex justify-center items-center sm:justify-center">
         <motion.div animate={animation}>
           <Image
             src="/img/assets/profile-image.jpg"

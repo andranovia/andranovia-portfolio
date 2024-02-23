@@ -48,9 +48,9 @@ const ProfileSkillCardContainer = () => {
 
   return (
     <>
-      <div className="w-screen px-14 sm:px-40 rounded-full ">
+      <div className="flex justify-center items-center  sm:px-0 px-14">
         <Marquee>
-          <div className="flex flex-col  justify-center  ">
+          <div className="flex flex-col  justify-center items-center ">
             <div className="flex  justify-center ">
               {SkillData.map((skill, index) => (
                 <ProfileSkillCard

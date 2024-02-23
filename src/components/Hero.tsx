@@ -42,14 +42,8 @@ function Hero() {
   return (
     <>
       <div className="relative flex justify-start sm:justify-start items-center h-[20vh] top-10 font-Poppins w-screen mt-[4rem]  sm:mt-[12rem]">
-        <div className=" font-bold font-Poppins flex flex-col gap-20 sm:items-center justify-start text-#272828 z-1">
-        <HeroAppText
-            animate={controlsTwo}
-            text={animatedTextOne}
-            textTwo={animatedTextTwo}
-            textThree={animatedTextThree}
-          />
-          <div className="sm:absolute  sm:top-[16vh]    sm:-right-2 flex justify-center sm:flex-col gap-[6vh] sm:-mt-20 sm:gap-10">
+        <div className=" font-bold font-Poppins flex flex-col-reverse sm:flex-row sm:gap-10 gap-20 sm:items-center justify-start text-#272828 z-1">
+          <div className="sm:relative  sm:top-[16vh]    sm:-right-2 flex justify-center sm:flex-col gap-[6vh]  sm:gap-10">
             <div className="rotate-0 sm:rotate-90 flex gap-4 items-center justify-center sm:mb-[7.5rem] ">
               <Image
                 src={"https://img.icons8.com/ios-filled/50/search--v1.png"}
@@ -116,7 +110,12 @@ function Hero() {
               </motion.div>
             </div>
           </div>
-         
+          <HeroAppText
+            animate={controlsTwo}
+            text={animatedTextOne}
+            textTwo={animatedTextTwo}
+            textThree={animatedTextThree}
+          />
         </div>
       </div>
     </>

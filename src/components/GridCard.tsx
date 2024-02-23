@@ -3,6 +3,7 @@ import AnimatedCard from "./AnimatedCard";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
+import ProfileSkillAnimation from "./ProfileSkillAnimation";
 
 const textArray = [
   {
@@ -24,28 +25,41 @@ const textArray = [
 
 const GridCard = () => {
   return (
-    <div className="flex flex-col sm:items-center sm:justify-center w-screen    ">
-      <div className="sm:font-bold text-2xl mx-14 sm:mx-0 sm:text-5xl w-52 sm:w-[30rem] sm:text-center">
-        <h1>Aight, here is somethin more about me!</h1>
+    <div className="flex flex-col sm:items-center sm:justify-center w-screen  ">
+      <div className=" flex flex-col justify-start lg:flex-row  sm:mx-0 gap-8 items-center lg:w-[48rem]">
+        <div className="w-1/4">
+          <div className="flex justify-center items-center gap-4 text-lg h-full w-fit">
+            <div className="bg-black w-[4rem] hidden lg:block lg:w-[10rem] rounded-md h-1"></div>
+          </div>
+        </div>
+        <div className=" flex justify-start flex-col mx-14 sm:mx-0 gap-4 items-center lg:w-2/4">
+          <div className="flex justify-center w-full items-center gap-4">
+          
+            <h1 className="font-semibold text-2xl  sm:text-5xl">
+              Somethin more about me!
+            </h1>
+            <div className="bg-black w-[8rem] block lg:hidden rounded-md h-1"></div>
+          </div>
+          <h1 className=" text-lg">
+            Here, you can see my things that i really like or some of my
+            information.
+          </h1>
+        </div>
       </div>
       <div className="container p-6 sm:w-[65rem] sm:flex justify-center items-center gap-10  mt-4 sm:mt-32">
         <div className="flex flex-col justify-center sm:w-full sm:items-end items-center gap-36 sm:gap-6">
           <div className="w-[38rem]  h-[11.5rem] rounded-xl">
             <div className="font-semibold text-2xl w-[38rem] rounded-xl items-center flex flex-col sm:flex-row justify-start  text-center sm:text-start gap-4 pt-4">
-              <div className="flex justify-center items-center border-2 overflow-hidden h-32  rounded-lg  ">
-                <motion.div className="font-normal w-[24rem] h-32 text-4xl  ">
-                  <h1 className="opacity-10 text-">
-                    Aight, here ecco qualcosa more about me, きなもの that i
-                    like the most!
-                  </h1>
-                  <h1 className="relative left-14 rotate-6 -top-32 w-40 text-black p-2 rounded-md  font-bold  ">
-                    My Fav
-                  </h1>
-                  <div className="rotate-6 -ml-4 ">
+              <div className="flex justify-center items-center border-2 border-gray-900 h-32 overflow-hidden   w-1/2 rounded-lg  ">
+                <motion.div className="font-normal  h-32 text-4xl w-full">
+                  
+             
+                  <div className=" flex justify-end items-end rotate-6 w-full ">
+                
                     <Marquee
                       autoFill={true}
                       direction="up"
-                      className="p-20 relative flex justify-start  -left-20 h-20 text-start font-bold"
+                      className="p-20 flex justify-start h-20 text-start font-bold"
                     >
                       {textArray.map((text, index) => (
                         <h1
@@ -89,7 +103,9 @@ const GridCard = () => {
           </div>
         </div>
         <AnimatedCard />
+  
       </div>
+      
     </div>
   );
 };

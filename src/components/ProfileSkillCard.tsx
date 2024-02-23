@@ -14,7 +14,7 @@ const ProfileSkillCard = React.memo(({ img, text }: props) => {
     <>
       <div
         id="profile-skill-card"
-        className={`bg-white rounded-md w-16 p-2  sm:w-52 sm:p-2 flex justify-center sm:gap-4 `}
+        className={`bg-white rounded-md w-16 p-2 grayscale  sm:w-52 sm:p-2 flex justify-center sm:gap-4 `}
       >
         <Image
           src={img}
