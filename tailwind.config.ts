@@ -8,39 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "card-background-image": "",
+      backgroundColor: {
+        primary: 'rgb(3 7 18)'
       },
-      boxShadow: {
-        ShadowCard:
-          "0px 0px 0px 2px rgba(6, 24, 44, 0.4), 0px 4px 6px -1px rgba(6, 24, 44, 0.65), 0px 1px 0px inset rgba(255, 255, 255, 0.08)",
-        ShadowCardCyan:
-          "0px 0px 0px 2px rgba(173, 216, 230, 1), 0px 4px 6px -1px rgba(0, 255, 255, 1), 0px 1px 0px inset rgba(0, 255, 255, 0.8)",
-        ShadowNavbar: "shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]",
-      },
+      textColor: {
+        primary: 'rgb(3 7 18)'
+      }
+      
 
-      animation: {
-        blob: "blob 7s infinite",
-      },
-      keyframes: {
-        blob: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
-          },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
-          },
-          "100%": {
-            transform: "tranlate(0px, 0px) scale(1)",
-          },
-        },
-      },
+
     },
   },
   plugins: [],

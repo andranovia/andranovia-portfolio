@@ -14,8 +14,8 @@ interface props {
 const HeroText = React.memo(
   ({ animate, textTwo, text, textThree }: props) => {
     return (
-      <div className="lg:-mx-10 mx-10 sm:w-fit w-72 flex flex-col sm:-mt-10  gap-10">
-        <motion.div
+      <div className="lg:-mx-10 mx-10 sm:w-fit w-72 flex flex-col lg:mt-24  gap-10 text-primary">
+        {/* <motion.div
           className="text-5xl sm:text-9xl text-center mb-10 text-gray-500"
           variants={{
             hidden: { opacity: 1 },
@@ -30,7 +30,7 @@ const HeroText = React.memo(
           animate={animate}
         >
           <AnimatedTextLetter text={text} charDelay={0.04} />
-        </motion.div>
+        </motion.div> */}
         <motion.div
           className="text-4xl lg:text-[6rem] 2xl:text-[7rem] mt-4  "
           variants={{
@@ -39,6 +39,7 @@ const HeroText = React.memo(
               opacity: 1,
               transition: {
                 staggerChildren: 0.04,
+                duration: 1,
               },
             },
           }}
@@ -55,6 +56,7 @@ const HeroText = React.memo(
               opacity: 1,
               transition: {
                 staggerChildren: 0.04,
+                duration: 1,
               },
             },
           }}

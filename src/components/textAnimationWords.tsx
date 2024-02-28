@@ -26,6 +26,7 @@ const AnimatedTextWords = React.memo(({ text, charDelay }: props) => {
             damping: 8,
             stiffness: 100,
             staggerChildren: charDelay,
+                    duration: 1,
           },
         },
       }}

@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import Image from "next/image";
+import { useResize } from "@/hooks/useResize";
 
 interface props {
   imgLogo: string;
   text: string;
-  isMobile: boolean;
+
 }
 
-const NavbarLinkAnimated = React.memo(({ imgLogo, text, isMobile }: props) => {
+const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
   const [isHovered, setHovered] = useState(false);
+  const { isMobile } = useResize();
 
   return (
     <motion.li className={`cursor-pointer text-center`}>
