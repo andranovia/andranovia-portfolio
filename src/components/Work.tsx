@@ -2,9 +2,7 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import {
   MotionValue,
-  delay,
   motion,
-  useInView,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -25,6 +23,8 @@ const Work = () => {
     return useTransform(value, range, [-distance, distance]);
   }
 
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
   function useParallaxRotate(
     value: MotionValue<number>,
@@ -34,28 +34,26 @@ const Work = () => {
     return useTransform(value, range, [-distance, distance]);
   }
 
-  const translateY = useParallax(scrollYProgress, 150, [1, 0]);
-  const translateYTwo = useParallax(scrollYProgress, 150, [0, 1]);
-  const rotate = useParallaxRotate(scrollYProgress, 10, [1, -1]);
-  const rotateTwo = useParallaxRotate(scrollYProgress, 10, [-1, 1]);
+  const translateY = useParallax(scrollYProgress, -80, [1, 0]);
+  const translateYTwo = useParallax(scrollYProgress, -20, [0, 1]);
+  const rotate = useParallaxRotate(scrollYProgress, -4, [1, -1]);
+  const rotateTwo = useParallaxRotate(scrollYProgress, -4, [-1, 1]);
 
-  function DelayedScrollValue(value: MotionValue<number>, delay: number) {
-    return useTransform(value, (latest) => {
-      const delayedValue = latest - delay;
-      return [delayedValue, latest];
-    });
-  }
 
   
 
   return (
     <div className="w-screen p-10 h-full flex justify-center ">
-      <motion.div className="bg-primary lg:w-[70vw] lg:h-[30vw] w-full rounded-xl overflow-hidden flex justify-center items-center text-white">
+      <motion.div ref={work} style={
+        {
+          scale: scale, opacity
+        }
+      } className="bg-primary lg:w-[70vw] lg:h-[30vw] w-full rounded-xl overflow-hidden flex justify-center items-center text-white">
         <div className="flex flex-col items-center justify-center my-20 gap-4 w-full h-full overflow-hidden">
           <motion.div
             ref={work}
             style={{ y: translateY, opacity: scrollYProgress, rotate }}
-            className=" flex justify-start items-start rotate-6 w-full h-full"
+            className=" flex justify-start items-end lg:mr-16 rotate-6 w-full h-full"
           >
             <Image
               src={"/img/projectImg/project-three.png"}
@@ -72,7 +70,7 @@ const Work = () => {
               opacity: scrollYProgress,
               rotate: rotateTwo,
             }}
-            className=" flex justify-end items-start rotate-6 w-full h-full"
+            className=" flex justify-end items-start lg:ml-16 rotate-6  w-full h-full"
           >
             <Image
               src={"/img/projectImg/project-one.png"}
