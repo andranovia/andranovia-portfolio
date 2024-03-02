@@ -4,7 +4,7 @@ const Navbar = dynamic(() => import("@/components/Navbar"));
 
 function LayoutApp({ children }: any) {
   return (
-    <div className="bg-gray-400">
+    <div className="bg-base">
       <Navbar/>
       <main>{children}</main>
     </div>

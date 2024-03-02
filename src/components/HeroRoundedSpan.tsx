@@ -32,7 +32,7 @@ function HeroRoundedSpan() {
           <div
             className={
               index === 0
-                ? `rounded-full border-2 flex justify-start gap-2 items-center border-white bg-primary text-white px-4 py-2`
+                ? `rounded-full border-2 flex justify-start gap-2 items-center border-white bg-primary text-secondary px-4 py-2`
                 : `rounded-full border-2 flex justify-start gap-2 items-center border-gray-600 text-primary px-4 py-2`
             }
             key={index}

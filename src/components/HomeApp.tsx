@@ -11,15 +11,15 @@ export default function HomeApp() {
   return (
     <LayoutApp>
       <div className="relative w-full max-w-lg bg- ">
-        <div className="relative mt-32">
+        <div className="relative lg:mt-32">
           <Hero />
         </div>
 
-        <div className="relative bottom-0 top-64 mt-52 sm:mb-40">
-          <Work />
-
+        <div className="relative bottom-0 lg:top-64 mt-52 mb-96">
           <GridCard />
+
           <ProfileSkillAnimation />
+          <Work />
         </div>
       </div>
     </LayoutApp>

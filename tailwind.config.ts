@@ -9,10 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: 'rgb(3 7 18)'
+        primary: '#191717',
+        secondary: '#F0ECE5',
+        base: '#FFFFFF',
+        invertPrimary: '#e6e8e8'
+      },
+      backgroundSize: {
+        '100%': '100%'
       },
       textColor: {
-        primary: 'rgb(3 7 18)'
+        primary: '#191717',
+        secondary: '#F0ECE5'
       }
       
 

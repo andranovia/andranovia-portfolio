@@ -48,7 +48,7 @@ const ProfileSkillCardContainer = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center  sm:px-0 px-14">
+      <div className="flex justify-center items-center ">
         <Marquee>
           <div className="flex flex-col  justify-center items-center ">
             <div className="flex  justify-center ">

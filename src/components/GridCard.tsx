@@ -1,50 +1,32 @@
 import React, { useEffect, useRef } from "react";
 import AnimatedCard from "./AnimatedCard";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import Marquee from "react-fast-marquee";
+import { motion, useAnimation, useInView } from "framer-motion";
+import AnimatedRoundText from "./AnimatedRoundText";
+import AnimatedHello from "./AnimatedHello";
 import { useResize } from "@/hooks/useResize";
-import CircleType from "circletype";
-
-const textArray = [
-  {
-    text: "Work",
-  },
-  {
-    text: "Travail",
-  },
-  {
-    text: "Werk",
-  },
-  {
-    text: "일하다",
-  },
-  {
-    text: "Lavoro",
-  },
-];
 
 const GridCard = () => {
-  const circleTypeRef = useRef<HTMLDivElement>(null);
   const { isMobile } = useResize();
+  const serviceRef = useRef(null);
+  const isInView = useInView(serviceRef, { once: true });
+  const controls = useAnimation();
+
+  const handleMouseEnterServices = () => {
+    controls.start("hover");
+  };
+
+  const handleMouseLeaveServices = () => {
+    controls.start("initial");
+  };
 
   useEffect(() => {
-    const circleType = new CircleType(document.getElementById("textCircular"));
-
-    const handleScroll = () => {
-      const offset = window.scrollY * 0.4;
-
-      if (circleType.element) {
-        circleType.element.style.transform = `rotate(${offset}deg)`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    isMobile &&
+      isInView &&
+      controls.start("hover", {
+        delay: isInView && isMobile && 1.2,
+      });
+  }, [controls, isMobile, isInView]);
 
   return (
     <div className="flex flex-col sm:items-center sm:justify-center w-screen lg:mt-20 ">
@@ -68,68 +50,16 @@ const GridCard = () => {
             </h1>
           </div>
         </div>
-        <div className="lg:relative lg:-right-2 flex justify-center lg:flex-col gap-[6vh]  lg:gap-10">
-          <div className={" flex items-center   justify-center text-center "}>
-            <motion.div
-              transition={{
-                type: "spring",
-                damping: 8,
-                stiffness: 100,
-                duration: 1,
-              }}
-              className="bg-primary bg-cover absolute lg:right-2 z-20 hidden   w-44 h-44 rounded-full  lg:flex items-center text-white justify-center text-2xl    "
-            >
-              <div ref={circleTypeRef} id="textCircular">
-                <div
-                  className={"flex items-center justify-center  text-center "}
-                >
-                  <div ref={circleTypeRef} className="">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{
-                        ease: "easeInOut",
-                        duration: 1,
-                        delay: 1.8,
-                      }}
-                      className=" p-2 w-full  z-20 relative"
-                    >
-                      <h2 className="text-white">&#8226; look &#8226; look</h2>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+        
       </div>
 
       <div className="container p-6 sm:w-[65rem] sm:flex justify-center items-center gap-10  mt-4 sm:mt-32">
         <div className="flex flex-col justify-center sm:w-full sm:items-end items-center gap-36 sm:gap-6">
-          <div className="w-[38rem]  h-[11.5rem] rounded-xl">
-            <div className="font-semibold text-2xl w-[38rem] rounded-xl items-center flex flex-col sm:flex-row justify-start  text-center sm:text-start gap-4 pt-4">
-              <div className="flex justify-center items-center border-2 border-gray-900 h-32 overflow-hidden   w-1/2 rounded-lg  ">
-                <motion.div className="font-normal  h-32 text-4xl w-full">
-                  <div className=" flex justify-end items-end rotate-6 w-full ">
-                    <Marquee
-                      autoFill={true}
-                      direction="up"
-                      className="p-20 flex justify-start h-20 text-start font-bold"
-                    >
-                      {textArray.map((text, index) => (
-                        <h1
-                          key={index}
-                          className="leading-snug -mx-4 bg-primary   p-2 rounded-md text-white  "
-                        >
-                          {text.text}
-                        </h1>
-                      ))}
-                    </Marquee>
-                  </div>
-                </motion.div>
-              </div>
+          <div className="lg:w-[38rem] w-full  h-[11.5rem] rounded-xl">
+            <div className="font-semibold text-2xl    rounded-xl items-center flex flex-col lg:flex-row justify-center  text-center sm:text-start gap-4 pt-4">
+              <AnimatedHello />
 
-              <div className="flex justify-center flex-col items-center border-2 w-1/2 py-6 rounded-lg bg-primary">
+              <div className="flex justify-center flex-col items-center border-2 w-full lg:w-1/2 py-6 rounded-lg bg-primary">
                 <Image
                   src={"/img/assets/folder-image.png"}
                   alt=""
@@ -146,16 +76,65 @@ const GridCard = () => {
             </div>
           </div>
 
-          <div className="sm:w-[38rem] w-[19rem] bg-cover flex flex-col justify-end border-2  h-[11.5rem] rounded-lg bg-white">
+          <motion.div
+            animate={controls}
+            ref={serviceRef}
+            initial="initial"
+            onMouseEnter={() => handleMouseEnterServices()}
+            onMouseLeave={() => handleMouseLeaveServices()}
+            variants={{
+              hover: {
+                backgroundSize: "120%",
+              },
+              initial: {
+                backgroundSize: "100%",
+              },
+            }}
+            className="w-full bg-100% flex flex-col justify-end border-2  h-[11.5rem] rounded-lg bg-[url('/img/assets/service-background-image.jpg')] "
+          >
             <div className="flex p-4 ">
-              <div className="text-lg font-bold text-primary ">
-                What Did I Make ?{" "}
-                <span className="text-base opacity-60">
-                  Ecommerce, dashboard, portfolio, and more..
-                </span>
+              <div className=" flex flex-col lg:flex-row lg:justify-between w-full lg:items-center text-white ">
+                <div className="flex flex-col w-72 items-start justify-center">
+                  <motion.h1
+                    animate={controls}
+                    variants={{
+                      hover: {
+                        y: -80,
+                      },
+                      initial: {
+                        y: 0,
+                      },
+                    }}
+                    className="text-lg font-semibold"
+                  >
+                    What can I do for you ?
+                  </motion.h1>
+                  <motion.p
+                    animate={controls}
+                    variants={{
+                      hover: {
+                        y: -60,
+                        visibility: "visible",
+                        opacity: 1,
+                        
+                      },
+                      initial: {
+                        y: 60,
+                        visibility: "hidden",
+                        opacity: 0,
+                      },
+                    }}
+                    initial='initial'
+                    className="-mb-10 font-thin"
+                  >
+                    Build, make, optimize, improve web application using modern
+                    stack
+                  </motion.p>
+                </div>
+                <span className="visible opacity-60">Website Development</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         <AnimatedCard />
       </div>

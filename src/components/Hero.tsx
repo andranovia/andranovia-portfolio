@@ -17,18 +17,18 @@ function Hero() {
 
   const animatedTextOne = "";
   const animatedTextTwo = !isMobile
-    ? "We Should 🔆 Know "
-    : "We Should Know Each Other🔆 ";
+    ? "We Should Know "
+    : "We Should Know Each";
 
-  const animatedTextThree = !isMobile ? "Each Other, Im Andra" : "Im Andra";
+  const animatedTextThree = !isMobile ? "Each arrow ther" : " arrow ther";
 
   return (
     <>
-      <div className="relative flex justify-start sm:justify-center items-center h-[20vh] top-10 font-Poppins w-screen mt-[4rem]  lg:mt-[12rem]">
+      <div className="relative flex justify-start sm:justify-center items-center h-[20vh] top-10 font-Poppins w-screen mt-[4rem]  lg:mt-[15rem]">
         <div className=" font-bold font-Poppins flex flex-col-reverse lg:flex-row lg:gap-10 gap-20 lg:items-center justify-start z-1">
           
           <HeroAppText
-            animate={controlsTwo}
+            animate={controlsTwo} 
             text={animatedTextOne}
             textTwo={animatedTextTwo}
             textThree={animatedTextThree}

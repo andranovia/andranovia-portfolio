@@ -11,11 +11,10 @@ interface props {
   textThree: string;
 }
 
-const HeroText = React.memo(
-  ({ animate, textTwo, text, textThree }: props) => {
-    return (
-      <div className="lg:-mx-10 mx-10 sm:w-fit w-72 flex flex-col lg:mt-24  gap-10 text-primary">
-        {/* <motion.div
+const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
+  return (
+    <div className="lg:-mx-10 mx-10 sm:w-fit w-72 flex flex-col lg:mt-24  lg:gap-10 text-primary">
+      {/* <motion.div
           className="text-5xl sm:text-9xl text-center mb-10 text-gray-500"
           variants={{
             hidden: { opacity: 1 },
@@ -31,48 +30,47 @@ const HeroText = React.memo(
         >
           <AnimatedTextLetter text={text} charDelay={0.04} />
         </motion.div> */}
-        <motion.div
-          className="text-4xl lg:text-[6rem] 2xl:text-[7rem] mt-4  "
-          variants={{
-            hidden: { opacity: 1 },
-            animate: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.04,
-                duration: 1,
-              },
-            },
-          }}
-          initial="hidden"
-          animate={animate}
-        >
-          <AnimatedTextWords text={textTwo} charDelay={0.04} />
-        </motion.div>
-        <motion.div
-          className="text-4xl lg:text-[6rem] 2xl:text-[7rem]  sm:flex justify-center items-center gap-4"
-          variants={{
-            hidden: { opacity: 1 },
-            animate: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.04,
-                duration: 1,
-              },
-            },
-          }}
-          initial="hidden"
-          animate={animate}
-        >
-          <AnimatedTextWords text={textThree} charDelay={0.04} />
-        </motion.div>
+      <motion.div
 
-        <div className="flex justify-start sm:justify-start relative -bottom-10 sm:mt-10 ">
-          <HeroRoundedSpan/>
-        </div>
+        variants={{
+          hidden: { opacity: 1 },
+          animate: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.04,
+              duration: 1,
+            },
+          },
+        }}
+        initial="hidden"
+        animate={animate}
+      >
+        <AnimatedTextWords text={textTwo} charDelay={0.04} />
+      </motion.div>
+      <motion.div
+
+        variants={{
+          hidden: { opacity: 1 },
+          animate: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.04,
+              duration: 1,
+            },
+          },
+        }}
+        initial="hidden"
+        animate={animate}
+      >
+        <AnimatedTextWords text={textThree} charDelay={0.04} />
+      </motion.div>
+
+      <div className="flex justify-start sm:justify-start relative -bottom-10  ">
+        <HeroRoundedSpan />
       </div>
-    );
-  }
-);
+    </div>
+  );
+});
 
 HeroText.displayName = "HeroText";
 

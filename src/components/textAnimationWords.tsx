@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import Image from "next/image";
+import AnimatedRoundText from "./AnimatedRoundText";
+import { useResize } from "@/hooks/useResize";
 
 interface props {
   text: string;
@@ -8,6 +11,7 @@ interface props {
 
 const AnimatedTextWords = React.memo(({ text, charDelay }: props) => {
   const controls = useAnimation();
+  const { isMobile } = useResize();
 
   useEffect(() => {
     controls.start("animate");
@@ -26,7 +30,7 @@ const AnimatedTextWords = React.memo(({ text, charDelay }: props) => {
             damping: 8,
             stiffness: 100,
             staggerChildren: charDelay,
-                    duration: 1,
+            duration: 1,
           },
         },
       }}
@@ -46,9 +50,15 @@ const AnimatedTextWords = React.memo(({ text, charDelay }: props) => {
               },
             },
           }}
-          className="inline-block"
+          className="inline-flex text-5xl lg:text-[6rem] 2xl:text-[7rem] "
         >
-          {word}
+          {word !== "arrow"  && word}
+          {word === "arrow" && (
+            <div className="lg:relative  right-4 lg:-right-2  lg:flex-col lg:gap-10">
+              <AnimatedRoundText />
+            </div>
+          )}
+  
           {wordIndex < text.split(" ").length - 1 && <>&nbsp;</>}
         </motion.div>
       ))}
