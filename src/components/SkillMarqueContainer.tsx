@@ -1,8 +1,8 @@
 import React from "react";
-import ProfileSkillCard from "@/components/ProfileSkillCard";
+import ProfileSkillCard from "@/components/SkillMarque";
 import Marquee from "react-fast-marquee";
 
-const ProfileSkillCardContainer = () => {
+const SkillMarqueContainer = () => {
   const SkillData = [
     {
       img: "/img/techLogo/framer-motion-Icon.svg",
@@ -68,5 +68,5 @@ const ProfileSkillCardContainer = () => {
   );
 };
 
-export default ProfileSkillCardContainer;
-ProfileSkillCardContainer.displayName = "ProfileSkillCardContainer";
+export default SkillMarqueContainer;
+SkillMarqueContainer.displayName = "SkillMarqueContainer";

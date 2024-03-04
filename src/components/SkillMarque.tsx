@@ -8,13 +8,13 @@ interface props {
   delay: number;
 }
 
-const ProfileSkillCard = React.memo(({ img, text }: props) => {
+const SkillMarque = React.memo(({ img, text }: props) => {
   const { isMobile } = useResize();
   return (
     <>
       <div
         id="profile-skill-card"
-        className={`bg-white  w-16 p-2 grayscale lg:invert  sm:w-52 sm:p-2 flex justify-center sm:gap-4 `}
+        className={`bg-white  w-16 p-2 grayscale lg:invert  sm:w-52 sm:p-4 flex justify-center sm:gap-4 `}
       >
         <Image
           src={img}
@@ -37,5 +37,5 @@ const ProfileSkillCard = React.memo(({ img, text }: props) => {
   );
 });
 
-export default ProfileSkillCard;
-ProfileSkillCard.displayName = "ProfileSkillCard";
+export default SkillMarque;
+SkillMarque.displayName = "SkillMarque";

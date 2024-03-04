@@ -29,15 +29,11 @@ const GridCard = () => {
   }, [controls, isMobile, isInView]);
 
   return (
-    <div className="flex flex-col sm:items-center sm:justify-center w-screen lg:mt-20 ">
-      <div className="flex justify-center lg:flex-row flex-col gap-10 items-center">
+    <div className="flex flex-col  sm:items-start p-8 sm:justify-start w-screen lg:mt-20 ">
+      <div className="flex justify-start lg:flex-row flex-col gap-10 items-center">
         <div className=" flex flex-col justify-start lg:flex-row  sm:mx-0 gap-8 items-center lg:w-[48rem]">
-          <div className="w-1/4">
-            <div className="flex justify-center items-center gap-4 text-lg h-full w-fit">
-              <div className="bg-primary w-[4rem] hidden lg:block lg:w-[10rem] rounded-md h-1"></div>
-            </div>
-          </div>
-          <div className=" flex justify-start flex-col mx-14 sm:mx-0 gap-4 items-center text-primary lg:w-2/4">
+        
+          <div className=" flex justify-start flex-col lg:mx-14 mx-4 gap-4 items-center text-primary lg:w-2/4">
             <div className="flex justify-center w-full items-center gap-4 ">
               <h1 className="font-semibold text-2xl  sm:text-5xl">
                 Somethin more about me!
@@ -49,14 +45,19 @@ const GridCard = () => {
               information.
             </h1>
           </div>
+          <div className="w-1/4">
+            <div className="flex justify-center items-center gap-4 text-lg h-full w-fit">
+              <div className="bg-primary w-[4rem] hidden lg:block lg:w-[10rem] rounded-md h-1"></div>
+            </div>
+          </div>
         </div>
         
       </div>
 
-      <div className="container p-6 sm:w-[65rem] sm:flex justify-center items-center gap-10  mt-4 sm:mt-32">
+      <div className="container sm:flex justify-center items-start gap-10  mt-4 sm:mt-32">
         <div className="flex flex-col justify-center sm:w-full sm:items-end items-center gap-36 sm:gap-6">
-          <div className="lg:w-[38rem] w-full  h-[11.5rem] rounded-xl">
-            <div className="font-semibold text-2xl    rounded-xl items-center flex flex-col lg:flex-row justify-center  text-center sm:text-start gap-4 pt-4">
+          <div className=" w-full  h-[11.5rem] rounded-xl">
+            <div className="font-semibold text-2xl    rounded-xl items-start flex flex-col lg:flex-row justify-start  text-center sm:text-start gap-4 pt-4">
               <AnimatedHello />
 
               <div className="flex justify-center flex-col items-center border-2 w-full lg:w-1/2 py-6 rounded-lg bg-primary">
