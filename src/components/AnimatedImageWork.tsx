@@ -47,7 +47,7 @@ const AnimatedImageWork = () => {
               alt=""
               width={400}
               height={300}
-              className="absolute rounded-sm w-36 lg:w-[25rem] "
+              className="absolute rounded-sm w-36 lg:w-[30rem] "
             />
           </motion.div>
           <motion.div
@@ -65,7 +65,7 @@ const AnimatedImageWork = () => {
               alt=""
               width={400}
               height={300}
-              className="absolute rounded-sm w-36 lg:w-[25rem]"
+              className="absolute rounded-sm w-36 lg:w-[26rem]"
             />
           </motion.div>
     </React.Fragment>

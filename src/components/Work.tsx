@@ -22,7 +22,7 @@ const Work = () => {
           scale: scale,
           opacity,
         }}
-        className="bg-primary container  lg:h-[30vw]  rounded-xl overflow-hidden flex justify-center items-center text-white"
+        className="bg-primary container  lg:h-[35vw]  rounded-xl overflow-hidden flex justify-center items-center text-white"
       >
         <div className="flex  flex-col items-center justify-center my-24 lg:my-20   gap-4 w-full h-full overflow-hidden">
           <AnimatedImageWork />
