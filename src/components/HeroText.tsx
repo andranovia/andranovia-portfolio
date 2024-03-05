@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedTextLetter from "./TextAnimationLetter";
 import AnimatedTextWords from "./textAnimationWords";
 import HeroRoundedSpan from "./HeroRoundedSpan";
+import { spring, useVariants } from "./CursorVariant";
+import Image from "next/image";
 
 interface props {
   animate: any;
@@ -12,61 +14,70 @@ interface props {
 }
 
 const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const ref = useRef(null);
+  const variants = useVariants(ref);
+
+  function textHover() {
+    setCursorVariant("hover");
+  }
+  function textHoverLeave() {
+    setCursorVariant("default");
+  }
+
   return (
-    <div className="lg:-mx-10 mx-10 sm:w-fit w-72 flex flex-col lg:mt-24  lg:gap-10 text-primary">
-      {/* <motion.div
-          className="text-5xl sm:text-9xl text-center mb-10 text-gray-500"
-          variants={{
-            hidden: { opacity: 1 },
-            animate: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.04,
-              },
-            },
-          }}
-          initial="hidden"
-          animate={animate}
+    <div className="lg:-mx-10 mx-10 sm:w-fit w-72 flex flex-col lg:mt-10   text-primary">
+      <div
+        ref={ref}
+        onMouseEnter={() => textHover()}
+        onMouseLeave={() => textHoverLeave()}
+      >
+        <motion.div
+          variants={variants}
+          className="circle bg-primary font-thin text-center"
+          animate={cursorVariant}
+          transition={spring}
         >
-          <AnimatedTextLetter text={text} charDelay={0.04} />
-        </motion.div> */}
-      <motion.div
+          <span className="  text-white ">andranovia</span>
+        </motion.div>
+        <div className="flex flex-col items-start gap-8  relative z-10 mt-4 cursor-pointer">
+          <motion.div
+            variants={{
+              hidden: { opacity: 1 },
+              animate: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.04,
+                  duration: 1,
+                },
+              },
+            }}
+            initial="hidden"
+            animate={animate}
+          >
+            <AnimatedTextWords text={textTwo} charDelay={0.04} />
+          </motion.div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 1 },
+              animate: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.04,
+                  duration: 1,
+                },
+              },
+            }}
+            initial="hidden"
+            animate={animate}
+          >
+            <AnimatedTextWords text={textThree} charDelay={0.04} />
+          </motion.div>
 
-        variants={{
-          hidden: { opacity: 1 },
-          animate: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.04,
-              duration: 1,
-            },
-          },
-        }}
-        initial="hidden"
-        animate={animate}
-      >
-        <AnimatedTextWords text={textTwo} charDelay={0.04} />
-      </motion.div>
-      <motion.div
-
-        variants={{
-          hidden: { opacity: 1 },
-          animate: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.04,
-              duration: 1,
-            },
-          },
-        }}
-        initial="hidden"
-        animate={animate}
-      >
-        <AnimatedTextWords text={textThree} charDelay={0.04} />
-      </motion.div>
-
-      <div className="flex justify-start sm:justify-start relative -bottom-10  ">
-        <HeroRoundedSpan />
+          <div className="flex justify-start sm:justify-start relative -bottom-10  ">
+            <HeroRoundedSpan />
+          </div>
+        </div>
       </div>
     </div>
   );

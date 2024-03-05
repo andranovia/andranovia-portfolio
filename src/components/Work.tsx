@@ -24,7 +24,7 @@ const Work = () => {
         }}
         className="bg-primary container  lg:h-[35vw]  rounded-xl overflow-hidden flex justify-center items-center text-white"
       >
-        <div className="flex  flex-col items-center justify-center my-24 lg:my-20   gap-4 w-full h-full overflow-hidden">
+        <div className="flex  flex-col items-center justify-center my-24 lg:my-20   gap-4 w-full h-full">
           <AnimatedImageWork />
           <div className="flex flex-col items-center justify-center absolute w-full">
             <div className="flex lg:mb-8 mb-4 flex-row items-center justify-center gap-2 rounded-xl border-2 s p-2">

@@ -1,7 +1,6 @@
 import React, { useEffect} from "react";
 import {  useAnimation } from "framer-motion";
 
-import Image from "next/image";
 import HeroAppText from "./HeroText";
 import { useResize } from "@/hooks/useResize";
 
@@ -24,7 +23,7 @@ function Hero() {
 
   return (
     <>
-      <div className="relative flex justify-start sm:justify-center items-center h-[20vh] top-10 font-Poppins w-screen mt-[4rem]  lg:mt-[15rem]">
+      <div className="relative flex justify-start sm:justify-center items-center  lg:top-10  w-screen mt-[4rem]  ">
         <div className=" font-bold font-Poppins flex flex-col-reverse lg:flex-row lg:gap-10 gap-20 lg:items-center justify-start z-1">
           
           <HeroAppText

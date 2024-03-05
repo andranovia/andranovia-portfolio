@@ -39,7 +39,7 @@ const TiltCard = () => {
               className="w-40 h-16 lg:w-40 lg:h-40  relative z-20 flex justify-center items-center left-20 lg:left-14 top-10 bottom-0 lg:top-10 rounded-full"
             ></motion.div>
           </div>
-          <div className="w-full z-20 p-2 h-full overflow-hidden opacity-80  bg-gradient-to-t from-black rounded-md to-transparent  "></div>
+          <div className="w-full z-20 p-2 h-full overflow-hidden  bg-gradient-to-t from-black rounded-md to-transparent  "></div>
           <div
             ref={ref}
             className=" w-full h-full z-10 overflow-hidden absolute flex justify-center items-end"
@@ -82,7 +82,7 @@ const TiltCard = () => {
                   y: 0,
                   transition: {
                     type: 'keyframes',
-                    ease: 'easeInOut',
+                    ease: 'easeInOut',    
                     delay: 1.2,
                   },
                 },

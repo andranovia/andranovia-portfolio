@@ -47,12 +47,12 @@ const AnimatedHello = () => {
               autoFill={true}
               speed={25}
               direction="up"
-              className="p-48 flex justify-start w-full text-start"
+              className="p-48 flex justify-start w-full "
             >
               {textArray.map((text, index) => (
                 <h1
                   key={index}
-                  className="text-3xl font-semibold w-32 -ml-20 text-start p-2 rounded-md text-primary "
+                  className="text-3xl font-semibold w-32 -ml-20 text-end lg:text-start p-2 rounded-md text-primary "
                 >
                   {text.text}
                 </h1>

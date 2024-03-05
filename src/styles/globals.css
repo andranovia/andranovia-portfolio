@@ -11,3 +11,18 @@
     }
   }
 
+  .mask{
+
+    mask-image: url('../../public/mask.svg');
+
+    mask-repeat: no-repeat;
+
+    mask-size: 40px;
+
+    background: #ec4e39;
+
+    position: absolute;
+
+    color: black;
+
+  }

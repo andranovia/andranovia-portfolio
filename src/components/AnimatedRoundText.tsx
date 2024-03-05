@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import CircleType from "circletype";
 import { motion } from "framer-motion";
-import { useResize } from "@/hooks/useResize";
 
 const AnimatedRoundText = () => {
   const circleTypeRef = useRef<HTMLDivElement>(null);
