@@ -37,6 +37,7 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
       opacity: 1,
       borderRadius: ' 0.4rem',
       color: "#000",
+
       height: 50,
       width: 160,
       fontSize: "25px",

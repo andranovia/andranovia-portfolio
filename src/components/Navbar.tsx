@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { useResize } from "@/hooks/useResize";
 import NavbarLink from "./NavbarLink";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { debounce } from "lodash";
 
 const Navbar: React.FC = () => {
@@ -10,17 +10,14 @@ const Navbar: React.FC = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-
-
   useEffect(() => {
-
     const controlNavbar = debounce(() => {
       if (window.scrollY > lastScrollY) {
         setShow(false);
       } else {
         setShow(true);
       }
-  
+
       setLastScrollY(window.scrollY);
     }, [100]);
 
@@ -30,7 +27,6 @@ const Navbar: React.FC = () => {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, [lastScrollY]);
-
 
   return (
     <div className="h-12 sm:fixed sm:right-0 sm:left-0 pt-10 top-10  flex justify-center text-black z-50  ">
@@ -54,7 +50,7 @@ const Navbar: React.FC = () => {
           {!isMobile && (
             <motion.div animate={{ y: show ? 1 : -110, opacity: show ? 1 : 1 }}>
               <div className="h-full w-full  shadow-[rgba(0.1,_0.1,_0.1,_0.1)_0px_30px_90px]  bg-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full">
-                <NavbarLink/>
+                <NavbarLink />
               </div>
             </motion.div>
           )}

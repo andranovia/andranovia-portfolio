@@ -2,7 +2,7 @@ import { MotionValue, useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useRef } from 'react'
 
-const AnimatedImageWork = () => {
+const PersonalWorkAnimatedImage = () => {
 
   const work = useRef(null);
 
@@ -72,4 +72,4 @@ const AnimatedImageWork = () => {
   )
 }
 
-export default AnimatedImageWork
+export default PersonalWorkAnimatedImage

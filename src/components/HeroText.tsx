@@ -1,10 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import AnimatedTextLetter from "./TextAnimationLetter";
-import AnimatedTextWords from "./textAnimationWords";
+import AnimatedTextWords from "./AnimatedTextWord";
 import HeroRoundedSpan from "./HeroRoundedSpan";
 import { spring, useVariants } from "./CursorVariant";
-import Image from "next/image";
 
 interface props {
   animate: any;
@@ -40,7 +38,7 @@ const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
         >
           <span className="  text-white ">andranovia</span>
         </motion.div>
-        <div className="flex flex-col items-start gap-8  relative z-10 mt-4 cursor-pointer">
+        <div className="flex flex-col items-start lg:gap-8  relative z-10 mt-4 cursor-pointer">
           <motion.div
             variants={{
               hidden: { opacity: 1 },

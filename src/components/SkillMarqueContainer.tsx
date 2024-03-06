@@ -48,8 +48,9 @@ const SkillMarqueContainer = () => {
 
   return (
     <>
+    <div className="relative  w-screen my-32">
       <div className="flex justify-center items-center ">
-        <Marquee>
+        <Marquee autoFill={true}>
           <div className="flex flex-col  justify-center items-center ">
             <div className="flex  justify-center ">
               {SkillData.map((skill, index) => (
@@ -63,6 +64,7 @@ const SkillMarqueContainer = () => {
             </div>
           </div>
         </Marquee>
+      </div>
       </div>
     </>
   );

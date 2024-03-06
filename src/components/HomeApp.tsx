@@ -1,30 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import GridCard from "./GridCard";
-import Work from "./Work";
 import SkillMarqueContainer from "./SkillMarqueContainer";
-import { motion } from "framer-motion";
-import useMousePosition from "@/hooks/useMousePosition";
+import PersonalWork from "./PersonalWork";
 const LayoutApp = dynamic(() => import("@/layouts/LayoutApp"));
 const Hero = dynamic(() => import("@/components/Hero"));
+import Lenis from "@studio-freight/lenis";
 
 export default function HomeApp() {
 
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <LayoutApp>
-      <div className="relative w-full max-w-lg bg ">
-        
+      <div className="relative w-full max-w-lg ">
         <Hero />
 
-
-        <div className="relative bottom-0     mt-52 mb-96">
-          <Work />
-
+        <div className="relative bottom-0     lg:mt-52 mb-96">
+          <PersonalWork />
           <GridCard />
-          <div className="w-screen  sm:h-[10vh] my-10  sm:mt-20  ">
-            <SkillMarqueContainer />
-          </div>
+          <SkillMarqueContainer />
         </div>
       </div>
     </LayoutApp>

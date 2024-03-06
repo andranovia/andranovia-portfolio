@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import AnimatedImageWork from "./AnimatedImageWork";
+import PersonalWorkAnimatedImage from "./PersonalWorkAnimatedImage";
 
-const Work = () => {
+const PersonalWork = () => {
   const work = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -15,7 +15,7 @@ const Work = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
   return (
-    <div className="w-[99vw] p-8 bg-white   h-full   my-20">
+    <div className="relative flex justify-start sm:justify-center items-center  lg:top-10  w-screen p-8 bg-white   h-full   my-20">
       <motion.div
         ref={work}
         style={{
@@ -25,7 +25,7 @@ const Work = () => {
         className="bg-primary container  lg:h-[35vw]  rounded-xl overflow-hidden flex justify-center items-center text-white"
       >
         <div className="flex  flex-col items-center justify-center my-24 lg:my-20   gap-4 w-full h-full">
-          <AnimatedImageWork />
+          <PersonalWorkAnimatedImage/>
           <div className="flex flex-col items-center justify-center absolute w-full">
             <div className="flex lg:mb-8 mb-4 flex-row items-center justify-center gap-2 rounded-xl border-2 s p-2">
               <Image
@@ -42,8 +42,8 @@ const Work = () => {
               </h3>
             </div>
 
-            <h1 className="text-2xl lg:text-6xl font-normal">MY PERSONAL</h1>
-            <h1 className="text-2xl lg:text-6xl font-normal">WORK</h1>
+            <h1 className="text-2xl lg:text-6xl font-thin">MY PERSONAL</h1>
+            <h1 className="text-2xl lg:text-6xl font-thin">WORK</h1>
             <button className="bg-white px-2 py-1 mt-4 lg:mt-10 rounded-md font-normal text-black flex justify-center items-center gap-2">
               <Image
                 width="25"
@@ -60,4 +60,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default PersonalWork;

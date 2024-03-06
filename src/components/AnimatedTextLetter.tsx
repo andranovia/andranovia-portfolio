@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useResize } from "@/hooks/useResize";
 
 interface props {
   text: string;
@@ -8,6 +9,7 @@ interface props {
 
 const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
   const controls = useAnimation();
+  const { isMobile } = useResize();
 
   useEffect(() => {
     controls.start("animate");
@@ -26,11 +28,12 @@ const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
             damping: 8,
             stiffness: 100,
             staggerChildren: charDelay,
+            
           },
         },
       }}
     >
-      {text.split("").map((char, charIndex) => (
+      {text.split(isMobile ? " " : "").map((char, charIndex) => (
         <motion.span
           key={charIndex}
           variants={{
@@ -42,12 +45,14 @@ const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
                 type: "spring",
                 damping: 8,
                 stiffness: 100,
+          
               },
             },
           }}
-          className="inline-block w-[1.2ch]"
+          className="inline-block   lg:w-[2ch]  font-thin"
         >
           {char}
+          <span className="lg:hidden">&nbsp;</span>
         </motion.span>
       ))}
     </motion.div>
