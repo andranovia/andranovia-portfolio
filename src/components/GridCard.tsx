@@ -17,7 +17,7 @@ const GridCard = () => {
 
   return (
     <div className="relative flex justify-start sm:justify-center items-center   w-screen">
-      <div className="flex flex-col  sm:items-start p-8 sm:justify-start lg:mt-20 ">
+      <div className="flex flex-col  sm:items-center p-8 sm:justify-start lg:mt-20 ">
         <div className="flex justify-center lg:flex-row flex-col gap-10 items-center">
           <div className=" flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
             <div className="w-1/4" ref={ref}>
