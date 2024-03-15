@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
+
 const GridCardAnimatedHello = () => {
   const textArray = [
     {
@@ -27,8 +28,6 @@ const GridCardAnimatedHello = () => {
     {
       text: "Ciao",
     },
-   
-    
   ];
   return (
     <React.Fragment>
@@ -40,7 +39,7 @@ const GridCardAnimatedHello = () => {
               Programmers learn language dont they?
             </p>
           </div>
-          
+
           <div className="flex justify-center absolute flex-col items-center  h-32 overflow-hidden -right-7 lg:-right-0  w-48 text-4xl">
             <div className="absolute bg-gradient-to-b from-white to-transparent z-20 top-0 left-0 w-full rounded-b-md h-10"></div>
             <Marquee

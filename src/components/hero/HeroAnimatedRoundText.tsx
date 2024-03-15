@@ -2,9 +2,8 @@ import React, { useEffect, useRef } from "react";
 import CircleType from "circletype";
 import { motion } from "framer-motion";
 
-const AnimatedRoundText = () => {
+const HeroAnimatedRoundText = () => {
   const circleTypeRef = useRef<HTMLDivElement>(null);
-
 
   useEffect(() => {
     const circleType = new CircleType(document.getElementById("textCircular"));
@@ -67,4 +66,4 @@ const AnimatedRoundText = () => {
   );
 };
 
-export default AnimatedRoundText;
+export default HeroAnimatedRoundText;

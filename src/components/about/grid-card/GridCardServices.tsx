@@ -1,15 +1,19 @@
 import React, { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useResize } from "@/hooks/useResize";
 import Image from "next/image";
-import useDimension from "@/hooks/useDimension";
 
 const GridCardServices = () => {
   const { isMobile } = useResize();
   const serviceRef = useRef(null);
   const isInView = useInView(serviceRef, { once: true });
   const controls = useAnimation();
-  const {height} = useDimension();
 
   const handleMouseEnterServices = () => {
     controls.start("hover");
@@ -27,14 +31,14 @@ const GridCardServices = () => {
       });
   }, [controls, isMobile, isInView]);
 
-  const {scrollYProgress} = useScroll({
+  const { scrollYProgress } = useScroll({
     target: serviceRef,
-    offset: ['start end', 'end start']
-  })
+    offset: ["start end", "end start"],
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200])
-  const yTwo = useTransform(scrollYProgress, [0, 1], [100, 0])
-  const yThree = useTransform(scrollYProgress, [0, 1], [0, 100])
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const yTwo = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const yThree = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
     <motion.div
@@ -54,8 +58,8 @@ const GridCardServices = () => {
       className="w-full bg-100% flex flex-col justify-end border-2   h-[11.5rem] rounded-lg  "
     >
       <div className="flex relative justify-center gap-4 items-center w-full overflow-hidden">
-      <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,white)]"></div>
-        <motion.div style={{y}} className="relative -top-[45%]">
+        <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,white)]"></div>
+        <motion.div style={{ y }} className="relative -top-[45%]">
           <Image
             src={"/img/projectImg/project-two-mobile.png"}
             alt=""
@@ -63,7 +67,10 @@ const GridCardServices = () => {
             height={200}
           />
         </motion.div>
-        <motion.div style={{y: yTwo}} className="relative -top-[25%] flex flex-col items-center gap-10">
+        <motion.div
+          style={{ y: yTwo }}
+          className="relative -top-[25%] flex flex-col items-center gap-10"
+        >
           <Image
             src={"/img/projectImg/project-one.png"}
             alt=""
@@ -77,14 +84,14 @@ const GridCardServices = () => {
             height={200}
           />
         </motion.div>
-        <motion.div style={{y: yThree}} className="relative -top-[45%]">
+        <motion.div style={{ y: yThree }} className="relative -top-[15%]">
           <Image
-            src={"/img/projectImg/project-two-mobile.png"}
+            src={"/img/projectImg/project-smknusa.jpeg"}
             alt=""
             width={200}
             height={200}
           />
-      </motion.div>
+        </motion.div>
       </div>
       <div className="flex justify-center items p-4 absolute z-20">
         <div className=" flex flex-col lg:flex-row lg:justify-center w-full lg:items-center text-primary ">
@@ -123,7 +130,7 @@ const GridCardServices = () => {
               Build, make, optimize, improve web application using modern stack
             </motion.p>
           </div>
-       </div>
+        </div>
       </div>
     </motion.div>
   );

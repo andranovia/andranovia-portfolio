@@ -89,7 +89,7 @@ const TiltCard = () => {
   );
 };
 
-const GridCardAnimatedCard = () => {
+const GridCardAnimatedPhone = () => {
   return (
     <div className="w-full  text-slate-900">
       <TiltCard />
@@ -97,4 +97,4 @@ const GridCardAnimatedCard = () => {
   );
 };
 
-export default GridCardAnimatedCard;
+export default GridCardAnimatedPhone;

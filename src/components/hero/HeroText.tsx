@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import AnimatedTextWords from "./AnimatedTextWord";
 import HeroRoundedSpan from "./HeroRoundedSpan";
-import { spring, useVariants } from "./CursorVariant";
+import { spring, useVariants } from "../animated/variant/CursorVariant";
+import HeroAnimatedText from "./HeroAnimatedText";
 
 interface props {
   animate: any;
@@ -19,6 +19,7 @@ const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
   function textHover() {
     setCursorVariant("hover");
   }
+
   function textHoverLeave() {
     setCursorVariant("default");
   }
@@ -53,7 +54,7 @@ const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
             initial="hidden"
             animate={animate}
           >
-            <AnimatedTextWords text={textTwo} charDelay={0.04} />
+            <HeroAnimatedText text={textTwo} charDelay={0.04} />
           </motion.div>
           <motion.div
             variants={{
@@ -69,7 +70,7 @@ const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
             initial="hidden"
             animate={animate}
           >
-            <AnimatedTextWords text={textThree} charDelay={0.04} />
+            <HeroAnimatedText text={textThree} charDelay={0.04} />
           </motion.div>
 
           <div className="flex justify-start sm:justify-start relative -bottom-10  ">

@@ -34,7 +34,6 @@ const NavbarLink = () => {
             />
           </ul>
         )}
-
       </div>
     </div>
   );

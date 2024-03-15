@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useAnimation, useInView } from "framer-motion";
-import AnimatedTextLetter from "./AnimatedTextLetter";
-import GridCardServices from "./GridCardServices";
-import GridCardAnimatedHello from "./GridCardAnimatedHello";
-import GridCardAnimatedCard from "./GridCardAnimatedCard";
+import AnimatedTextLetter from "../animated/AnimatedTextLetter";
+import GridCardServices from "./grid-card/GridCardServices";
+import GridCardAnimatedPhone from "./grid-card/GridCardAnimatedPhone";
+import GridCardAnimatedHello from "./grid-card/GridCardAnimatedHello";
 
-const GridCard = () => {
+const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const TextControls = useAnimation();
@@ -91,11 +91,11 @@ const GridCard = () => {
             <GridCardServices />
           </div>
           <div className="w-full">
-            <GridCardAnimatedCard />
+            <GridCardAnimatedPhone />
           </div>
         </div>
       </div>
     </div>
   );
 };
-export default GridCard;
+export default About;

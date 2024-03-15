@@ -1,8 +1,8 @@
 import React from "react";
-import ProfileSkillCard from "@/components/SkillMarque";
 import Marquee from "react-fast-marquee";
+import SkillMarqueeItem from "@/components/marquee/skill-marquee/SkillMarqueeItem";
 
-const SkillMarqueContainer = () => {
+const SkillMarquee = () => {
   const SkillData = [
     {
       img: "/img/techLogo/framer-motion-Icon.svg",
@@ -48,27 +48,27 @@ const SkillMarqueContainer = () => {
 
   return (
     <>
-    <div className="relative  w-screen my-32">
-      <div className="flex justify-center items-center ">
-        <Marquee autoFill={true}>
-          <div className="flex flex-col  justify-center items-center ">
-            <div className="flex  justify-center ">
-              {SkillData.map((skill, index) => (
-                <ProfileSkillCard
-                  key={index}
-                  img={skill.img}
-                  text={skill.text}
-                  delay={skill.delay}
-                />
-              ))}
+      <div className="relative  w-screen my-32">
+        <div className="flex justify-center items-center ">
+          <Marquee autoFill={true}>
+            <div className="flex flex-col  justify-center items-center ">
+              <div className="flex  justify-center ">
+                {SkillData.map((skill, index) => (
+                  <SkillMarqueeItem
+                    key={index}
+                    img={skill.img}
+                    text={skill.text}
+                    delay={skill.delay}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        </Marquee>
-      </div>
+          </Marquee>
+        </div>
       </div>
     </>
   );
 };
 
-export default SkillMarqueContainer;
-SkillMarqueContainer.displayName = "SkillMarqueContainer";
+export default SkillMarquee;
+SkillMarquee.displayName = "SkillMarquee";

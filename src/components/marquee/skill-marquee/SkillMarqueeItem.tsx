@@ -8,7 +8,7 @@ interface props {
   delay: number;
 }
 
-const SkillMarque = React.memo(({ img, text }: props) => {
+const SkillMarqueeItem = React.memo(({ img, text }: props) => {
   const { isMobile } = useResize();
   return (
     <>
@@ -37,5 +37,5 @@ const SkillMarque = React.memo(({ img, text }: props) => {
   );
 });
 
-export default SkillMarque;
-SkillMarque.displayName = "SkillMarque";
+export default SkillMarqueeItem;
+SkillMarqueeItem.displayName = "SkillMarqueeItem";
