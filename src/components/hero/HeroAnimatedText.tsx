@@ -1,19 +1,13 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import AnimatedRoundText from "./HeroAnimatedRoundText";
+import React from "react";
+import { motion } from "framer-motion";
+import HeroAnimatedRoundText from "./HeroAnimatedRoundText";
 
 interface props {
-  text: string;
   charDelay: number;
+  text: string;
 }
 
-const HeroAnimatedText = React.memo(({ text, charDelay }: props) => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start("animate");
-  }, [controls]);
-
+const HeroAnimatedText = React.memo(({ charDelay, text }: props) => {
   return (
     <motion.div
       className="inline-block"
@@ -52,7 +46,7 @@ const HeroAnimatedText = React.memo(({ text, charDelay }: props) => {
           {word !== "arrow" && word}
           {word === "arrow" && (
             <div className="lg:relative  right-4 lg:-right-2  lg:flex-col lg:gap-10">
-              <AnimatedRoundText />
+              <HeroAnimatedRoundText />
             </div>
           )}
 

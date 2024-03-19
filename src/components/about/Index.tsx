@@ -16,7 +16,7 @@ const About = () => {
   }, [isInView, TextControls]);
 
   return (
-    <div className="relative flex justify-start sm:justify-center items-center   w-screen">
+    <div className="relative flex justify-start sm:justify-center items-center   w-screen ">
       <div className="flex flex-col  sm:items-center p-8 sm:justify-start lg:mt-20 ">
         <div className="flex justify-center lg:flex-row flex-col gap-10 items-center">
           <div className=" flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
@@ -67,24 +67,23 @@ const About = () => {
         </div>
 
         <div className="container sm:flex justify-center items-center  gap-10  mt-4 sm:mt-32">
-          <div className="flex flex-col justify-center sm:w-full sm:items-end items-center gap-36 sm:gap-0">
-            <div className=" w-full  h-[11.5rem] rounded-xl">
+          <div className="flex flex-col justify-center sm:w-full sm:items-end items-center gap-4">
+            <div className=" w-full  rounded-xl">
               <div className="font-semibold text-2xl    rounded-xl items-start flex flex-col lg:flex-row justify-start  text-center sm:text-start gap-4 pt-2">
                 <GridCardAnimatedHello />
 
-                <div className="flex justify-center flex-col items-center border-2 w-full lg:w-1/2 py-6 rounded-lg bg-primary">
-                  <Image
-                    src={"/img/assets/folder-image.png"}
-                    alt=""
-                    width={180}
-                    height={180}
-                    className="w-32 rounded-xl opacity-60"
-                  />
-
-                  <motion.div
-                    whileHover={{ y: 10, rotateX: 40 }}
-                    className="w-28  h-20 -mt-20 rounded-md relative bg-yellow-400 z-20 text-gray-100 text-center"
-                  ></motion.div>
+                <div className="flex relative justify-center text-start flex-col items-center border w-full lg:w-1/2 h-40 py-6 rounded-lg gap-2 ">
+                  <div className="flex justify-center items-center gap-4 lg:gap-2">
+                    {" "}
+                    <h1 className="font-semibold text-5xl ">2</h1>
+                    <div className="flex-col font-thin">
+                      <h2>Years</h2>
+                      <h3>Experience</h3>
+                    </div>
+                  </div>
+                  <p className="lg:text-xs text-base font-thin w-1/2 lg:w-32 ">
+                    Not that much init? but im still 17 years old!
+                  </p>
                 </div>
               </div>
             </div>

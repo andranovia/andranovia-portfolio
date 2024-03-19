@@ -1,17 +1,16 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import HeroRoundedSpan from "./HeroRoundedSpan";
 import { spring, useVariants } from "../animated/variant/CursorVariant";
 import HeroAnimatedText from "./HeroAnimatedText";
+import HeroAnimatedRoundText from "./HeroAnimatedRoundText";
 
 interface props {
-  animate: any;
   textTwo: string;
-  text: string;
   textThree: string;
 }
 
-const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
+const HeroText = React.memo(({ textTwo, textThree }: props) => {
   const [cursorVariant, setCursorVariant] = useState("default");
   const ref = useRef(null);
   const variants = useVariants(ref);
@@ -23,6 +22,11 @@ const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
   function textHoverLeave() {
     setCursorVariant("default");
   }
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start("animate");
+  }, [controls]);
 
   return (
     <div className="lg:-mx-10 mx-10 sm:w-fit w-72 flex flex-col lg:mt-10   text-primary">
@@ -39,38 +43,22 @@ const HeroText = React.memo(({ animate, textTwo, text, textThree }: props) => {
         >
           <span className="  text-white ">andranovia</span>
         </motion.div>
-        <div className="flex flex-col items-start lg:gap-8  relative z-10 mt-4 cursor-pointer">
+        <div>
           <motion.div
             variants={{
-              hidden: { opacity: 1 },
+              hidden: {
+                opacity: 0,
+              },
               animate: {
                 opacity: 1,
-                transition: {
-                  staggerChildren: 0.04,
-                  duration: 1,
-                },
               },
             }}
             initial="hidden"
-            animate={animate}
+            animate={controls}
+            className="flex flex-col items-start lg:gap-8  relative z-10 mt-4 cursor-pointer"
           >
-            <HeroAnimatedText text={textTwo} charDelay={0.04} />
-          </motion.div>
-          <motion.div
-            variants={{
-              hidden: { opacity: 1 },
-              animate: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.04,
-                  duration: 1,
-                },
-              },
-            }}
-            initial="hidden"
-            animate={animate}
-          >
-            <HeroAnimatedText text={textThree} charDelay={0.04} />
+            <HeroAnimatedText charDelay={0.04} text={textTwo} />
+            <HeroAnimatedText charDelay={0.04} text={textThree} />
           </motion.div>
 
           <div className="flex justify-start sm:justify-start relative -bottom-10  ">

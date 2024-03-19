@@ -5,6 +5,7 @@ import PersonalWork from "@/components/personal-work/Index";
 import LayoutApp from "@/layouts/LayoutApp";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import Project from "@/components/project/Index";
 
 export default function Home() {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Home() {
             <PersonalWork />
             <About />
             <SkillMarquee />
+            <Project />
           </div>
         </div>
       </LayoutApp>
