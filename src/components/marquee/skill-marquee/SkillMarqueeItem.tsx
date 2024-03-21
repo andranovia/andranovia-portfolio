@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { useResize } from "@/hooks/useResize";
+import { useMediaQuery } from "react-responsive";
 
 interface props {
   img: string;
@@ -9,7 +9,7 @@ interface props {
 }
 
 const SkillMarqueeItem = React.memo(({ img, text }: props) => {
-  const { isMobile } = useResize();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <>
       <div

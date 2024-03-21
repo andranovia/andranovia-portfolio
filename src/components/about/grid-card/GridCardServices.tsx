@@ -6,11 +6,12 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useResize } from "@/hooks/useResize";
+
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 const GridCardServices = () => {
-  const { isMobile } = useResize();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const serviceRef = useRef(null);
   const isInView = useInView(serviceRef, { once: true });
   const controls = useAnimation();

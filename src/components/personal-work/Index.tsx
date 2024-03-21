@@ -15,7 +15,7 @@ const PersonalWork = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
   return (
-    <div className="relative flex justify-start sm:justify-center items-center  lg:top-10  w-screen p-8 bg-white   h-full   my-20">
+    <div className="relative flex justify-start sm:justify-center items-center  lg:top-10  w-screen p-8 bg-white   h-full mt-10   lg:my-20">
       <motion.div
         ref={work}
         style={{

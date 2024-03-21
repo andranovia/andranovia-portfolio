@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { useResize } from "@/hooks/useResize";
+
 import NavbarLink from "./NavbarLink";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
+import { useMediaQuery } from "react-responsive";
 
 const Navbar: React.FC = () => {
-  const { isMobile } = useResize();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 

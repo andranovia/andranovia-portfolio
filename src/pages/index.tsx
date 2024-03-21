@@ -22,13 +22,16 @@ export default function Home() {
   return (
     <>
       <LayoutApp>
-        <div className="relative w-full max-w-lg ">
-          <Hero />
-
-          <div className="relative bottom-0     lg:mt-52 mb-96">
+        <div className="relative   ">
+          <div className="overflow-hidden">
+            <Hero />
+          </div>
+          <div className="relative bottom-0 overflow-hidden ">
             <PersonalWork />
             <About />
             <SkillMarquee />
+          </div>
+          <div className="mb-[40%]">
             <Project />
           </div>
         </div>

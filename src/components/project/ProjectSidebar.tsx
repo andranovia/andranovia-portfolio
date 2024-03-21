@@ -4,7 +4,7 @@ import React from "react";
 const ProjectSidebar = () => {
   return (
     <>
-      <div className="bg-primary w-[20%] h-[25rem] rounded-3xl">
+      <div className="bg-primary w-full lg:w-[20%] lg:h-[30rem] rounded-3xl">
         <div className="p-6 flex flex-col gap-6">
           <div className="flex gap-4">
             <Image

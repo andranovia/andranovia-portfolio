@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useResize } from "@/hooks/useResize";
+import { useMediaQuery } from "react-responsive";
 
 interface props {
   text: string;
@@ -9,7 +9,7 @@ interface props {
 
 const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
   const controls = useAnimation();
-  const { isMobile } = useResize();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
     controls.start("animate");
@@ -28,7 +28,6 @@ const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
             damping: 8,
             stiffness: 100,
             staggerChildren: charDelay,
-            
           },
         },
       }}
@@ -45,7 +44,6 @@ const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
                 type: "spring",
                 damping: 8,
                 stiffness: 100,
-          
               },
             },
           }}

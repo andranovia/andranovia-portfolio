@@ -1,9 +1,9 @@
 import React from "react";
 import NavbarLinkAnimated from "./NavbarLinkAnimated";
-import { useResize } from "@/hooks/useResize";
+import { useMediaQuery } from "react-responsive";
 
 const NavbarLink = () => {
-  const { isMobile } = useResize();
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <div className="flex justify-center sm:w-[30rem] w-0  items-center font-semibold  rounded-full p-1 ">
