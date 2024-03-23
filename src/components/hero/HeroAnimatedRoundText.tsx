@@ -38,7 +38,7 @@ const HeroAnimatedRoundText = () => {
             stiffness: 100,
             duration: 1,
           }}
-          className="bg-primary bg-cover overflow-hidden  lg:right-2 z-20  w-24 h-10 lg:w-36 lg:h-36 rounded-full  flex items-center text-white justify-center text-2xl    "
+          className="bg-primary bg-cover overflow-hidden  lg:right-2 z-20  w-24 h-10 lg:w-36 lg:h-20 rounded-full  flex items-center text-white justify-center text-2xl    "
         >
           <div ref={circleTypeRef} id="textCircular">
             <div className={"flex items-center justify-center  text-center "}>

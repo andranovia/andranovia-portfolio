@@ -34,7 +34,7 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
     <motion.div
       ref={ref}
       style={{ scale: scale, rotate }}
-      className={`w-4/5 lg:w-[30%] p-4 h-[20rem] absolute  overflow-hidden flex justify-center lg:items-start items-center lg:justify-start gap-6 -bottom-10 rounded-3xl bg-zinc-800 bg-opacity-90 backdrop-blur-lg ${CardData.CardStyle}`}
+      className={`w-4/5 lg:w-[30%] p-4 h-[20rem] absolute z-40 overflow-hidden flex justify-center lg:items-start items-center lg:justify-start gap-6 -bottom-10 rounded-3xl bg-zinc-800 bg-opacity-90 backdrop-blur-lg ${CardData.CardStyle}`}
     >
       <motion.div
         style={{

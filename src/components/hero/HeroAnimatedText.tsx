@@ -41,7 +41,7 @@ const HeroAnimatedText = React.memo(({ charDelay, text }: props) => {
               },
             },
           }}
-          className="inline-flex text-5xl lg:text-[6rem] 2xl:text-[7rem] "
+          className="inline-flex text-5xl  lg:text-[8rem] 2xl:text-[7rem] "
         >
           {word !== "arrow" && word}
           {word === "arrow" && (

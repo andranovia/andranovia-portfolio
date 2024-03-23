@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectCard from "./ProjectCard";
-import ProjectAnimatedFolder from "./ProjectAnimatedFolder";
+import ProjectFolderAnimated from "./ProjectFolderAnimated";
 
 const Project = () => {
   const projectTwoRef = useRef(null);
@@ -93,28 +93,32 @@ const Project = () => {
   return (
     <>
       <div className="relative" ref={projectTwoRef}>
-        <div className="sticky top-0  h-screen flex justify-center items-center overflow-hidden">
-          <div className="relative w-screen">
-            <div className="flex flex-col w-full px-2 lg:flex-row justify-center items-center gap-2">
-              <ProjectSidebar />
+        <div className=" lg:w-full lg:h-full   bg-white  bg-dot-black/[0.4] relative rounded-xl mt-10 lg:mt-0 ">
+          <div className="hidden absolute pointer-events-none inset-0 z-10 lg:flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_70%,black)]"></div>
+          <div className="sticky top-0  h-screen flex justify-center items-center overflow-hidden ">
+            <div className="relative w-screen">
+              <div className="flex flex-col w-full px-2 lg:flex-row justify-center items-center gap-2">
+                <ProjectSidebar />
 
-              <div className="bg-primary w-full lg:w-[50%] h-[30rem] rounded-3xl  ">
-                <div className=" py-6 px-10 font-semibold text-white text-lg">
-                  <h1>Project</h1>
+                <div className="bg-primary w-full lg:w-[50%] h-[30rem] rounded-3xl  ">
+                  <div className=" py-6 px-10 font-semibold text-white text-lg">
+                    <h1>Project</h1>
+                  </div>
+                  <ProjectFolderAnimated projectTwoRef={projectTwoRef} />
                 </div>
-                <ProjectAnimatedFolder projectTwoRef={projectTwoRef} />
               </div>
             </div>
           </div>
+          <div className="flex justify-center ">
+            {popupData.map((data, index) => (
+              <React.Fragment key={index}>
+                <ProjectCard CardData={data.Card} />
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className=" top-0 h-[150vw] z-20 pointer  pointer-events: none; flex justify-center items-center"></div>
         </div>
-        <div className="">
-          {popupData.map((data, index) => (
-            <React.Fragment key={index}>
-              <ProjectCard CardData={data.Card} />
-            </React.Fragment>
-          ))}
-        </div>
-        <div className=" top-0 h-[150vw] z-20 pointer  pointer-events: none; flex justify-center items-center"></div>
       </div>
     </>
   );

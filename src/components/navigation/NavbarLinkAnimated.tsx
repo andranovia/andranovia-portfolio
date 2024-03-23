@@ -11,10 +11,20 @@ interface props {
 
 const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
   const [isHovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+    setTimeout(() => {
+      setHovered(false);
+    }, 1000);
+  };
+
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <motion.li className={`cursor-pointer text-center`}>
+    <motion.li
+      className={` cursor-pointer text-center flex justify-center items-center gap-4`}
+    >
       <motion.div
         initial={false}
         animate={{ y: isHovered ? 0 : 10, scale: isHovered ? 1.2 : 1 }}
@@ -60,6 +70,13 @@ const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
           {text}
         </Link>
       </motion.div>
+      <Image
+        src={"https://img.icons8.com/ios-filled/50/long-arrow-right.png"}
+        alt=""
+        width={10}
+        height={10}
+        className="w-4 h-4 translate-y-5"
+      />
     </motion.li>
   );
 });

@@ -1,10 +1,9 @@
 import useMouse from "@react-hook/mouse-position";
 
-
 export const useVariants = (ref: React.MutableRefObject<null>) => {
   const mouse = useMouse(ref, {
-    enterDelay: 100,
-    leaveDelay: 100,
+    enterDelay: 50,
+    leaveDelay: 50,
   });
 
   let mouseXPosition = 0;
@@ -24,10 +23,9 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
 
       width: 120,
       fontSize: "20px",
-      padding: '4px',
-      borderRadius: ' 0.4rem',
-      x: mouseXPosition,
-      y: mouseYPosition,
+      padding: "4px",
+      borderRadius: " 0.4rem",
+
       transition: {
         type: "spring",
         mass: 0.6,
@@ -35,20 +33,20 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
     },
     hover: {
       opacity: 1,
-      borderRadius: ' 0.4rem',
+      borderRadius: " 10rem",
       color: "#000",
 
-      height: 50,
-      width: 160,
+      height: 180,
+      width: 180,
       fontSize: "25px",
       x: mouseXPosition - 300,
-      y: mouseYPosition - 30,
+      y: mouseYPosition - 200,
     },
   };
 };
 
 export const spring = {
   type: "spring",
-  stiffness: 500,
+  stiffness: 200,
   damping: 28,
 };

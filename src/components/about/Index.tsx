@@ -66,7 +66,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="container sm:flex justify-center items-center  gap-10  mt-4 sm:mt-32">
+        <div className="container sm:flex justify-center  items-center  gap-10  mt-4 sm:mt-32">
           <div className="flex flex-col justify-center sm:w-full sm:items-end items-center gap-4">
             <div className=" w-full  rounded-xl">
               <div className="font-semibold text-2xl    rounded-xl items-start flex flex-col lg:flex-row justify-start  text-center sm:text-start gap-4 pt-2">
