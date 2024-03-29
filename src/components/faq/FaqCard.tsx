@@ -23,7 +23,9 @@ const FaqCard = ({ data }: FaqCardProps) => {
 
   const handleLeave = () => {
     hoverControls.start("initial");
-    setIsHovered(false);
+    setTimeout(() => {
+      setIsHovered(false);
+    }, 100);
   };
 
   const transition = {
@@ -56,7 +58,22 @@ const FaqCard = ({ data }: FaqCardProps) => {
       >
         <h1 className="lg:text-2xl font-thin text-lg ">{data.textHead}</h1>
         <div className="flex lg:justify-center items-center gap-4">
-          <p className=" font-semibold lg:text-3xl">{data.textMsg}</p>
+          <motion.p
+            animate={hoverControls}
+            initial={"initial"}
+            variants={{
+              initial: {
+                y: 0,
+              },
+              animate: {
+                y: -100,
+              },
+            }}
+            className=" font-semibold lg:text-3xl"
+            transition={transition}
+          >
+            {data.textMsg}
+          </motion.p>
           <motion.div
             animate={hoverControls}
             initial={"initial"}

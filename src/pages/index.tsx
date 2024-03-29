@@ -1,12 +1,21 @@
-import SkillMarquee from "@/components/marquee/skill-marquee/Index";
-import PersonalWork from "@/components/personal-work/Index";
 import LayoutApp from "@/layouts/LayoutApp";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import dynamic from "next/dynamic";
 
+const SkillMarquee = dynamic(
+  () => import("@/components/marquee/skill-marquee/Index"),
+  {
+    ssr: false,
+  }
+);
+
 const About = dynamic(() => import("@/components/about/Index"), {
+  ssr: false,
+});
+
+const PersonalWork = dynamic(() => import("@/components/personal-work/Index"), {
   ssr: false,
 });
 
