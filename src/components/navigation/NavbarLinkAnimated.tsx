@@ -12,13 +12,6 @@ interface props {
 const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
   const [isHovered, setHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-    setTimeout(() => {
-      setHovered(false);
-    }, 1000);
-  };
-
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (

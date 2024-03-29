@@ -16,9 +16,7 @@ const GridCardAnimatedHello = () => {
     {
       text: "Ni hao",
     },
-    {
-      text: "Konnichiwa",
-    },
+
     {
       text: "Bonjour",
     },
@@ -33,6 +31,7 @@ const GridCardAnimatedHello = () => {
     <React.Fragment>
       <div className="bg-base h-40  overflow-hidden w-full rounded-lg  ">
         <motion.div className="relative border  rounded-md flex lg:justify-start    items-center h-full  lg:px-10 px-6 w-full text-start">
+          <div className="absolute bg-gradient-to-b from-white to-transparent z-20 top-0 left-0 w-full rounded-b-md h-10"></div>
           <div className="w-2/3">
             <h1 className="font-semibold">Hi There.</h1>
             <p className="text-sm w-40">
@@ -40,8 +39,7 @@ const GridCardAnimatedHello = () => {
             </p>
           </div>
 
-          <div className="flex justify-center absolute flex-col items-center  h-32 overflow-hidden -right-7 lg:-right-0  w-48 text-4xl">
-            <div className="absolute bg-gradient-to-b from-white to-transparent z-20 top-0 left-0 w-full rounded-b-md h-10"></div>
+          <div className="flex justify-center absolute flex-col items-center  h-36 overflow-hidden -right-8 lg:-right-12  w-48 text-4xl">
             <Marquee
               autoFill={true}
               speed={25}
@@ -57,8 +55,8 @@ const GridCardAnimatedHello = () => {
                 </h1>
               ))}
             </Marquee>
-            <div className="absolute bg-gradient-to-b from-transparent to-white z-20 bottom-0 left-0 w-full rounded-t-md h-10"></div>
           </div>
+          <div className="absolute bg-gradient-to-b from-transparent to-white z-20 bottom-0 left-0 w-full rounded-t-md h-full"></div>
         </motion.div>
       </div>
     </React.Fragment>

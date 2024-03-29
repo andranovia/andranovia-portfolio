@@ -11,7 +11,7 @@ function Hero() {
 
   return (
     <>
-      <div className="relative flex justify-start sm:justify-center  items-center  lg:top-10  lg:mt-[4rem] font-bold  ">
+      <div className=" relative flex justify-start sm:justify-center  items-center  lg:top-10  lg:mt-[4rem] font-bold  ">
         <HeroText textTwo={animatedTextTwo} textThree={animatedTextThree} />
       </div>
     </>

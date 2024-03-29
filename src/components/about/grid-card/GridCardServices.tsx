@@ -59,10 +59,10 @@ const GridCardServices = () => {
       className="w-full bg-100% flex flex-col justify-end border-2   h-[11.5rem] rounded-lg  "
     >
       <div className="flex relative justify-center gap-4 items-center w-full overflow-hidden">
-        <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,white)]"></div>
+        <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center   bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,white)]"></div>
         <motion.div style={{ y }} className="relative -top-[45%]">
           <Image
-            src={"/img/projectImg/project-two-mobile.png"}
+            src={"/img/projectImg/project-noirythm-three.png"}
             alt=""
             width={200}
             height={200}
@@ -73,13 +73,13 @@ const GridCardServices = () => {
           className="relative -top-[25%] flex flex-col items-center gap-10"
         >
           <Image
-            src={"/img/projectImg/project-one.png"}
+            src={"/img/projectImg/project-society-one.png"}
             alt=""
             width={200}
             height={200}
           />
           <Image
-            src={"/img/projectImg/project-one.png"}
+            src={"/img/projectImg/project-heroio.png"}
             alt=""
             width={200}
             height={200}

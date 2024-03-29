@@ -31,9 +31,10 @@ const HeroText = React.memo(({ textTwo, textThree }: props) => {
     <div className="lg:-mx-10 mx-10  lg:w-fit w-72 lg:h-[35rem]  lg:mt-10   text-primary">
       <motion.div
         variants={variants}
-        className=" h-full bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"
+        className="hidden lg:block h-full bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"
         animate={cursorVariant}
         transition={spring}
+        initial={"default"}
       >
         <motion.div
           animate={{

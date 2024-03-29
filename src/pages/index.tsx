@@ -1,11 +1,26 @@
-import About from "@/components/about/Index";
-import Hero from "@/components/hero/Index";
 import SkillMarquee from "@/components/marquee/skill-marquee/Index";
 import PersonalWork from "@/components/personal-work/Index";
 import LayoutApp from "@/layouts/LayoutApp";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
-import Project from "@/components/project/Index";
+
+import dynamic from "next/dynamic";
+
+const About = dynamic(() => import("@/components/about/Index"), {
+  ssr: false,
+});
+
+const Hero = dynamic(() => import("@/components/hero/Index"), {
+  ssr: false,
+});
+
+const Project = dynamic(() => import("@/components/project/Index"), {
+  ssr: false,
+});
+
+const Faq = dynamic(() => import("@/components/faq/Index"), {
+  ssr: false,
+});
 
 export default function Home() {
   useEffect(() => {
@@ -23,16 +38,17 @@ export default function Home() {
     <>
       <LayoutApp>
         <div className="relative   ">
-          <div className="overflow-hidden">
+          <div className="">
             <Hero />
           </div>
           <div className="relative bottom-0 overflow-hidden ">
-            <PersonalWork />
             <About />
+            <PersonalWork />
             <SkillMarquee />
           </div>
           <div className="mb-[40%]">
             <Project />
+            <Faq />
           </div>
         </div>
       </LayoutApp>

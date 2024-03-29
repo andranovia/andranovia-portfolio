@@ -40,10 +40,9 @@ const Project = () => {
         LinkStyle: " lg:bottom-[44%] right-[10%]",
       },
       Card: {
-        Img: "/img/projectImg/smknusa.png",
-        Title: "SMKNUSA 2",
-        Description:
-          "SMKN 1 Purwosari official website, build using modern stack",
+        Img: "/img/projectImg/project-noirythm-four.jpeg",
+        Title: "Noirythm",
+        Description: "Noirythm ecommerce, first complex project.",
         CardStyle: "lg:left-[20%] bottom-[35%] lg:bottom-[40%]",
         Tech: [
           {
@@ -55,8 +54,12 @@ const Project = () => {
             TechStyle: "bg-sky-200",
           },
           {
-            Name: "Framer-motion",
-            TechStyle: "bg-violet-200 col-span-2",
+            Name: "Laravel",
+            TechStyle: "bg-red-200 col-span-2",
+          },
+          {
+            Name: "React-Query",
+            TechStyle: "bg-orange-200 col-span-2",
           },
         ],
       },
@@ -67,10 +70,9 @@ const Project = () => {
         LinkStyle: "bottom-[8%] lg:left-[28%]",
       },
       Card: {
-        Img: "/img/projectImg/smknusa.png",
-        Title: "SMKNUSA 3",
-        Description:
-          "SMKN 1 Purwosari official website, build using modern stack",
+        Img: "/img/projectImg/project-society-twos.jpeg",
+        Title: "Society",
+        Description: "Society job apply platform app.",
         CardStyle: "lg:right-[10%] bottom-[10%] ",
         Tech: [
           {
@@ -81,9 +83,10 @@ const Project = () => {
             Name: "Tailwind",
             TechStyle: "bg-sky-200",
           },
+
           {
-            Name: "Framer-motion",
-            TechStyle: "bg-violet-200 col-span-2",
+            Name: "Laravel",
+            TechStyle: "bg-red-200 col-span-2",
           },
         ],
       },

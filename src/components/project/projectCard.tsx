@@ -41,7 +41,7 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
           opacity,
           y,
         }}
-        className="flex  gap-6 "
+        className="flex  lg:items-start items-center gap-6 "
       >
         <div className={`w-fit h-full overflow-hidden rounded-lg `}>
           <Image
@@ -49,10 +49,10 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
             alt="asd"
             width={200}
             height={200}
-            className="-top-24 relative "
+            className="lg:-top-24 relative "
           />
         </div>
-        <div className="w-1/2 h-full mt-2 flex flex-col items-start gap-4">
+        <div className="w-1/2 h-full   lg:mt-2 flex flex-col items-center  lg:items-start  gap-4">
           <div className="flex items-center  gap-4">
             <Image
               src={
@@ -70,7 +70,7 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
             {CardData.Tech.map((data, index) => (
               <div
                 className={cn(
-                  "rounded-xl  flex justify-center gap-2  bg-white  p-2 text-xs lg:text-base",
+                  "rounded-xl  flex justify-center gap-2  bg-white  p-2 text-[0.7rem] lg:text-base",
                   data.TechStyle
                 )}
                 key={index}
