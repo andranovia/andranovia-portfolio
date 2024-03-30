@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectCard from "./ProjectCard";
 import ProjectFolderAnimated from "./ProjectFolderAnimated";
+import ProjectLink from "./ProjectLink";
 
 const Project = () => {
   const projectTwoRef = useRef(null);
@@ -107,6 +108,7 @@ const Project = () => {
                   <div className=" py-6 px-10 font-semibold text-white text-lg">
                     <h1>Project</h1>
                   </div>
+
                   <ProjectFolderAnimated projectTwoRef={projectTwoRef} />
                 </div>
               </div>
@@ -115,7 +117,7 @@ const Project = () => {
           <div className="flex justify-center ">
             {popupData.map((data, index) => (
               <React.Fragment key={index}>
-                <ProjectCard CardData={data.Card} />
+                <ProjectCard CardData={data.Card} LinkData={data.Link} />
               </React.Fragment>
             ))}
           </div>

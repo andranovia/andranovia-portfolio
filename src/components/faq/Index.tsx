@@ -19,13 +19,19 @@ const Faq = () => {
       textHead: "How can we communicate?",
       textMsg: "Communicate is a way to understand each others",
       textDesc:
-        "You can always contact me at yeromrenandra07@gmail.com, unless when im sleep ofc",
+        "You can always contact me at yeromrenandra07@gmail.com, unless when im sleep ofc!",
     },
     {
       textHead: "Where am i currently work?",
       textMsg: "Work...",
       textDesc:
-        "You can always contact me at yeromrenandra07@gmail.com, unless when im sleep ofc",
+        "I'm currently a student, but if we can collaborate, please let me know!",
+    },
+    {
+      textHead: "What type of projects did you do?",
+      textMsg: "Anything I could.",
+      textDesc:
+        "From dynamic e-commerce platforms to interactive web applications, my portfolio showcases a diverse range of projects.",
     },
   ];
 

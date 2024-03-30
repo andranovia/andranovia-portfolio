@@ -1,12 +1,30 @@
 import Image from "next/image";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import ProjectLink from "./ProjectLink";
 
 const ProjectFolder = () => {
+  const [isFolderHovered, setIsFolderHovered] = useState(false);
+  const controls = useAnimation();
+
+  const handleHover = () => {
+    setIsFolderHovered(true);
+    controls.start("animate");
+  };
+
+  const handleLeave = () => {
+    setIsFolderHovered(true);
+    controls.start("initial");
+  };
+
   return (
     <>
-      <div className="flex flex-col items-center  gap-4">
-        <div className=" flex justify-center flex-col items-center ">
+      <div className="flex flex-col items-center  gap-4 ">
+        <div
+          className=" flex justify-center flex-col items-center cursor-pointer"
+          onMouseEnter={() => handleHover()}
+          onMouseLeave={() => handleLeave()}
+        >
           <Image
             src={"/img/assets/folder-image.png"}
             alt=""
@@ -14,12 +32,20 @@ const ProjectFolder = () => {
             height={180}
             className="w-32 rounded-xl opacity-60 relative"
           />
+          <motion.div
+            initial={"initial"}
+            animate={controls}
+            variants={{ initial: { y: 0 }, animate: { y: -60 } }}
+            className="flex justify-center absolute items-center   bg-zinc-800 p-2 rounded-md gap-4"
+          >
+            <ProjectLink LinkRef="" />
+          </motion.div>
 
           <motion.div
-            whileHover={{
-              y: 20,
-            }}
-            className="w-28  h-20 -mt-20 rounded-md relative bg-yellow-400  text-gray-100 text-center"
+            initial={"initial"}
+            animate={controls}
+            variants={{ initial: { y: 0 }, animate: { y: 20 } }}
+            className="w-28 z-40   h-20 -mt-20 rounded-md relative bg-yellow-400  text-gray-100 text-center"
           ></motion.div>
         </div>
         <h3 className="font-thin text-white "></h3>

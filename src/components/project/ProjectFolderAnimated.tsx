@@ -3,6 +3,7 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectFolder from "./ProjectFolder";
 import { useMediaQuery } from "react-responsive";
+import ProjectLink from "./ProjectLink";
 
 const ProjectFolderAnimated: React.FC<{
   projectTwoRef: React.MutableRefObject<null>;

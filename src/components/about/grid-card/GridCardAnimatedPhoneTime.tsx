@@ -35,28 +35,25 @@ const GridCardAnimatedPhoneTime = () => {
   const Time = () => {
     return (
       <div className="w-full h-20   overflow-hidden  p-2 rounded-md flex flex-col justify-center items-center  text-gray-950">
-        <AnimatePresence>
-          {previousTextIndex !== null && (
-            <motion.div
-              key={texts[previousTextIndex]}
-              initial={{ y: 0, opacity: 1 }}
-              animate={{ y: 50, opacity: 0 }}
-              transition={transition}
-              className="-mt-10"
-            >
-              <p className="font-thin text-5xl">{texts[previousTextIndex]}</p>
-            </motion.div>
-          )}
+        {previousTextIndex !== null && (
           <motion.div
-            key={texts[currentTextIndex]}
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 50, opacity: 0 }}
+            key={texts[previousTextIndex]}
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: 50, opacity: 0 }}
             transition={transition}
+            className="-mt-10"
           >
-            <p className="font-thin text-5xl">{texts[currentTextIndex]}</p>
+            <p className="font-thin text-5xl">{texts[previousTextIndex]}</p>
           </motion.div>
-        </AnimatePresence>
+        )}
+        <motion.div
+          key={texts[currentTextIndex]}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={transition}
+        >
+          <p className="font-thin text-5xl">{texts[currentTextIndex]}</p>
+        </motion.div>
       </div>
     );
   };
@@ -82,27 +79,29 @@ const GridCardAnimatedPhoneTime = () => {
           />
           <p className="font-thin text-xs">{notification[previousTextIndex]}</p>
         </motion.div>
-
-        <motion.div
-          key={notification[currentTextIndex]}
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
-          transition={transition}
-          className="absolute w-[90%] bottom-0 h-12 overflow-hidden flex justify-start px-4 gap-4 items-center bg-primary  rounded-md -mt-6 text-white"
-        >
-          <Image
-            src={
-              "https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/FFFFFF/external-notification-bell-user-interface-anggara-basic-outline-anggara-putra.png"
-            }
-            alt="notification"
-            width={20}
-            height={40}
-            className="w-4 h-4"
-          />
-          <p className="font-thin text-xs bg-primary">
-            {notification[currentTextIndex]}
-          </p>
-        </motion.div>
+        <AnimatePresence>
+          <motion.div
+            key={notification[currentTextIndex]}
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
+            exit={{ y: 30, opacity: 0 }}
+            transition={transition}
+            className="absolute w-[90%] bottom-0 h-12 overflow-hidden flex justify-start px-4 gap-4 items-center bg-primary  rounded-md -mt-6 text-white"
+          >
+            <Image
+              src={
+                "https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/FFFFFF/external-notification-bell-user-interface-anggara-basic-outline-anggara-putra.png"
+              }
+              alt="notification"
+              width={20}
+              height={40}
+              className="w-4 h-4"
+            />
+            <p className="font-thin text-xs bg-primary">
+              {notification[currentTextIndex]}
+            </p>
+          </motion.div>
+        </AnimatePresence>
       </>
     );
   };

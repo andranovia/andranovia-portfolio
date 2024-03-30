@@ -100,6 +100,7 @@ const FaqCard = ({ data }: FaqCardProps) => {
           </motion.div>
         </div>
       </motion.div>
+
       <motion.div
         animate={hoverControls}
         initial={"initial"}
@@ -114,8 +115,11 @@ const FaqCard = ({ data }: FaqCardProps) => {
           },
         }}
         transition={transition}
-        className="w-full h-32 absolute   bg-primary"
-      ></motion.div>
+        className="w-full h-32 absolute flex justify-end  pr-20 items-center text-white bg-primary"
+      >
+        {" "}
+        <p className="w-1/2"> {data.textDesc}</p>
+      </motion.div>
     </div>
   );
 };

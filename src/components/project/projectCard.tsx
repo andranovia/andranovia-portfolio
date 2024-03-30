@@ -3,6 +3,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import ProjectLink from "./ProjectLink";
 
 type ProjectCardProps = {
   CardData: {
@@ -15,9 +16,13 @@ type ProjectCardProps = {
       TechStyle: string;
     }[];
   };
+  LinkData: {
+    LinkRef: string;
+    LinkStyle: string;
+  };
 };
 
-const ProjectCard = ({ CardData }: ProjectCardProps) => {
+const ProjectCard = ({ CardData, LinkData }: ProjectCardProps) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
