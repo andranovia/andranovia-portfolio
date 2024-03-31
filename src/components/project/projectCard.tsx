@@ -3,7 +3,6 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import ProjectLink from "./ProjectLink";
 
 type ProjectCardProps = {
   CardData: {
@@ -16,13 +15,9 @@ type ProjectCardProps = {
       TechStyle: string;
     }[];
   };
-  LinkData: {
-    LinkRef: string;
-    LinkStyle: string;
-  };
 };
 
-const ProjectCard = ({ CardData, LinkData }: ProjectCardProps) => {
+const ProjectCard = ({ CardData }: ProjectCardProps) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -46,9 +41,11 @@ const ProjectCard = ({ CardData, LinkData }: ProjectCardProps) => {
           opacity,
           y,
         }}
-        className="flex  lg:items-start items-center gap-6 "
+        className="flex  items-start  gap-6 "
       >
-        <div className={`w-fit h-full overflow-hidden rounded-lg `}>
+        <div
+          className={`w-fit h-[20rem] lg:h-full overflow-hidden rounded-lg `}
+        >
           <Image
             src={CardData.Img}
             alt="asd"
@@ -57,7 +54,7 @@ const ProjectCard = ({ CardData, LinkData }: ProjectCardProps) => {
             className="lg:-top-24 relative "
           />
         </div>
-        <div className="w-1/2 h-full   lg:mt-2 flex flex-col items-center  lg:items-start  gap-4">
+        <div className="w-1/2 h-full  mt-4 lg:mt-2 flex flex-col items-center  lg:items-start  gap-4">
           <div className="flex items-center  gap-4">
             <Image
               src={

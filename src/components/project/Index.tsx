@@ -2,17 +2,12 @@ import React, { useRef } from "react";
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectCard from "./ProjectCard";
 import ProjectFolderAnimated from "./ProjectFolderAnimated";
-import ProjectLink from "./ProjectLink";
 
 const Project = () => {
   const projectTwoRef = useRef(null);
 
   const popupData = [
     {
-      Link: {
-        LinkRef: "https://github.com/andranovia/smknusa-frontend",
-        LinkStyle: "top-[16%] left-[28%] ",
-      },
       Card: {
         Img: "/img/projectImg/smknusa.png",
         Title: "SMKNUSA",
@@ -36,10 +31,6 @@ const Project = () => {
       },
     },
     {
-      Link: {
-        LinkRef: "https://github.com/andranovia/smknusa-frontend",
-        LinkStyle: " lg:bottom-[44%] right-[10%]",
-      },
       Card: {
         Img: "/img/projectImg/project-noirythm-four.jpeg",
         Title: "Noirythm",
@@ -66,10 +57,6 @@ const Project = () => {
       },
     },
     {
-      Link: {
-        LinkRef: "https://github.com/andranovia/smknusa-frontend",
-        LinkStyle: "bottom-[8%] lg:left-[28%]",
-      },
       Card: {
         Img: "/img/projectImg/project-society-twos.jpeg",
         Title: "Society",
@@ -117,12 +104,14 @@ const Project = () => {
           <div className="flex justify-center ">
             {popupData.map((data, index) => (
               <React.Fragment key={index}>
-                <ProjectCard CardData={data.Card} LinkData={data.Link} />
+                <ProjectCard CardData={data.Card} />
               </React.Fragment>
             ))}
           </div>
 
-          <div className=" top-0 h-[150vw] z-20 pointer  pointer-events: none; flex justify-center items-center"></div>
+          <div className=" top-0 h-[150vw] z-20 pointer  pointer-events: none; flex justify-center items-center">
+            {/* add height to trigger sticky*/}
+          </div>
         </div>
       </div>
     </>

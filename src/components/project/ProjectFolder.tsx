@@ -1,19 +1,21 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import ProjectLink from "./ProjectLink";
 
-const ProjectFolder = () => {
-  const [isFolderHovered, setIsFolderHovered] = useState(false);
+interface ProjectFolderProps {
+  children: React.ReactNode;
+  LinkRef: string;
+}
+
+const ProjectFolder = ({ children, LinkRef }: ProjectFolderProps) => {
   const controls = useAnimation();
 
   const handleHover = () => {
-    setIsFolderHovered(true);
     controls.start("animate");
   };
 
   const handleLeave = () => {
-    setIsFolderHovered(true);
     controls.start("initial");
   };
 
@@ -38,7 +40,7 @@ const ProjectFolder = () => {
             variants={{ initial: { y: 0 }, animate: { y: -60 } }}
             className="flex justify-center absolute items-center   bg-zinc-800 p-2 rounded-md gap-4"
           >
-            <ProjectLink LinkRef="" />
+            <ProjectLink LinkRef={LinkRef} />
           </motion.div>
 
           <motion.div
@@ -48,7 +50,7 @@ const ProjectFolder = () => {
             className="w-28 z-40   h-20 -mt-20 rounded-md relative bg-yellow-400  text-gray-100 text-center"
           ></motion.div>
         </div>
-        <h3 className="font-thin text-white "></h3>
+        {children}
       </div>
     </>
   );

@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 
 const ProjectSidebar = () => {
+  const sidebarData = ["SMKNUSA", "Noirythm", "Society"];
+
   return (
     <>
       <div className="bg-primary w-full lg:w-[20%] lg:h-[30rem] rounded-3xl">
@@ -39,45 +41,22 @@ const ProjectSidebar = () => {
               />
               <h3 className="font-thin text-white text-md">Project</h3>
             </div>
-            <div className="px-2">
-              <div className="flex items-center gap-4  p-2 rounded-md">
-                <Image
-                  src={
-                    "https://img.icons8.com/material-outlined/24/FFFFFF/folder-invoices--v1.png"
-                  }
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="w-4 h-4"
-                />
-                <h3 className="font-thin text-white text-md">SMKNUSA</h3>
-              </div>
-
-              <div className="flex items-center gap-4  p-2 rounded-md">
-                <Image
-                  src={
-                    "https://img.icons8.com/material-outlined/24/FFFFFF/folder-invoices--v1.png"
-                  }
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="w-4 h-4"
-                />
-                <h3 className="font-thin text-white text-md">Noirythm</h3>
-              </div>
-              <div className="flex items-center gap-4  p-2 rounded-md">
-                <Image
-                  src={
-                    "https://img.icons8.com/material-outlined/24/FFFFFF/folder-invoices--v1.png"
-                  }
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="w-4 h-4"
-                />
-                <h3 className="font-thin text-white text-md">Society</h3>
-              </div>
-            </div>
+            {sidebarData.map((project, index) => (
+              <React.Fragment key={index}>
+                <div className="flex items-center gap-4  p-2 rounded-md mx-2">
+                  <Image
+                    src={
+                      "https://img.icons8.com/material-outlined/24/FFFFFF/folder-invoices--v1.png"
+                    }
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="w-4 h-4"
+                  />
+                  <h3 className="font-thin text-white text-md">{project}</h3>
+                </div>
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
