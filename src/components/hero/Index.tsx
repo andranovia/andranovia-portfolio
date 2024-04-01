@@ -6,8 +6,8 @@ import { useMediaQuery } from "react-responsive";
 function Hero() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
-  const animatedTextTwo = !isMobile ? "We Should Know " : "We Should Know Each";
-  const animatedTextThree = !isMobile ? "Each arrow ther" : " arrow ther";
+  const animatedTextTwo = isMobile ? "We Should Know Each " : "We Should Know";
+  const animatedTextThree = isMobile ? " arrow ther" : "Each arrow ther";
 
   return (
     <>

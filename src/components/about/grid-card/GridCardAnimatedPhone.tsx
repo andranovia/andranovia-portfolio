@@ -6,12 +6,12 @@ import GridCardAnimatedPhoneTime from "./GridCardAnimatedPhoneTime";
 const TiltCard = () => {
   const ref = useRef<HTMLInputElement>(null);
 
-  const controls = useAnimation();
+  const shapeControls = useAnimation();
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) {
-      controls.start("animate");
+      shapeControls.start("animate");
     }
   });
 
@@ -21,7 +21,7 @@ const TiltCard = () => {
         <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center rounded-xl dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
         <motion.div className="relative h-full w-full flex flex-col">
           <motion.div
-            animate={controls}
+            animate={shapeControls}
             initial="initial"
             variants={{
               initial: {
@@ -60,7 +60,7 @@ const TiltCard = () => {
               Take Your Time
             </h1>
             <motion.div
-              animate={controls}
+              animate={shapeControls}
               initial="initial"
               variants={{
                 initial: {

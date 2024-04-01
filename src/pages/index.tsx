@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <LayoutApp>
-        <div className="relative   ">
+        <div className="relative bg-white pb-20">
           <div className="">
             <Hero />
           </div>
@@ -55,10 +55,9 @@ export default function Home() {
             <PersonalWork />
             <SkillMarquee />
           </div>
-          <div className="mb-[40%]">
-            <Project />
-            <Faq />
-          </div>
+
+          <Project />
+          <Faq />
         </div>
       </LayoutApp>
     </>

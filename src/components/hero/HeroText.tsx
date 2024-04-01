@@ -21,11 +21,11 @@ const HeroText = React.memo(({ textTwo, textThree }: props) => {
   function textHoverLeave() {
     setCursorVariant("default");
   }
-  const controls = useAnimation();
+  const textControls = useAnimation();
 
   useEffect(() => {
-    controls.start("animate");
-  }, [controls]);
+    textControls.start("animate");
+  }, [textControls]);
 
   return (
     <div className="lg:-mx-10 mx-10  lg:w-fit w-72 lg:h-[35rem]  lg:mt-10   text-primary">
@@ -62,7 +62,7 @@ const HeroText = React.memo(({ textTwo, textThree }: props) => {
               },
             }}
             initial="hidden"
-            animate={controls}
+            animate={textControls}
             className="flex flex-col items-start lg:gap-8  relative z-10 mt-10  cursor-pointer"
           >
             <HeroAnimatedText charDelay={0.04} text={textTwo} />

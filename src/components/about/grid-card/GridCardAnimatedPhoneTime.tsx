@@ -34,12 +34,12 @@ const GridCardAnimatedPhoneTime = () => {
 
   const Time = () => {
     return (
-      <div className="w-full h-20   overflow-hidden  p-2 rounded-md flex flex-col justify-center items-center  text-gray-950">
+      <div className="w-full h-20 overflow-hidden p-2 rounded-md flex flex-col justify-center items-center text-gray-950">
         {previousTextIndex !== null && (
           <motion.div
-            key={texts[previousTextIndex]}
+            key={`time-prev-${texts[previousTextIndex]}`}
             initial={{ y: 0, opacity: 1 }}
-            animate={{ y: 50, opacity: 0 }}
+            animate={{ y: -100, opacity: 1 }}
             transition={transition}
             className="-mt-10"
           >
@@ -47,8 +47,8 @@ const GridCardAnimatedPhoneTime = () => {
           </motion.div>
         )}
         <motion.div
-          key={texts[currentTextIndex]}
-          initial={{ y: -50, opacity: 0 }}
+          key={`time-current-${texts[currentTextIndex]}`}
+          initial={{ y: 100, opacity: 1 }}
           animate={{ y: 0, opacity: 1 }}
           transition={transition}
         >
@@ -64,7 +64,7 @@ const GridCardAnimatedPhoneTime = () => {
         <motion.div
           initial={{ y: 0, opacity: 1 }}
           animate={{ y: 30, opacity: 0 }}
-          key={notification[previousTextIndex]}
+          key={`notification-prev-${notification[previousTextIndex]}`}
           transition={transition}
           className="absolute w-[90%] bottom-0 h-12 overflow-hidden flex justify-start gap-4 px-4 items-center bg-primary  rounded-md -mt-6 text-white"
         >
@@ -81,7 +81,7 @@ const GridCardAnimatedPhoneTime = () => {
         </motion.div>
         <AnimatePresence>
           <motion.div
-            key={notification[currentTextIndex]}
+            key={`notification-current-${notification[currentTextIndex]}`}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
             exit={{ y: 30, opacity: 0 }}

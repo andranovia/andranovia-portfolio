@@ -14,23 +14,23 @@ const GridCardServices = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const serviceRef = useRef(null);
   const isInView = useInView(serviceRef, { once: true });
-  const controls = useAnimation();
+  const hoverControls = useAnimation();
 
   const handleMouseEnterServices = () => {
-    controls.start("hover");
+    hoverControls.start("hover");
   };
 
   const handleMouseLeaveServices = () => {
-    controls.start("initial");
+    hoverControls.start("initial");
   };
 
   useEffect(() => {
     isMobile &&
       isInView &&
-      controls.start("hover", {
+      hoverControls.start("hover", {
         delay: isInView && 1.2,
       });
-  }, [controls, isMobile, isInView]);
+  }, [hoverControls, isMobile, isInView]);
 
   const { scrollYProgress } = useScroll({
     target: serviceRef,
@@ -44,7 +44,7 @@ const GridCardServices = () => {
   return (
     <motion.div
       ref={serviceRef}
-      animate={controls}
+      animate={hoverControls}
       initial="initial"
       onMouseEnter={() => handleMouseEnterServices()}
       onMouseLeave={() => handleMouseLeaveServices()}
@@ -98,7 +98,7 @@ const GridCardServices = () => {
         <div className=" flex flex-col lg:flex-row lg:justify-center w-full lg:items-center text-primary ">
           <div className="flex flex-col w-72 items-start justify-center ">
             <motion.h1
-              animate={controls}
+              animate={hoverControls}
               variants={{
                 hover: {
                   y: -80,
@@ -112,7 +112,7 @@ const GridCardServices = () => {
               What can I do for you ?
             </motion.h1>
             <motion.p
-              animate={controls}
+              animate={hoverControls}
               variants={{
                 hover: {
                   y: -60,

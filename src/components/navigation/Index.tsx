@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
-import NavbarLink from "./NavbarLink";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
+
+const NavbarLink = dynamic(() => import("./NavbarLink"), {
+  ssr: false,
+});
 
 const Navbar: React.FC = () => {
   const [show, setShow] = useState(true);
@@ -36,10 +39,11 @@ const Navbar: React.FC = () => {
             <button>
               <Image
                 src={"https://img.icons8.com/ios/50/mail-filter.png"}
-                alt=""
+                alt="Mail"
                 width={20}
                 height={20}
-                className="w-8"
+                priority
+                className="w-8 h-8"
               />
             </button>
           </div>

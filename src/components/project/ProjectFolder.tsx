@@ -9,14 +9,14 @@ interface ProjectFolderProps {
 }
 
 const ProjectFolder = ({ children, LinkRef }: ProjectFolderProps) => {
-  const controls = useAnimation();
+  const hoverControls = useAnimation();
 
   const handleHover = () => {
-    controls.start("animate");
+    hoverControls.start("animate");
   };
 
   const handleLeave = () => {
-    controls.start("initial");
+    hoverControls.start("initial");
   };
 
   return (
@@ -36,7 +36,7 @@ const ProjectFolder = ({ children, LinkRef }: ProjectFolderProps) => {
           />
           <motion.div
             initial={"initial"}
-            animate={controls}
+            animate={hoverControls}
             variants={{ initial: { y: 0 }, animate: { y: -60 } }}
             className="flex justify-center absolute items-center   bg-zinc-800 p-2 rounded-md gap-4"
           >
@@ -45,7 +45,7 @@ const ProjectFolder = ({ children, LinkRef }: ProjectFolderProps) => {
 
           <motion.div
             initial={"initial"}
-            animate={controls}
+            animate={hoverControls}
             variants={{ initial: { y: 0 }, animate: { y: 20 } }}
             className="w-28 z-40   h-20 -mt-20 rounded-md relative bg-yellow-400  text-gray-100 text-center"
           ></motion.div>

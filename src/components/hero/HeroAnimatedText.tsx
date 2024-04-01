@@ -12,7 +12,7 @@ const HeroAnimatedText = React.memo(({ charDelay, text }: props) => {
     <motion.div
       className="inline-block"
       variants={{
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 60 },
         animate: {
           opacity: 1,
           y: 0,
@@ -30,7 +30,7 @@ const HeroAnimatedText = React.memo(({ charDelay, text }: props) => {
         <motion.div
           key={wordIndex}
           variants={{
-            hidden: { opacity: 0, y: 20 },
+            hidden: { opacity: 0, y: 60 },
             animate: {
               opacity: 1,
               y: 0,

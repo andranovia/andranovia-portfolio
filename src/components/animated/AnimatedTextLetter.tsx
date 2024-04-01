@@ -8,12 +8,12 @@ interface props {
 }
 
 const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
-  const controls = useAnimation();
+  const textControls = useAnimation();
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
-    controls.start("animate");
-  }, [controls]);
+    textControls.start("animate");
+  }, [textControls]);
 
   return (
     <motion.div

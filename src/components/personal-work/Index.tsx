@@ -11,7 +11,7 @@ const PersonalWork = () => {
     offset: ["start end", "start start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
 
   return (
