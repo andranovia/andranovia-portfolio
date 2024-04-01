@@ -1,8 +1,8 @@
 import { cn } from "@/utils/cn";
+import useMobileDetect from "@/utils/useMobileDetect";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
-import { useMediaQuery } from "react-responsive";
 
 type ProjectCardProps = {
   CardData: {
@@ -18,7 +18,7 @@ type ProjectCardProps = {
 };
 
 const ProjectCard = ({ CardData }: ProjectCardProps) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMobileDetect();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,

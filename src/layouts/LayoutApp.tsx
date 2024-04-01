@@ -1,9 +1,5 @@
+import Footer from "@/components/footer/Index";
 import Navbar from "@/components/navigation/Index";
-import dynamic from "next/dynamic";
-
-const Footer = dynamic(() => import("@/components/footer/Index"), {
-  ssr: false,
-});
 
 function LayoutApp({ children }: any) {
   return (

@@ -8,10 +8,10 @@ import {
 } from "framer-motion";
 
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
+import useMobileDetect from "@/utils/useMobileDetect";
 
 const GridCardServices = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMobileDetect();
   const serviceRef = useRef(null);
   const isInView = useInView(serviceRef, { once: true });
   const hoverControls = useAnimation();

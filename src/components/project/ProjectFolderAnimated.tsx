@@ -1,8 +1,8 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectFolder from "./ProjectFolder";
-import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
+import useMobileDetect from "@/utils/useMobileDetect";
 
 type ProjectFolderAnimatedProps = {
   projectTwoRef: React.MutableRefObject<null>;
@@ -12,7 +12,7 @@ type ProjectFolderAnimatedProps = {
 const ProjectFolderAnimated: React.FC<ProjectFolderAnimatedProps> = ({
   projectTwoRef,
 }) => {
-  const isMobileDevice = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMobileDetect();
 
   const { scrollYProgress: folder2ScrollProgress } = useScroll({
     target: projectTwoRef,
@@ -30,22 +30,22 @@ const ProjectFolderAnimated: React.FC<ProjectFolderAnimatedProps> = ({
   const folder1And2EndPosition = useTransform(
     folder3ScrollProgress,
     [1, 0],
-    [0, isMobileDevice ? 0 : 200]
+    [0, isMobile ? 0 : 200]
   );
   const folder2XPosition = useTransform(
     folder2ScrollProgress,
     [0, 1],
-    [isMobileDevice ? 0 : -80, 200]
+    [isMobile ? 0 : -80, 200]
   );
   const folder2YPosition = useTransform(
     folder2ScrollProgress,
     [0, 1],
-    [0, isMobileDevice ? 400 : 700]
+    [0, isMobile ? 400 : 700]
   );
   const cursorFolder2YPosition = useTransform(
     folder2ScrollProgress,
     [0, 1],
-    [-80, isMobileDevice ? 500 : 0]
+    [-80, isMobile ? 500 : 0]
   );
   const cursorFolder2Opacity = useTransform(
     folder2ScrollProgress,
@@ -62,7 +62,7 @@ const ProjectFolderAnimated: React.FC<ProjectFolderAnimatedProps> = ({
   const folder3YPosition = useTransform(
     folder3ScrollProgress,
     [0, 1],
-    [isMobileDevice ? 0 : -150, isMobileDevice ? 400 : 700]
+    [isMobile ? 0 : -150, isMobile ? 400 : 700]
   );
   const cursorFolder3YPosition = useTransform(
     folder3ScrollProgress,

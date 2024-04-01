@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
+import useMobileDetect from "@/utils/useMobileDetect";
 
 interface props {
   text: string;
@@ -9,7 +9,7 @@ interface props {
 
 const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
   const textControls = useAnimation();
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMobileDetect();
 
   useEffect(() => {
     textControls.start("animate");

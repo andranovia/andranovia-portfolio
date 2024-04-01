@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 
 interface props {
   img: string;
@@ -9,7 +8,6 @@ interface props {
 }
 
 const SkillMarqueeItem = React.memo(({ img, text }: props) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <>
       <div
@@ -24,13 +22,9 @@ const SkillMarqueeItem = React.memo(({ img, text }: props) => {
           className="w-8 h-8 sm:w-11 "
         />
         <div className="flex flex-col items-center justify-center">
-          {isMobile ? (
-            ""
-          ) : (
-            <h3 className="text-sm font-bold text-center text-secondary">
-              {text}
-            </h3>
-          )}
+          <h3 className="hidden lg:block text-sm font-bold text-center text-secondary">
+            {text}
+          </h3>
         </div>
       </div>
     </>

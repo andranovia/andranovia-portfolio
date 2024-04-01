@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
+import useMobileDetect from "@/utils/useMobileDetect";
 
 interface props {
   imgLogo: string;
@@ -12,7 +12,7 @@ interface props {
 const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
   const [isHovered, setHovered] = useState(false);
 
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMobileDetect();
 
   return (
     <motion.li
@@ -52,7 +52,7 @@ const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           className={`p-1 rounded-md relative transition-all w-min-content
-                        before:w-0 before:h-1 before:absolute before:bottom-0 before:right-0 before:bg-secondary before:transition-all before:duration-500
+                        before:w-0 before:h-1 before:absolute before:bottom-0 before:right-0 before:bg-transparent before:transition-all before:duration-500
                         ${
                           isHovered
                             ? "hover:before:w-full hover:before:left-0 hover:before:bg-primary"

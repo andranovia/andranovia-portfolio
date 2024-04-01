@@ -1,10 +1,10 @@
 import React from "react";
 
 import HeroText from "./HeroText";
-import { useMediaQuery } from "react-responsive";
+import useMobileDetect from "@/utils/useMobileDetect";
 
 function Hero() {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMobileDetect();
 
   const animatedTextTwo = isMobile ? "We Should Know Each " : "We Should Know";
   const animatedTextThree = isMobile ? " arrow ther" : "Each arrow ther";
