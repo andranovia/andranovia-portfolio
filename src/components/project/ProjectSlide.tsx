@@ -2,7 +2,9 @@ import { cn } from "@/utils/cn";
 import useMobileDetect from "@/utils/useMobileDetect";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useRef } from "react";
+import ProjectLink from "./ProjectLink";
 
 type ProjectSlideProps = {
   SlideData: {
@@ -10,6 +12,7 @@ type ProjectSlideProps = {
     Title: string;
     Description: string;
     SlideStyle: string;
+    ProjectLink: string;
     Tech: {
       Name: string;
       TechStyle: string;
@@ -53,6 +56,9 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
             height={200}
             className="lg:-top-24 relative "
           />
+          <div className="absolute flex justify-center gap-2 lg:hidden bottom-4 ml-2 py-2 px-10 rounded-xl bg-primary">
+            <ProjectLink LinkRef={SlideData.ProjectLink} />
+          </div>
         </div>
         <div className="w-1/2 h-full  mt-4 lg:mt-2 flex flex-col items-center  lg:items-start  gap-4">
           <div className="flex items-center  gap-4">

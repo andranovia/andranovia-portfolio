@@ -11,6 +11,11 @@ export default function App({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Andra's simple introduction website, blend of creativity and technical skill in web development."
+        />
+        <title>Andranovia - Portfolio</title>
       </Head>
 
       <Component {...pageProps} />

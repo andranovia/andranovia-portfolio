@@ -13,6 +13,9 @@ const Project = () => {
         Title: "SMKNUSA",
         Description:
           "SMKN 1 Purwosari official website, build using modern stack",
+
+        ProjectLink: "https://github.com/andranovia/smknusa-frontend",
+
         SlideStyle: "-bottom-10 lg:right-[10%] top-[14%]",
         Tech: [
           {
@@ -35,6 +38,9 @@ const Project = () => {
         Img: "/img/projectImg/project-noirythm-four.jpeg",
         Title: "Noirythm",
         Description: "Noirythm ecommerce, first complex project.",
+
+        ProjectLink: "https://github.com/andranovia/Noirythm-Ecommerce",
+
         SlideStyle: "lg:left-[20%] bottom-[35%] lg:bottom-[40%]",
         Tech: [
           {
@@ -62,6 +68,9 @@ const Project = () => {
         Title: "Society",
         Description: "Society job apply platform app.",
         SlideStyle: "lg:right-[10%] bottom-[10%] ",
+
+        ProjectLink: "https://github.com/andranovia/society-job-platform",
+
         Tech: [
           {
             Name: "Next.Js",

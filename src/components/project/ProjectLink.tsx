@@ -15,7 +15,7 @@ const ProjectLink = ({ LinkRef }: ProjectLinkProps) => {
           alt="search"
           width={40}
           height={40}
-          className="w-4 h-4"
+          className="lg:w-4 lg:h-4 w-6 h-6"
         />
       </Link>
 
@@ -24,7 +24,7 @@ const ProjectLink = ({ LinkRef }: ProjectLinkProps) => {
         alt="search"
         width={40}
         height={40}
-        className="w-4 h-4 opacity-40"
+        className="lg:w-4 lg:h-4 w-6 h-6 opacity-40"
       />
     </>
   );
