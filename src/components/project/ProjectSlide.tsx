@@ -4,12 +4,12 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef } from "react";
 
-type ProjectCardProps = {
-  CardData: {
+type ProjectSlideProps = {
+  SlideData: {
     Img: string;
     Title: string;
     Description: string;
-    CardStyle: string;
+    SlideStyle: string;
     Tech: {
       Name: string;
       TechStyle: string;
@@ -17,7 +17,7 @@ type ProjectCardProps = {
   };
 };
 
-const ProjectCard = ({ CardData }: ProjectCardProps) => {
+const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
   const isMobile = useMobileDetect();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -34,7 +34,7 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
     <motion.div
       ref={ref}
       style={{ scale: scale, rotate }}
-      className={`w-4/5 lg:w-[30%] p-4 h-[20rem] absolute z-40 overflow-hidden flex justify-center lg:items-start items-center lg:justify-start gap-6 -bottom-10 rounded-3xl bg-zinc-800 bg-opacity-90 backdrop-blur-lg ${CardData.CardStyle}`}
+      className={`w-4/5 lg:w-[30%] p-4 h-[20rem] absolute z-40 overflow-hidden flex justify-center lg:items-start items-center lg:justify-start gap-6 -bottom-10 rounded-3xl bg-zinc-800 bg-opacity-90 backdrop-blur-lg ${SlideData.SlideStyle}`}
     >
       <motion.div
         style={{
@@ -47,7 +47,7 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
           className={`w-fit h-[20rem] lg:h-full overflow-hidden rounded-lg `}
         >
           <Image
-            src={CardData.Img}
+            src={SlideData.Img}
             alt="asd"
             width={200}
             height={200}
@@ -65,11 +65,11 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
               height={20}
               className="w-4 h-4"
             />
-            <h1 className="text-white font-semibold">{CardData.Title}</h1>
+            <h1 className="text-white font-semibold">{SlideData.Title}</h1>
           </div>
-          <p className="font-thin text-white">{CardData.Description}</p>
+          <p className="font-thin text-white">{SlideData.Description}</p>
           <div className="grid grid-cols-2 items-start gap-4 text-primary">
-            {CardData.Tech.map((data, index) => (
+            {SlideData.Tech.map((data, index) => (
               <div
                 className={cn(
                   "rounded-xl  flex justify-center gap-2  bg-white  p-2 text-[0.7rem] lg:text-base",
@@ -87,4 +87,4 @@ const ProjectCard = ({ CardData }: ProjectCardProps) => {
   );
 };
 
-export default ProjectCard;
+export default ProjectSlide;

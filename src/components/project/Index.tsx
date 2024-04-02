@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import ProjectSidebar from "./ProjectSidebar";
-import ProjectCard from "./ProjectCard";
+import ProjectSlide from "./ProjectSlide";
 import ProjectFolderAnimated from "./ProjectFolderAnimated";
 
 const Project = () => {
@@ -8,12 +8,12 @@ const Project = () => {
 
   const popupData = [
     {
-      Card: {
+      Slide: {
         Img: "/img/projectImg/smknusa.png",
         Title: "SMKNUSA",
         Description:
           "SMKN 1 Purwosari official website, build using modern stack",
-        CardStyle: "-bottom-10 lg:right-[10%] top-[14%]",
+        SlideStyle: "-bottom-10 lg:right-[10%] top-[14%]",
         Tech: [
           {
             Name: "Next.Js",
@@ -31,11 +31,11 @@ const Project = () => {
       },
     },
     {
-      Card: {
+      Slide: {
         Img: "/img/projectImg/project-noirythm-four.jpeg",
         Title: "Noirythm",
         Description: "Noirythm ecommerce, first complex project.",
-        CardStyle: "lg:left-[20%] bottom-[35%] lg:bottom-[40%]",
+        SlideStyle: "lg:left-[20%] bottom-[35%] lg:bottom-[40%]",
         Tech: [
           {
             Name: "Next.Js",
@@ -57,11 +57,11 @@ const Project = () => {
       },
     },
     {
-      Card: {
+      Slide: {
         Img: "/img/projectImg/project-society-twos.jpeg",
         Title: "Society",
         Description: "Society job apply platform app.",
-        CardStyle: "lg:right-[10%] bottom-[10%] ",
+        SlideStyle: "lg:right-[10%] bottom-[10%] ",
         Tech: [
           {
             Name: "Next.Js",
@@ -104,7 +104,7 @@ const Project = () => {
           <div className="flex justify-center ">
             {popupData.map((data, index) => (
               <React.Fragment key={index}>
-                <ProjectCard CardData={data.Card} />
+                <ProjectSlide SlideData={data.Slide} />
               </React.Fragment>
             ))}
           </div>
