@@ -11,20 +11,24 @@ const NavbarLink = () => {
               "https://img.icons8.com/sf-regular-filled/48/home-page.png"
             }
             text={"Home"}
+            linkTo="Hero"
           />
           <NavbarLinkAnimated
             imgLogo={"https://img.icons8.com/material/24/person-male.png"}
             text={"About"}
+            linkTo="About"
           />
           <NavbarLinkAnimated
             imgLogo={
               "https://img.icons8.com/sf-regular-filled/48/home-page.png"
             }
-            text={"Experience"}
+            text={"Project"}
+            linkTo="Project"
           />
           <NavbarLinkAnimated
             imgLogo={"https://img.icons8.com/material/24/experience-skill.png"}
-            text={"Project"}
+            text={"FAQ"}
+            linkTo="FAQ"
           />
         </ul>
       </div>

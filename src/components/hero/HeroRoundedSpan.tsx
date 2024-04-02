@@ -37,7 +37,9 @@ function HeroRoundedSpan() {
             }
             key={index}
           >
-            <p className="text-start text-sm sm:text-base font-semibold">{data.text}</p>
+            <p className="text-start text-sm sm:text-base font-semibold">
+              {data.text}
+            </p>
             <Image
               src={data.image}
               alt=""

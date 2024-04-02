@@ -7,7 +7,7 @@ interface props {
   delay: number;
 }
 
-const SkillMarqueeItem = React.memo(({ img, text }: props) => {
+const SkillMarqueeItem = ({ img, text }: props) => {
   return (
     <>
       <div
@@ -29,7 +29,7 @@ const SkillMarqueeItem = React.memo(({ img, text }: props) => {
       </div>
     </>
   );
-});
+};
 
 export default SkillMarqueeItem;
 SkillMarqueeItem.displayName = "SkillMarqueeItem";

@@ -24,17 +24,22 @@ export default function Home() {
     <>
       <LayoutApp>
         <div className="relative bg-white pb-20">
-          <div className="">
+          <div id="Hero">
             <Hero />
           </div>
           <div className="relative bottom-0 overflow-hidden ">
-            <About />
+            <div id="About">
+              <About />
+            </div>
             <PersonalWork />
             <SkillMarquee />
           </div>
-
-          <Project />
-          <Faq />
+          <div id="Project">
+            <Project />
+          </div>
+          <div id="FAQ">
+            <Faq />
+          </div>
         </div>
       </LayoutApp>
     </>

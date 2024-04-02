@@ -1,13 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import HeroAnimatedRoundText from "./HeroAnimatedRoundText";
 
 interface props {
   charDelay: number;
   text: string;
 }
 
-const HeroAnimatedText = React.memo(({ charDelay, text }: props) => {
+const HeroAnimatedText = ({ charDelay, text }: props) => {
   return (
     <motion.div
       className="inline-block"
@@ -41,21 +40,16 @@ const HeroAnimatedText = React.memo(({ charDelay, text }: props) => {
               },
             },
           }}
-          className="inline-flex text-5xl  lg:text-[8rem] 2xl:text-[7rem] "
+          className="inline-flex text-6xl  lg:text-[10rem] 2xl:text-[7rem] "
         >
-          {word !== "arrow" && word}
-          {word === "arrow" && (
-            <div className="lg:relative  right-4 lg:-right-2  lg:flex-col lg:gap-10">
-              <HeroAnimatedRoundText />
-            </div>
-          )}
+          {word}
 
           {wordIndex < text.split(" ").length - 1 && <>&nbsp;</>}
         </motion.div>
       ))}
     </motion.div>
   );
-});
+};
 
 export default HeroAnimatedText;
 HeroAnimatedText.displayName = "HeroAnimatedText";

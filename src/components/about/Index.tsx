@@ -18,7 +18,7 @@ const About = () => {
   return (
     <div className="relative flex justify-start sm:justify-center items-center   lg:w-screen ">
       <div className="lg:w-[80%] flex flex-col  sm:items-center p-8 sm:justify-start lg:mt-20 ">
-        <div className="w-full flex flex-col-reverse  justify-start lg:flex-row my-20 lg:my-0  sm:mx-0 items-center">
+        <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
             <div className="flex justify-center flex-col gap-10 lg:flex-row items-center lg:gap-4 mt-20 lg:mt-0 text-lg h-full w-fit">
               <div className="bg-gradient-to-r from-white to-black rotate-90 lg:rotate-0 w-[4rem] lg:w-[10rem] rounded-md h-1"></div>

@@ -7,7 +7,7 @@ interface props {
   charDelay: number;
 }
 
-const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
+const AnimatedTextLetter = ({ text, charDelay }: props) => {
   const textControls = useAnimation();
   const isMobile = useMobileDetect();
 
@@ -47,7 +47,7 @@ const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
               },
             },
           }}
-          className="inline-block   lg:w-[2ch]  font-thin"
+          className="inline-block   lg:w-[1.8ch]  font-thin"
         >
           {char}
           <span className="lg:hidden">&nbsp;</span>
@@ -55,7 +55,7 @@ const AnimatedTextLetter = React.memo(({ text, charDelay }: props) => {
       ))}
     </motion.div>
   );
-});
+};
 
 export default AnimatedTextLetter;
 AnimatedTextLetter.displayName = "AnimatedTextLetter";

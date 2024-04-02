@@ -7,9 +7,10 @@ import useMobileDetect from "@/utils/useMobileDetect";
 interface props {
   imgLogo: string;
   text: string;
+  linkTo: string;
 }
 
-const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
+const NavbarLinkAnimated = ({ imgLogo, text, linkTo }: props) => {
   const [isHovered, setHovered] = useState(false);
 
   const isMobile = useMobileDetect();
@@ -46,7 +47,7 @@ const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
         </div>
         <Link
           activeClass="active"
-          to="Navbar"
+          to={linkTo}
           spy={true}
           smooth={true}
           onMouseEnter={() => setHovered(true)}
@@ -72,7 +73,7 @@ const NavbarLinkAnimated = React.memo(({ imgLogo, text }: props) => {
       />
     </motion.li>
   );
-});
+};
 
 export default NavbarLinkAnimated;
 NavbarLinkAnimated.displayName = "NavbarLinkAnimated";

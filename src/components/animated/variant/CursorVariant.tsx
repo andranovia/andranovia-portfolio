@@ -17,6 +17,20 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
   }
 
   return {
+    initial: {
+      opacity: 0,
+      height: 40,
+
+      width: 620,
+      fontSize: "20px",
+      padding: "4px",
+      borderRadius: " 0.4rem",
+
+      transition: {
+        type: "spring",
+        mass: 0.6,
+      },
+    },
     default: {
       opacity: 0.8,
       height: 40,
@@ -39,7 +53,7 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
       height: 180,
       width: 180,
       fontSize: "25px",
-      x: mouseXPosition - 300,
+      x: mouseXPosition - 380,
       y: mouseYPosition - 200,
     },
   };

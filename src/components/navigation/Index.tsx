@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const controlNavbar = debounce(() => {
+    const controlNavbar = () => {
       if (window.scrollY > lastScrollY) {
         setShow(false);
       } else {
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
       }
 
       setLastScrollY(window.scrollY);
-    }, [100]);
+    };
 
     window.addEventListener("scroll", controlNavbar);
 

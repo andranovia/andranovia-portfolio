@@ -1,21 +1,23 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import HeroRoundedSpan from "./HeroRoundedSpan";
 import { spring, useVariants } from "../animated/variant/CursorVariant";
 import HeroAnimatedText from "./HeroAnimatedText";
+import useMobileDetect from "@/utils/useMobileDetect";
 
 interface props {
+  textOne: string;
   textTwo: string;
   textThree: string;
 }
 
-const HeroText = React.memo(({ textTwo, textThree }: props) => {
+const HeroText = ({ textOne, textTwo, textThree }: props) => {
+  const isMobile = useMobileDetect();
   const [cursorVariant, setCursorVariant] = useState("default");
   const ref = useRef(null);
   const variants = useVariants(ref);
 
   function textHover() {
-    setCursorVariant("hover");
+    !isMobile ? setCursorVariant("hover") : null;
   }
 
   function textHoverLeave() {
@@ -28,13 +30,13 @@ const HeroText = React.memo(({ textTwo, textThree }: props) => {
   }, [textControls]);
 
   return (
-    <div className="lg:-mx-10 mx-10  lg:w-fit w-72 lg:h-[35rem]  lg:mt-10   text-primary">
+    <div className="lg:-mx-10 mx-10  lg:w-fit w-72 h-full lg:h-[35rem]  lg:mt-10   text-primary">
       <motion.div
         variants={variants}
-        className="hidden lg:block h-full bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"
+        className="h-full bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"
         animate={cursorVariant}
         transition={spring}
-        initial={"default"}
+        initial={["default", "initial"]}
       >
         <motion.div
           animate={{
@@ -50,6 +52,7 @@ const HeroText = React.memo(({ textTwo, textThree }: props) => {
         ref={ref}
         onMouseEnter={() => textHover()}
         onMouseLeave={() => textHoverLeave()}
+        className="mt-6 h-full"
       >
         <div className="flex flex-col gap-10">
           <motion.div
@@ -63,20 +66,17 @@ const HeroText = React.memo(({ textTwo, textThree }: props) => {
             }}
             initial="hidden"
             animate={textControls}
-            className="flex flex-col items-start lg:gap-8  relative z-10 mt-10  cursor-pointer"
+            className="flex flex-col lg:items-center lg:gap-8  relative z-10 mt-10  cursor-pointer"
           >
+            <HeroAnimatedText charDelay={0.04} text={textOne} />
             <HeroAnimatedText charDelay={0.04} text={textTwo} />
             <HeroAnimatedText charDelay={0.04} text={textThree} />
           </motion.div>
-
-          <div className="flex justify-start sm:justify-start relative ">
-            <HeroRoundedSpan />
-          </div>
         </div>
       </div>
     </div>
   );
-});
+};
 
 HeroText.displayName = "HeroText";
 
