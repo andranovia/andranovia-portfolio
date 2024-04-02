@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <LayoutApp>
-        <div className="relative bg-white pb-20">
+        <div className="relative bg-white pb-20 rounded-lg">
           <div id="Hero">
             <Hero />
           </div>

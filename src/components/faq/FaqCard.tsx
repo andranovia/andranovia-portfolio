@@ -56,8 +56,14 @@ const FaqCard = ({ data }: FaqCardProps) => {
         }}
         className=" w-full px-10 flex lg:flex-row flex-col justify-between   lg:items-center relative z-40"
       >
-        <h1 className="lg:text-2xl font-thin text-lg ">{data.textHead}</h1>
-        <div className="flex lg:justify-center items-center gap-4">
+        <h1
+          className={`lg:text-2xl font-thin text-lg ${
+            isHovered ? "text-transparent" : "text-black"
+          } `}
+        >
+          {data.textHead}
+        </h1>
+        <div className="flex justify-between lg:justify-center items-center gap-4">
           <motion.p
             animate={hoverControls}
             initial={"initial"}
@@ -66,7 +72,7 @@ const FaqCard = ({ data }: FaqCardProps) => {
                 y: 0,
               },
               animate: {
-                y: -100,
+                y: -120,
               },
             }}
             className=" font-semibold lg:text-3xl"
@@ -95,7 +101,7 @@ const FaqCard = ({ data }: FaqCardProps) => {
               alt=""
               width={20}
               height={20}
-              className="w-6 h-6  -rotate-45"
+              className="w-4 h-4 lg:w-6 lg:h-6  -rotate-45"
             />
           </motion.div>
         </div>
@@ -115,10 +121,10 @@ const FaqCard = ({ data }: FaqCardProps) => {
           },
         }}
         transition={transition}
-        className="w-full h-32 absolute flex justify-end  pr-20 items-center text-white bg-primary"
+        className="w-full h-32 absolute flex justify-end px-10 lg:pr-20 items-center text-white bg-primary"
       >
         {" "}
-        <p className="w-1/2"> {data.textDesc}</p>
+        <p className="lg:w-1/2"> {data.textDesc}</p>
       </motion.div>
     </div>
   );

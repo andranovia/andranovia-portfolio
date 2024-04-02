@@ -17,7 +17,7 @@ const Faq = () => {
   const faqData = [
     {
       textHead: "How can we communicate?",
-      textMsg: "Communicate is a way to understand each others",
+      textMsg: "Way to understand indeed.",
       textDesc:
         "You can always contact me at yeromrenandra07@gmail.com, unless when im sleep ofc!",
     },
@@ -31,7 +31,7 @@ const Faq = () => {
       textHead: "What type of projects did you do?",
       textMsg: "Anything I could.",
       textDesc:
-        "From dynamic e-commerce platforms to interactive web applications, my portfolio showcases a diverse range of projects.",
+        "From dynamic e-commerce platforms to interactive web applications, encompassing a diverse range of projects.",
     },
   ];
 
