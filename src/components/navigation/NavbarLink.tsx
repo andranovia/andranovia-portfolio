@@ -15,13 +15,13 @@ const NavbarLink = ({ linkData }: NavbarLinkProps) => {
       <div className="relative flex justify-center w-full h-full bg-white backdrop-filter backdrop-blur-sm  bg-opacity-25 rounded-full ">
         <ul className="px-4 list-none flex gap-8 items-center text-lg relative bottom-4 text-primary ">
           {linkData.map((link, index) => (
-            <>
+            <React.Fragment key={index}>
               <NavbarLinkAnimated
                 imgLogo={link.linkLogo}
                 text={link.linkName}
                 linkTo={link.linkRef}
               />
-            </>
+            </React.Fragment>
           ))}
         </ul>
       </div>

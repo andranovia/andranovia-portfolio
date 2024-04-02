@@ -5,7 +5,7 @@ function LayoutApp({ children }: any) {
   return (
     <div className="bg-base">
       <Navbar />
-      <main className="bg-primary">
+      <main className="bg-primary ">
         <Footer>{children}</Footer>
       </main>
     </div>

@@ -83,7 +83,7 @@ const Project = () => {
 
   return (
     <>
-      <div className="relative" ref={projectTwoRef}>
+      <div className="relative z-40" ref={projectTwoRef}>
         <div className=" lg:w-full lg:h-full   bg-white  bg-dot-black/[0.4] relative rounded-xl mt-10 lg:mt-0 ">
           <div className="hidden absolute pointer-events-none inset-0 z-10 lg:flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_70%,black)]"></div>
           <div className="sticky top-0  h-screen flex justify-center items-center overflow-hidden ">

@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="w-full h-12 lg:fixed sm:right-0 sm:left-0 pt-10 top-10  flex justify-center text-black z-50  ">
+    <div className="w-full lg:h-12 lg:fixed sm:right-0 sm:left-0 pt-10 top-10  flex justify-center text-black z-50  ">
       <div className="w-full flex justify-center  items-center font-semibold ">
         <div className="w-full relative flex justify-center left-12 z-50">
           <div className="fixed lg:hidden   bottom-0 mb-6 left-16 overflow-hidden pt-52 rounded-lg">

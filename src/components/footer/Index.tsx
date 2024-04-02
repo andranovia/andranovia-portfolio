@@ -30,7 +30,9 @@ const Footer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <>
-      <motion.div style={{ scale }}>{children}</motion.div>
+      <motion.div style={{ scale, borderRadius: "10px" }}>
+        {children}
+      </motion.div>
       <motion.div
         style={{ y }}
         className="bg-primary overflow-hidden flex flex-col items-center"
