@@ -57,8 +57,8 @@ const FaqCard = ({ data }: FaqCardProps) => {
         className=" w-full px-10 flex lg:flex-row flex-col justify-between   lg:items-center relative z-40"
       >
         <h1
-          className={`lg:text-2xl font-thin text-lg ${
-            isHovered ? "text-transparent" : "text-black"
+          className={`lg:text-2xl text-black font-thin text-lg ${
+            isHovered ? "text-transparent lg:text-white" : "text-black "
           } `}
         >
           {data.textHead}

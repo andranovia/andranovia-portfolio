@@ -16,8 +16,8 @@ const About = () => {
   }, [isInView, TextControls]);
 
   return (
-    <div className="relative flex justify-center items-center w-screen p-8">
-      <div className="lg:w-[80%] flex flex-col  items-center  sm:justify-start lg:mt-20 ">
+    <div className="relative flex justify-center items-center lg:w-screen p-8">
+      <div className="lg:w-[80%] w-full flex flex-col  items-center  sm:justify-start lg:mt-20 ">
         <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
             <div className="flex justify-center flex-col gap-10 lg:flex-row items-center lg:gap-4 mt-20 lg:mt-0 text-lg h-full w-fit">
@@ -84,7 +84,7 @@ const About = () => {
             </div>
             <GridCardServices />
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2">
             <GridCardAnimatedPhone />
           </div>
         </div>

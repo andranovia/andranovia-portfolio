@@ -17,7 +17,7 @@ const TiltCard = () => {
 
   return (
     <div>
-      <div className=" w-80 lg:w-full h-96  dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative rounded-xl mt-10 lg:mt-0 ">
+      <div className="w-fit lg:w-full h-96  dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative rounded-xl mt-10 lg:mt-0 ">
         <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center rounded-xl dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
         <motion.div className="relative h-full w-full flex flex-col">
           <motion.div

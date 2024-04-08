@@ -6,22 +6,22 @@ import Image from "next/image";
 const SkillMarquee = () => {
   const skillDataRowOne = [
     {
-      img: "/img/techLogo/framer-motion-Icon.svg",
+      img: "/img/techLogo/framer-motion.svg",
       text: "Framer-motion",
       delay: 0.2,
     },
     {
-      img: "/img/techLogo/Laravel-Icon.svg",
+      img: "/img/techLogo/laravel.svg",
       text: "Laravel",
       delay: 0.3,
     },
     {
-      img: "/img/techLogo/mysql-Icon.svg",
+      img: "/img/techLogo/mysql.svg",
       text: "MySQL",
       delay: 0.4,
     },
     {
-      img: "/img/techLogo/PHP-logo.svg",
+      img: "/img/techLogo/php.svg",
       text: "PHP",
       delay: 0.5,
     },
@@ -29,22 +29,22 @@ const SkillMarquee = () => {
 
   const skillDataRowTwo = [
     {
-      img: "/img/techLogo/React-icon.svg",
+      img: "/img/techLogo/react.svg",
       text: "ReactJs",
       delay: 0.5,
     },
     {
-      img: "/img/techLogo/tailwindcss-Icon.svg",
+      img: "/img/techLogo/tailwindcss.svg",
       text: "Tailwind",
       delay: 0.4,
     },
     {
-      img: "/img/techLogo/Typescript_Icon.svg",
+      img: "/img/techLogo/typescript.svg",
       text: "Typescript",
       delay: 0.3,
     },
     {
-      img: "/img/techLogo/nextjs-icon.png",
+      img: "/img/techLogo/nextjs.png",
       text: "NextJs",
       delay: 0.2,
     },

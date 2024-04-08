@@ -78,7 +78,9 @@ const Footer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex flex-col items-start gap-4 text-2xl lg:text-3xl font-thin text-gray-300 pb-4 mt-4 lg:mt-0">
             <h1 className="font-semibold">Say Some</h1>
             <Link href={"mailto:info@yeromrenandra07@gmail.com"}></Link>
-            <h1 className="cursor-pointer">yeromrenandra07@gmail.com</h1>
+            <h1 className="cursor-pointer text-lg lg:text-3xl">
+              yeromrenandra07@gmail.com
+            </h1>
           </div>
           <div className="flex flex-col items-start gap-4 text-2xl lg:text-3xl font-thin text-gray-300 pb-4 mt-4 lg:mt-0">
             <h1 className="font-semibold">Say More</h1>
@@ -87,7 +89,9 @@ const Footer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 "https://wa.me/+6282330390858?text=Im%20intrested%20discussing%20incase%20of%20our%20deal"
               }
             >
-              <h1 className="cursor-pointer">+62 823 3039 0858</h1>
+              <h1 className="cursor-pointer text-lg lg:text-3xl">
+                +62 823 3039 0858
+              </h1>
             </Link>
           </div>
         </div>

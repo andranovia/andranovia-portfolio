@@ -21,17 +21,17 @@ const Project = () => {
           {
             Name: "Next.Js",
             TechStyle: "bg-white",
-            TechIcons: "/img/techLogo/nextjs-icon.png",
+            TechIcons: "/img/techLogo/nextjs.png",
           },
           {
             Name: "Tailwind",
             TechStyle: "bg-sky-200",
-            TechIcons: "/img/techLogo/tailwindcss-icon.svg",
+            TechIcons: "/img/techLogo/tailwindcss.svg",
           },
           {
             Name: "Framer-motion",
             TechStyle: "bg-violet-200 col-span-2",
-            TechIcons: "/img/techLogo/framer-motion-icon.svg",
+            TechIcons: "/img/techLogo/framer-motion.svg",
           },
         ],
       },
@@ -49,22 +49,22 @@ const Project = () => {
           {
             Name: "Next.Js",
             TechStyle: "bg-white",
-            TechIcons: "/img/techLogo/nextjs-icon.png",
+            TechIcons: "/img/techLogo/nextjs.png",
           },
           {
             Name: "Tailwind",
             TechStyle: "bg-sky-200",
-            TechIcons: "/img/techLogo/tailwindcss-icon.svg",
+            TechIcons: "/img/techLogo/tailwindcss.svg",
           },
           {
             Name: "Laravel",
             TechStyle: "bg-red-200 col-span-2",
-            TechIcons: "/img/techLogo/Laravel-icon.svg",
+            TechIcons: "/img/techLogo/laravel.svg",
           },
           {
             Name: "React-Query",
             TechStyle: "bg-orange-200 col-span-2",
-            TechIcons: "/img/techLogo/react-query-icon.svg",
+            TechIcons: "/img/techLogo/react-query.svg",
           },
         ],
       },
@@ -82,18 +82,18 @@ const Project = () => {
           {
             Name: "Next.Js",
             TechStyle: "bg-white",
-            TechIcons: "/img/techLogo/nextjs-icon.png",
+            TechIcons: "/img/techLogo/nextjs.png",
           },
           {
             Name: "Tailwind",
             TechStyle: "bg-sky-200",
-            TechIcons: "/img/techLogo/tailwindcss-icon.svg",
+            TechIcons: "/img/techLogo/tailwindcss.svg",
           },
 
           {
             Name: "Laravel",
             TechStyle: "bg-red-200 col-span-2",
-            TechIcons: "/img/techLogo/Laravel-icon.svg",
+            TechIcons: "/img/techLogo/laravel.svg",
           },
         ],
       },

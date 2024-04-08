@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PersonalWorkAnimatedImage from "./PersonalWorkAnimatedImage";
+import Link from "next/link";
 
 const PersonalWork = () => {
   const work = useRef(null);
@@ -44,15 +45,17 @@ const PersonalWork = () => {
 
             <h1 className="text-2xl lg:text-6xl font-thin">MY PERSONAL</h1>
             <h1 className="text-2xl lg:text-6xl font-thin">WORK</h1>
-            <button className="bg-white px-2 py-1 mt-4 lg:mt-10 rounded-md font-normal text-black flex justify-center items-center gap-2">
-              <Image
-                width="25"
-                height="25"
-                src="https://img.icons8.com/windows/32/circled-right.png"
-                alt="circled-right"
-              />
-              <p>See More</p>
-            </button>
+            <Link href={"https://github.com/andranovia?tab=repositories"}>
+              <button className="bg-white px-2 py-1 mt-4 lg:mt-10 rounded-md font-normal text-black flex justify-center items-center gap-2">
+                <Image
+                  width="25"
+                  height="25"
+                  src="https://img.icons8.com/windows/32/circled-right.png"
+                  alt="circled-right"
+                />
+                <p>See More</p>
+              </button>
+            </Link>
           </div>
         </div>
       </motion.div>

@@ -60,8 +60,8 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
             <ProjectLink LinkRef={SlideData.ProjectLink} />
           </div>
         </div>
-        <div className="w-1/2 h-full  mt-4 lg:mt-2 flex flex-col items-center  lg:items-start  gap-4">
-          <div className="flex items-center  gap-4">
+        <div className="w-1/2 h-full  mt-4 lg:mt-2 flex flex-col items-start  gap-4">
+          <div className="flex items-center gap-2  lg:gap-4 ">
             <Image
               src={
                 "https://img.icons8.com/material-outlined/24/FFFFFF/folder-invoices--v1.png"
@@ -71,7 +71,9 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
               height={20}
               className="w-4 h-4"
             />
-            <h1 className="text-white font-semibold">{SlideData.Title}</h1>
+            <h1 className="text-white font-semibold text-xs lg:text-base">
+              {SlideData.Title}
+            </h1>
           </div>
           <p className="font-thin text-white">{SlideData.Description}</p>
           <div className="grid grid-cols-2 items-start gap-4 text-primary">
