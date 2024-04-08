@@ -18,8 +18,7 @@ const Faq = () => {
     {
       textHead: "How can we communicate?",
       textMsg: "Way to understand indeed.",
-      textDesc:
-        "You can always contact me at yeromrenandra07@gmail.com, unless when im sleep ofc!",
+      textDesc: "You can always contact me at yeromrenandra07@gmail.com!",
     },
     {
       textHead: "Where am i currently work?",
@@ -31,13 +30,13 @@ const Faq = () => {
       textHead: "What type of projects did you do?",
       textMsg: "Anything I could.",
       textDesc:
-        "From dynamic e-commerce platforms to interactive web applications, encompassing a diverse range of projects.",
+        "From dynamic e-commerce platforms to interactive web applications.",
     },
   ];
 
   return (
     <>
-      <div className="w-full px-[10%] flex flex-col items-center  mt-[10%] ">
+      <div className="w-full px-[10%] flex flex-col items-center  mt-[20%] ">
         <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
             <div className="flex justify-center flex-col gap-10 lg:flex-row items-center lg:gap-4 mt-20 lg:mt-0 text-lg h-full w-fit">

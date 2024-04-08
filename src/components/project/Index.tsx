@@ -21,14 +21,17 @@ const Project = () => {
           {
             Name: "Next.Js",
             TechStyle: "bg-white",
+            TechIcons: "/img/techLogo/nextjs-icon.png",
           },
           {
             Name: "Tailwind",
             TechStyle: "bg-sky-200",
+            TechIcons: "/img/techLogo/tailwindcss-icon.svg",
           },
           {
             Name: "Framer-motion",
             TechStyle: "bg-violet-200 col-span-2",
+            TechIcons: "/img/techLogo/framer-motion-icon.svg",
           },
         ],
       },
@@ -46,18 +49,22 @@ const Project = () => {
           {
             Name: "Next.Js",
             TechStyle: "bg-white",
+            TechIcons: "/img/techLogo/nextjs-icon.png",
           },
           {
             Name: "Tailwind",
             TechStyle: "bg-sky-200",
+            TechIcons: "/img/techLogo/tailwindcss-icon.svg",
           },
           {
             Name: "Laravel",
             TechStyle: "bg-red-200 col-span-2",
+            TechIcons: "/img/techLogo/Laravel-icon.svg",
           },
           {
             Name: "React-Query",
             TechStyle: "bg-orange-200 col-span-2",
+            TechIcons: "/img/techLogo/react-query-icon.svg",
           },
         ],
       },
@@ -75,15 +82,18 @@ const Project = () => {
           {
             Name: "Next.Js",
             TechStyle: "bg-white",
+            TechIcons: "/img/techLogo/nextjs-icon.png",
           },
           {
             Name: "Tailwind",
             TechStyle: "bg-sky-200",
+            TechIcons: "/img/techLogo/tailwindcss-icon.svg",
           },
 
           {
             Name: "Laravel",
             TechStyle: "bg-red-200 col-span-2",
+            TechIcons: "/img/techLogo/Laravel-icon.svg",
           },
         ],
       },
@@ -92,10 +102,10 @@ const Project = () => {
 
   return (
     <>
-      <div className="relative z-40" ref={projectTwoRef}>
-        <div className=" lg:w-full lg:h-full   bg-white  bg-dot-black/[0.4] relative rounded-xl mt-10 lg:mt-0 ">
+      <div className="relative w-full h-full " ref={projectTwoRef}>
+        <div className=" w-full h-full   bg-white  bg-dot-black/[0.4] relative rounded-xl mt-10 lg:mt-0 ">
           <div className="hidden absolute pointer-events-none inset-0 z-10 lg:flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_70%,black)]"></div>
-          <div className="sticky top-0  h-screen flex justify-center items-center overflow-hidden ">
+          <div className="sticky top-0  h-full lg:h-screen flex justify-center items-center overflow-hidden ">
             <div className="relative w-screen">
               <div className="flex flex-col w-full px-2 lg:flex-row justify-center items-center gap-2">
                 <ProjectSidebar />

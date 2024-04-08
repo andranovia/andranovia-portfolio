@@ -64,76 +64,75 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="w-full lg:h-12 lg:fixed sm:right-0 sm:left-0 pt-10 top-10  flex justify-center text-black z-50  ">
+      <div className="fixed w-[18rem] bottom-4 lg:hidden overflow-hidden pt-52 z-50 rounded-lg">
+        <div className="relative z-40 shadow-2xl overflow-y-hidden  bg-white rounded-full flex justify-between items-center gap-20 p-2">
+          <h1 className="text-center mr-20 pl-4">MENU</h1>
+          <button onClick={() => handleOpenDropdown()}>
+            <Image
+              src={"https://img.icons8.com/ios/50/mail-filter.png"}
+              alt="Mail"
+              width={20}
+              height={20}
+              priority
+              className="w-8 h-8"
+            />
+          </button>
+        </div>
+        <AnimatePresence>
+          {showDropdown && (
+            <div className="absolute left-5 shadow-xl ">
+              <motion.div
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={{
+                  initial: { opacity: 0, scale: 0.85, y: -200 },
+                  animate: { opacity: 1, scale: 1, y: -310 },
+                  exit: { opacity: 1, y: -100 },
+                }}
+                transition={{
+                  type: "spring",
+                  mass: 0.5,
+                  damping: 11.5,
+                  stiffness: 100,
+                  restDelta: 0.001,
+                  restSpeed: 0.001,
+                }}
+                className="w-[14rem] flex justify-center items-center mt-14 z-20 rounded-b-[10px] rounded-r-[10px] bg-white py-4  overflow-hidden"
+              >
+                <div className="flex justify-start px-4 items-center gap-4  w-full  py-2">
+                  <div className="flex flex-col gap-4 items-start justify-center w-full">
+                    {linkData.map((link, index) => (
+                      <React.Fragment key={index}>
+                        <Link
+                          activeClass="active"
+                          to={link.linkRef}
+                          spy={true}
+                          smooth={true}
+                          className="flex justify-between items-center w-full"
+                        >
+                          <h2 className=" font-[600] text-[16px] ">
+                            {link.linkName}
+                          </h2>
+                          <Image
+                            src={link.linkLogo}
+                            alt={link.linkLogo}
+                            width={20}
+                            height={40}
+                            className="w-4 h-4 "
+                          />
+                        </Link>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+      </div>
       <div className="w-full flex justify-center  items-center font-semibold ">
         <div className="w-full relative flex justify-center left-12 z-50">
-          <div className="fixed lg:hidden   bottom-0 mb-6 left-16 overflow-hidden pt-52 rounded-lg">
-            <div className="relative z-40 shadow-2xl overflow-y-hidden  bg-white rounded-full flex justify-between items-center gap-20 p-2">
-              <h1 className="text-center mr-20 pl-4">MENU</h1>
-              <button onClick={() => handleOpenDropdown()}>
-                <Image
-                  src={"https://img.icons8.com/ios/50/mail-filter.png"}
-                  alt="Mail"
-                  width={20}
-                  height={20}
-                  priority
-                  className="w-8 h-8"
-                />
-              </button>
-            </div>
-            <AnimatePresence>
-              {showDropdown && (
-                <div className="absolute left-5 shadow-xl ">
-                  <motion.div
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={{
-                      initial: { opacity: 0, scale: 0.85, y: -200 },
-                      animate: { opacity: 1, scale: 1, y: -310 },
-                      exit: { opacity: 1, y: -100 },
-                    }}
-                    transition={{
-                      type: "spring",
-                      mass: 0.5,
-                      damping: 11.5,
-                      stiffness: 100,
-                      restDelta: 0.001,
-                      restSpeed: 0.001,
-                    }}
-                    className="w-[14rem] flex justify-center items-center mt-14 z-20 rounded-b-[10px] rounded-r-[10px] bg-white py-4  overflow-hidden"
-                  >
-                    <div className="flex justify-start px-4 items-center gap-4  w-full  py-2">
-                      <div className="flex flex-col gap-4 items-start justify-center w-full">
-                        {linkData.map((link, index) => (
-                          <React.Fragment key={index}>
-                            <Link
-                              activeClass="active"
-                              to={link.linkRef}
-                              spy={true}
-                              smooth={true}
-                              className="flex justify-between items-center w-full"
-                            >
-                              <h2 className=" font-[600] text-[16px] ">
-                                {link.linkName}
-                              </h2>
-                              <Image
-                                src={link.linkLogo}
-                                alt={link.linkLogo}
-                                width={20}
-                                height={40}
-                                className="w-4 h-4 "
-                              />
-                            </Link>
-                          </React.Fragment>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              )}
-            </AnimatePresence>
-          </div>
-
           <motion.div
             animate={{ y: show ? 1 : -110, opacity: show ? 1 : 1 }}
             className="hidden lg:block"

@@ -2,7 +2,6 @@ import { cn } from "@/utils/cn";
 import useMobileDetect from "@/utils/useMobileDetect";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useRef } from "react";
 import ProjectLink from "./ProjectLink";
 
@@ -16,6 +15,7 @@ type ProjectSlideProps = {
     Tech: {
       Name: string;
       TechStyle: string;
+      TechIcons: string;
     }[];
   };
 };
@@ -47,16 +47,16 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
         className="flex  items-start  gap-6 "
       >
         <div
-          className={`w-fit h-[20rem] lg:h-full overflow-hidden rounded-lg `}
+          className={`w-fit h-full overflow-hidden rounded-lg flex justify-center flex-col items-center `}
         >
           <Image
             src={SlideData.Img}
             alt="asd"
             width={200}
             height={200}
-            className="lg:-top-24 relative "
+            className="lg:-top-24 relative h-[20rem]"
           />
-          <div className="absolute flex justify-center gap-2 lg:hidden bottom-4 ml-2 py-2 px-10 rounded-xl bg-primary">
+          <div className="w-2/3 relative -top-14 z-20  flex justify-center gap-2  lg:hidden py-2    rounded-xl bg-primary">
             <ProjectLink LinkRef={SlideData.ProjectLink} />
           </div>
         </div>
@@ -78,12 +78,22 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
             {SlideData.Tech.map((data, index) => (
               <div
                 className={cn(
-                  "rounded-xl  flex justify-center gap-2  bg-white  p-2 text-[0.7rem] lg:text-base",
+                  "rounded-xl  flex justify-center gap-2  bg-white  p-2 ",
                   data.TechStyle
                 )}
                 key={index}
               >
-                {data.Name}
+                <Image
+                  src={data.TechIcons}
+                  alt="tech-icons"
+                  width={40}
+                  height={40}
+                  className="w-6 h-4 block lg:hidden"
+                />
+                <h2 className="hidden lg:block text-[0.7rem] lg:text-base">
+                  {" "}
+                  {data.Name}
+                </h2>
               </div>
             ))}
           </div>

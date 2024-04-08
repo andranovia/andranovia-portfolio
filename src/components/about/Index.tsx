@@ -16,7 +16,7 @@ const About = () => {
   }, [isInView, TextControls]);
 
   return (
-    <div className="relative flex justify-start sm:justify-center items-center   lg:w-screen ">
+    <div className="relative flex justify-center items-center w-screen ">
       <div className="lg:w-[80%] flex flex-col  sm:items-center p-8 sm:justify-start lg:mt-20 ">
         <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>

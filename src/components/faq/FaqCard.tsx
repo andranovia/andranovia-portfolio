@@ -124,7 +124,7 @@ const FaqCard = ({ data }: FaqCardProps) => {
         className="w-full h-32 absolute flex justify-end px-10 lg:pr-20 items-center text-white bg-primary"
       >
         {" "}
-        <p className="lg:w-1/2"> {data.textDesc}</p>
+        <p className="lg:w-1/2 text-sm lg:text-base"> {data.textDesc}</p>
       </motion.div>
     </div>
   );
