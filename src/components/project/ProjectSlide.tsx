@@ -54,7 +54,7 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
             alt="asd"
             width={200}
             height={200}
-            className="lg:-top-24 relative h-[20rem]"
+            className="lg:-top-24 relative h-[20rem] lg:h-full"
           />
           <div className="w-2/3 relative -top-14 z-20  flex justify-center gap-2  lg:hidden py-2    rounded-xl bg-primary">
             <ProjectLink LinkRef={SlideData.ProjectLink} />
