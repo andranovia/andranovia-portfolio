@@ -19,7 +19,7 @@ const Footer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const socialData = [
     {
       text: "github",
-      textLink: "github.com/andranovia",
+      textLink: "https://github.com/andranovia",
     },
     {
       text: "LinkedIn",
