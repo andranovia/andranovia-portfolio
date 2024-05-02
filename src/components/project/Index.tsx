@@ -71,13 +71,13 @@ const Project = () => {
     },
     {
       Slide: {
-        Img: "/img/projectImg/project-society-twos.jpeg",
-        Title: "Society",
-        Description: "Society job apply platform app.",
+        Img: "/img/projectImg/project-foodfinder.png",
+        Title: "Foodfinder",
+        Description: "Restaurant searcher app, my favourite stack.",
         SlideStyle: "lg:right-[10%] bottom-[10%] ",
 
-        ProjectLink: "https://github.com/andranovia/society-job-platform",
-
+        ProjectLink: "https://github.com/andranovia/restaurant-searcher",
+        ProjectHost: "https://restaurant-searcher-foodfinder.vercel.app/",
         Tech: [
           {
             Name: "Next.Js",
@@ -89,7 +89,11 @@ const Project = () => {
             TechStyle: "bg-sky-200",
             TechIcons: "/img/techLogo/tailwindcss.svg",
           },
-
+          {
+            Name: "React-Query",
+            TechStyle: "bg-orange-200 col-span-2",
+            TechIcons: "/img/techLogo/react-query.svg",
+          },
           {
             Name: "Laravel",
             TechStyle: "bg-red-200 col-span-2",

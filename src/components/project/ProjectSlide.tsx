@@ -12,6 +12,7 @@ type ProjectSlideProps = {
     Description: string;
     SlideStyle: string;
     ProjectLink: string;
+    ProjectHost?: string;
     Tech: {
       Name: string;
       TechStyle: string;
@@ -51,16 +52,16 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
         >
           <Image
             src={SlideData.Img}
-            alt="asd"
+            alt='slide-img'
             width={200}
             height={200}
-            className="lg:-top-24 relative h-[20rem] lg:h-full"
+            className="lg:-top-24 relative h-[24rem] lg:h-full"
           />
-          <div className="w-2/3 relative -top-14 z-20  flex justify-center gap-2  lg:hidden py-2    rounded-xl bg-primary">
-            <ProjectLink LinkRef={SlideData.ProjectLink} />
+          <div className="w-2/3 relative -top-20 z-20  flex justify-center gap-2  lg:hidden py-2    rounded-xl bg-primary">
+            <ProjectLink LinkRef={SlideData.ProjectLink} HostRef={SlideData.ProjectHost}/>
           </div>
         </div>
-        <div className="w-1/2 h-full  mt-4 lg:mt-2 flex flex-col items-start  gap-4">
+        <div className="w-1/2 h-full relative  mt-4 lg:mt-2 flex flex-col items-start  gap-4">
           <div className="flex items-center gap-2  lg:gap-4 ">
             <Image
               src={

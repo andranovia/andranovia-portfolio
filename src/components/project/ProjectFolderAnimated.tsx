@@ -8,7 +8,6 @@ type ProjectFolderAnimatedProps = {
   projectTwoRef: React.MutableRefObject<null>;
 };
 
-// Define the ProjectFolderAnimated component
 const ProjectFolderAnimated: React.FC<ProjectFolderAnimatedProps> = ({
   projectTwoRef,
 }) => {
@@ -93,13 +92,14 @@ const ProjectFolderAnimated: React.FC<ProjectFolderAnimatedProps> = ({
       projectLink: "https://github.com/andranovia/Noirythm-Ecommerce",
     },
     {
-      name: "Society",
+      name: "Foodfinder",
       x: folder3XPosition,
       y: folder3YPosition,
       cursorY: cursorFolder3YPosition,
       opacity: cursorFolder3Opacity,
       rotation: folder3Rotation,
-      projectLink: "https://github.com/andranovia/society-job-platform",
+      projectLink: "https://github.com/andranovia/restaurant-searcher",
+      hostLink: 'https://restaurant-searcher-foodfinder.vercel.app/'
     },
   ];
 
@@ -115,7 +115,7 @@ const ProjectFolderAnimated: React.FC<ProjectFolderAnimatedProps> = ({
               rotate: folder.rotation,
             }}
           >
-            <ProjectFolder LinkRef={folder.projectLink}>
+            <ProjectFolder LinkRef={folder.projectLink} HostRef={folder.hostLink}>
               <h3 className="font-thin text-white ">{folder.name}</h3>
             </ProjectFolder>
             {index !== 0 && (

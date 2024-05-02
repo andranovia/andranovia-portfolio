@@ -6,9 +6,10 @@ import ProjectLink from "./ProjectLink";
 interface ProjectFolderProps {
   children: React.ReactNode;
   LinkRef: string;
+  HostRef?: string;
 }
 
-const ProjectFolder = ({ children, LinkRef }: ProjectFolderProps) => {
+const ProjectFolder = ({ children, LinkRef, HostRef }: ProjectFolderProps) => {
   const hoverControls = useAnimation();
 
   const handleHover = () => {
@@ -40,7 +41,7 @@ const ProjectFolder = ({ children, LinkRef }: ProjectFolderProps) => {
             variants={{ initial: { y: 0 }, animate: { y: -60 } }}
             className="flex justify-center absolute items-center   bg-zinc-800 p-2 rounded-md gap-4"
           >
-            <ProjectLink LinkRef={LinkRef} />
+            <ProjectLink LinkRef={LinkRef} HostRef={HostRef}/>
           </motion.div>
 
           <motion.div
