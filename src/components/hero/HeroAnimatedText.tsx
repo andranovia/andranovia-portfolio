@@ -3,13 +3,16 @@ import { motion } from "framer-motion";
 
 interface props {
   charDelay: number;
-  text: string;
 }
 
-const HeroAnimatedText = ({ charDelay, text }: props) => {
+const HeroAnimatedText = ({ charDelay }: props) => {
+
+  const text = 'We should know each other'
+
+
   return (
     <motion.div
-      className="inline-block"
+      className="lg:w-[60rem] space-y-4 lg:text-center"
       variants={{
         hidden: { opacity: 0, y: 60 },
         animate: {
@@ -40,10 +43,9 @@ const HeroAnimatedText = ({ charDelay, text }: props) => {
               },
             },
           }}
-          className="inline-flex text-6xl  lg:text-[10rem] 2xl:text-[7rem] "
+          className="inline-block text-6xl  lg:text-[10rem] 2xl:text-[7rem] "
         >
           {word}
-
           {wordIndex < text.split(" ").length - 1 && <>&nbsp;</>}
         </motion.div>
       ))}

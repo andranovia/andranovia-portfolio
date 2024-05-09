@@ -69,7 +69,6 @@ const About = () => {
 
                 <div className="flex relative justify-center text-start flex-col items-center border w-full lg:w-1/3 h-40 py-6 rounded-lg gap-2 ">
                   <div className="flex justify-center items-center gap-4 lg:gap-2">
-                    {" "}
                     <h1 className="font-semi bold text-5xl ">2</h1>
                     <div className="flex-col font-thin">
                       <h2>Years</h2>

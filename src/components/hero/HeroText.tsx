@@ -4,13 +4,9 @@ import { spring, useVariants } from "../animated/variant/CursorVariant";
 import HeroAnimatedText from "./HeroAnimatedText";
 import useMobileDetect from "@/utils/useMobileDetect";
 
-interface props {
-  textOne: string;
-  textTwo: string;
-  textThree: string;
-}
 
-const HeroText = ({ textOne, textTwo, textThree }: props) => {
+
+const HeroText = () => {
   const isMobile = useMobileDetect();
   const [cursorVariant, setCursorVariant] = useState("default");
   const ref = useRef(null);
@@ -30,10 +26,10 @@ const HeroText = ({ textOne, textTwo, textThree }: props) => {
   }, [textControls]);
 
   return (
-    <div className="lg:-mx-10 mx-10  lg:w-fit w-72 h-full lg:h-[35rem]  lg:mt-10   text-primary">
+    <div className="flex flex-col lg:mx-10 mx-10  lg:w-fit w-72 h-full lg:h-[35rem]  lg:mt-10   text-primary">
       <motion.div
         variants={variants}
-        className="h-full bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"
+        className="h-full lg:mx-10 bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"
         animate={cursorVariant}
         transition={spring}
         initial={["default", "initial"]}
@@ -68,9 +64,8 @@ const HeroText = ({ textOne, textTwo, textThree }: props) => {
             animate={textControls}
             className="flex flex-col lg:items-center lg:gap-8  relative z-10 mt-10  cursor-pointer"
           >
-            <HeroAnimatedText charDelay={0.04} text={textOne} />
-            <HeroAnimatedText charDelay={0.04} text={textTwo} />
-            <HeroAnimatedText charDelay={0.04} text={textThree} />
+            <HeroAnimatedText charDelay={0.04}  />
+       
           </motion.div>
         </div>
       </div>

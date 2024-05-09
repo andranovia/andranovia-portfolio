@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import useMobileDetect from "@/utils/useMobileDetect";
 
 interface props {
   text: string;
@@ -9,7 +8,7 @@ interface props {
 
 const AnimatedTextLetter = ({ text, charDelay }: props) => {
   const textControls = useAnimation();
-  const isMobile = useMobileDetect();
+
 
   useEffect(() => {
     textControls.start("animate");
@@ -32,7 +31,7 @@ const AnimatedTextLetter = ({ text, charDelay }: props) => {
         },
       }}
     >
-      {text.split(isMobile ? " " : "").map((char, charIndex) => (
+      {text.split("").map((char, charIndex) => (
         <motion.span
           key={charIndex}
           variants={{
