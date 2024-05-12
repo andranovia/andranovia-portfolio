@@ -36,7 +36,7 @@ const Faq = () => {
 
   return (
     <>
-      <div className="w-full px-[10%] flex flex-col items-center  mt-[20%] ">
+      <div className="w-full px-[10%] flex flex-col items-center  mt-[10%] ">
         <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
             <div className="flex justify-center flex-col gap-10 lg:flex-row items-center lg:gap-4 mt-20 lg:mt-0 text-lg h-full w-fit">

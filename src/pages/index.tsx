@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import Hero from "@/components/hero/Index";
 import About from "@/components/about/Index";
-import PersonalWork from "@/components/personal-work/Index";
 import SkillMarquee from "@/components/marquee/skill-marquee/Index";
 import Project from "@/components/project/Index";
 import Faq from "@/components/faq/Index";
+import HeroImages from "@/components/hero-images/Index";
 
 export default function Home() {
   useEffect(() => {
@@ -28,10 +28,11 @@ export default function Home() {
             <Hero />
           </div>
           <div className="relative bottom-0 overflow-hidden ">
+          <HeroImages />
             <div id="About">
               <About />
             </div>
-            <PersonalWork />
+    
             <SkillMarquee />
           </div>
           <div id="Project">

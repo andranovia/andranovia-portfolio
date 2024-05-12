@@ -16,7 +16,7 @@ const About = () => {
   }, [isInView, TextControls]);
 
   return (
-    <div className="relative flex justify-center items-center lg:w-screen p-8">
+    <div className="relative flex justify-center items-center lg:w-screen mt-0 p-8 mb-40">
       <div className="lg:w-[80%] w-full flex flex-col  items-center  sm:justify-start lg:mt-20 ">
         <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
@@ -50,13 +50,12 @@ const About = () => {
                   initial="hidden"
                   animate={TextControls}
                 >
-                  <AnimatedTextLetter text="About me!" charDelay={0.2} />
+                  <AnimatedTextLetter text="About Me!" charDelay={0.2} />
                 </motion.div>
               </div>
             </div>
             <h1 className=" text-lg">
-              Here, you can see my things that i really like or some of my
-              information.
+              Slightly some things about me or my life.
             </h1>
           </div>
         </div>
