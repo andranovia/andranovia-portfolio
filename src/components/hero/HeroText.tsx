@@ -26,7 +26,7 @@ const HeroText = () => {
   }, [textControls]);
 
   return (
-    <div className="flex flex-col lg:mx-10 mx-10  lg:w-fit w-72 h-full lg:h-[35rem]  lg:mt-10   text-primary">
+    <div className="flex flex-col lg:mx-10 mx-10 my-10 lg:my-0  lg:w-fit w-72 h-full lg:h-[36.5rem]  lg:mt-10   text-white">
       <motion.div
         variants={variants}
         className="h-full lg:mx-10 bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"

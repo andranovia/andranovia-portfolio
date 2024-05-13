@@ -12,8 +12,8 @@ type NavbarLinkProps = {
 const NavbarLink = ({ linkData }: NavbarLinkProps) => {
   return (
     <div className="flex justify-center  w-full  items-center font-semibold  rounded-full p-1 ">
-      <div className="relative flex justify-center w-full h-full bg-white backdrop-filter backdrop-blur-sm  bg-opacity-25 rounded-full ">
-        <ul className="px-4 list-none flex gap-8 items-center text-lg relative bottom-4 text-primary ">
+      <div className="relative flex justify-center w-full h-full  bg-white backdrop-filter backdrop-blur-sm  bg-opacity-25 rounded-full ">
+        <ul className="px-4 list-none flex gap-8 items-center  text-lg relative bottom-4  ">
           {linkData.map((link, index) => (
             <React.Fragment key={index}>
               <NavbarLinkAnimated

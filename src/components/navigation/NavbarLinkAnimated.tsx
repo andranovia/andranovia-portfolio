@@ -52,7 +52,7 @@ const NavbarLinkAnimated = ({ imgLogo, text, linkTo }: props) => {
           smooth={true}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className={`p-1 rounded-md relative transition-all w-min-content
+          className={` p-1 rounded-md relative transition-all w-min-content
                         before:w-0 before:h-1 before:absolute before:bottom-0 before:right-0 before:bg-transparent before:transition-all before:duration-500
                         ${
                           isHovered

@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <LayoutApp>
         <div className="relative bg-white pb-20 rounded-b-xl">
-          <div id="Hero">
+          <div id="Hero" className="p-3">
             <Hero />
           </div>
           <div className="relative bottom-0 overflow-hidden ">

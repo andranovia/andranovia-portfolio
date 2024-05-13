@@ -12,7 +12,7 @@ const SkillMarqueeItem = ({ img, text }: props) => {
     <>
       <div
         id="profile-skill-card"
-        className={` mx-2 rounded-md w-16 p-2  sm:w-52 sm:p-4 flex justify-center sm:gap-4 `}
+        className={` mx-2 rounded-md w-16 p-2 grayscale hover:grayscale-0 cursor-pointer  sm:w-52 sm:p-4 flex justify-center sm:gap-4 `}
       >
         <Image
           src={img}
