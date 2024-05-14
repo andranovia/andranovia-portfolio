@@ -11,7 +11,7 @@ import Image from "next/image";
 import useMobileDetect from "@/utils/useMobileDetect";
 
 const GridCardServices = () => {
-  const isMobile = useMobileDetect();
+  const {isMobile, isTablet} = useMobileDetect();
   const serviceRef = useRef(null);
   const isInView = useInView(serviceRef, { once: true });
   const hoverControls = useAnimation();
@@ -25,7 +25,7 @@ const GridCardServices = () => {
   };
 
   useEffect(() => {
-    isMobile &&
+    isMobile || isTablet &&
       isInView &&
       hoverControls.start("hover", {
         delay: isInView && 1.2,

@@ -36,11 +36,11 @@ const Faq = () => {
 
   return (
     <>
-      <div className="w-full px-[10%] flex flex-col items-center  mt-[10%] ">
-        <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
+      <div className="w-full px-[10%] flex flex-col items-center  mt-[20%] lg:mt-[10%] ">
+      <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
-            <div className="flex justify-center flex-col gap-10 lg:flex-row items-center lg:gap-4 mt-20 lg:mt-0 text-lg h-full w-fit">
-              <div className="bg-gradient-to-r from-white to-black rotate-90 lg:rotate-0 w-[4rem] lg:w-[10rem] rounded-md h-1"></div>
+            <div className="flex justify-center flex-col gap-10 md:flex-row lg:flex-row items-center lg:gap-4 mt-20 md:mt-0 lg:mt-0 text-lg h-full w-fit">
+              <div className="bg-gradient-to-r from-white to-black md:rotate-0 rotate-90 lg:rotate-0 w-[4rem] lg:w-[10rem] rounded-md h-1"></div>
               <Image
                 src={
                   "https://img.icons8.com/ios-filled/50/000000/circled-left-2.png"
@@ -48,7 +48,7 @@ const Faq = () => {
                 alt=""
                 width={40}
                 height={40}
-                className="-rotate-90 lg:rotate-180"
+                className="-rotate-90 lg:rotate-180 md:rotate-180"
               />
             </div>
           </div>
@@ -69,11 +69,13 @@ const Faq = () => {
                   initial="hidden"
                   animate={TextControls}
                 >
-                  <AnimatedTextLetter text="FAQ!" charDelay={0.2} />
+                  <AnimatedTextLetter text="Frequently Asked!" charDelay={0.2} />
                 </motion.div>
               </div>
             </div>
-            <h1 className=" text-lg">Most asked question about me</h1>
+            <h1 className=" text-lg">
+              Slightly some things about me or my life.
+            </h1>
           </div>
         </div>
         <div className="flex flex-col items-center gap-4  w-full mt-[20%] lg:mt-[10%]">

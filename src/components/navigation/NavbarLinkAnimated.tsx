@@ -13,7 +13,7 @@ interface props {
 const NavbarLinkAnimated = ({ imgLogo, text, linkTo }: props) => {
   const [isHovered, setHovered] = useState(false);
 
-  const isMobile = useMobileDetect();
+  const {isMobile} = useMobileDetect();
 
   return (
     <motion.li

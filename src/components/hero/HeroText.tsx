@@ -7,13 +7,13 @@ import useMobileDetect from "@/utils/useMobileDetect";
 
 
 const HeroText = () => {
-  const isMobile = useMobileDetect();
+  const {isMobile, isTablet} = useMobileDetect();
   const [cursorVariant, setCursorVariant] = useState("default");
   const ref = useRef(null);
   const variants = useVariants(ref);
 
   function textHover() {
-    !isMobile ? setCursorVariant("hover") : null;
+    !isMobile && !isTablet ? setCursorVariant("hover") : null;
   }
 
   function textHoverLeave() {
@@ -26,7 +26,7 @@ const HeroText = () => {
   }, [textControls]);
 
   return (
-    <div className="flex flex-col lg:mx-10 mx-10 my-10 lg:my-0  lg:w-fit w-72 h-full lg:h-[36.5rem]  lg:mt-10   text-white">
+    <div className="flex flex-col mx-10 my-10 lg:my-0  lg:w-fit w-72 h-full lg:h-[36.5rem]  lg:mt-10   text-white">
       <motion.div
         variants={variants}
         className="h-full lg:mx-10 bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"

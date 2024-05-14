@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 
 const HeroAnimatedImages = () => {
   const work = useRef(null);
-  const isMobile = useMobileDetect();
+  const {isMobile, isTablet} = useMobileDetect();
 
   const { scrollYProgress } = useScroll({
     target: work,
@@ -40,25 +40,25 @@ const HeroAnimatedImages = () => {
       img: "/img/myselves/image-2.jpg",
       scale: scaleTwo,
       y: yTwo,
-      style: " lg:-left-[36%]",
+      style: " lg:-left-[36%] md:-left-[22%]",
     },
     {
       img: "/img/myselves/image-3.jpg",
       scale: scaleThree,
       y: yThree,
-      style: "lg:top-[27%] lg:-left-[20%]  ",
+      style: "lg:top-[27%] lg:-left-[20%]  md:top-[44%] md:-left-[14%]",
     },
     {
       img: "/img/myselves/image-4.jpg",
       scale: scaleFour,
       y: yFour,
-      style: " lg:left-[36%] lg:top-20  ",
+      style: " lg:left-[36%] lg:top-20  md:left-[22%] md:top-14  ",
     },
     {
       img: "/img/myselves/image-5.jpg",
       scale: scaleFive,
       y: yFive,
-      style: " lg:left-[20%] lg:top-[20%] left-10 -top-[14rem] ",
+      style: " lg:left-[20%] lg:top-[20%] left-10 -top-[14rem]  md:left-[10%] md:mt-20 ",
     },
   ];
   const startIndex = 0;
@@ -104,7 +104,7 @@ const HeroAnimatedImages = () => {
 
   return (
     <React.Fragment>
-      {isMobile ? (
+      {isMobile && !isTablet? (
         <>
         <motion.div
         ref={containerRef}
@@ -140,12 +140,12 @@ const HeroAnimatedImages = () => {
           {images.map((image, index) => (
             <motion.div
               style={{ scale: image.scale, y: image.y }}
-              className="w-full h-full flex items-center justify-center lg:absolute"
+              className="w-full h-full flex items-center justify-center md:absolute lg:absolute"
               key={index}
               ref={work}
             >
               <div
-                className={`lg:relative flex justify-center items-center lg:mb-0    w-full h-full ${image.style}`}
+                className={`md:relative lg:relative flex justify-center items-center lg:mb-0    w-full h-full ${image.style}`}
               >
                 <Image
                   src={image.img}

@@ -17,11 +17,11 @@ const About = () => {
 
   return (
     <div className="relative flex justify-center items-center lg:w-screen mt-0 p-8 mb-40">
-      <div className="lg:w-[80%] w-full flex flex-col  items-center  sm:justify-start lg:mt-20 ">
-        <div className="w-full flex flex-col-reverse  justify-start lg:flex-row  sm:mx-0 items-center">
+      <div className="lg:w-[80%] w-full flex flex-col  items-center  sm:justify-start md:mt-20 lg:mt-20 ">
+        <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
-            <div className="flex justify-center flex-col gap-10 lg:flex-row items-center lg:gap-4 mt-20 lg:mt-0 text-lg h-full w-fit">
-              <div className="bg-gradient-to-r from-white to-black rotate-90 lg:rotate-0 w-[4rem] lg:w-[10rem] rounded-md h-1"></div>
+            <div className="flex justify-center flex-col gap-10 md:flex-row lg:flex-row items-center lg:gap-4 mt-20 md:mt-0 lg:mt-0 text-lg h-full w-fit">
+              <div className="bg-gradient-to-r from-white to-black md:rotate-0 rotate-90 lg:rotate-0 w-[4rem] lg:w-[10rem] rounded-md h-1"></div>
               <Image
                 src={
                   "https://img.icons8.com/ios-filled/50/000000/circled-left-2.png"
@@ -29,7 +29,7 @@ const About = () => {
                 alt=""
                 width={40}
                 height={40}
-                className="-rotate-90 lg:rotate-180"
+                className="-rotate-90 lg:rotate-180 md:rotate-180"
               />
             </div>
           </div>
@@ -60,7 +60,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="container sm:flex justify-center  items-center  gap-10  mt-4 sm:mt-32">
+        <div className="container md:grid grid-cols-2 lg:flex justify-center  items-center  gap-10  mt-4 sm:mt-32">
           <div className="flex flex-col justify-center w-full lg:w-1/2 sm:items-end items-center gap-4">
             <div className=" w-full  rounded-xl">
               <div className="font-semibold text-2xl    rounded-xl items-start flex flex-col lg:flex-row justify-center  text-center sm:text-start gap-4 pt-2">
@@ -82,7 +82,7 @@ const About = () => {
             </div>
             <GridCardServices />
           </div>
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 md:h-full">
             <GridCardAnimatedPhone />
           </div>
         </div>

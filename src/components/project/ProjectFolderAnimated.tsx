@@ -11,7 +11,7 @@ type ProjectFolderAnimatedProps = {
 const ProjectFolderAnimated: React.FC<ProjectFolderAnimatedProps> = ({
   projectTwoRef,
 }) => {
-  const isMobile = useMobileDetect();
+  const {isMobile} = useMobileDetect();
 
   const { scrollYProgress: folder2ScrollProgress } = useScroll({
     target: projectTwoRef,

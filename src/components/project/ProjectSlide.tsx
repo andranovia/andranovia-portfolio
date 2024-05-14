@@ -22,7 +22,7 @@ type ProjectSlideProps = {
 };
 
 const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
-  const isMobile = useMobileDetect();
+  const {isMobile, isTablet} = useMobileDetect();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,7 +31,7 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
 
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : 2]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, isMobile && isTablet  ? 0 : 0]);
   const y = useTransform(scrollYProgress, [0, 1], [150, 0]);
 
   return (
@@ -45,23 +45,23 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
           opacity,
           y,
         }}
-        className="flex  items-start  gap-6 "
+        className="flex  items-start lg:items-start md:items-center lg:justify-start md:justify-center lg:gap-6 md:gap-20  gap-6 "
       >
         <div
-          className={`w-fit h-full overflow-hidden rounded-lg flex justify-center flex-col items-center `}
+          className={`w-fit h-full lg:h-full md:h-[30rem] overflow-hidden rounded-lg flex justify-center  flex-col items-center `}
         >
           <Image
             src={SlideData.Img}
             alt='slide-img'
             width={200}
             height={200}
-            className="lg:-top-24 relative h-[24rem] lg:h-full"
+            className="lg:-top-24 relative h-[24rem] lg:h-full md:h-full md:top-20 object-cover"
           />
-          <div className="w-2/3 relative -top-20 z-20  flex justify-center gap-2  lg:hidden py-2    rounded-xl bg-primary">
+          <div className="w-2/3 relative md:-top-32 -top-20 z-20  flex justify-center gap-2  lg:hidden py-2    rounded-xl bg-primary">
             <ProjectLink LinkRef={SlideData.ProjectLink} HostRef={SlideData.ProjectHost}/>
           </div>
         </div>
-        <div className="w-1/2 h-full relative  mt-4 lg:mt-2 flex flex-col items-start  gap-4">
+        <div className="w-1/2 h-full relative md:mt-0 mt-14 lg:mt-2 flex flex-col items-start  gap-4">
           <div className="flex items-center gap-2  lg:gap-4 ">
             <Image
               src={
@@ -72,12 +72,12 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
               height={20}
               className="w-4 h-4"
             />
-            <h1 className="text-white font-semibold text-xs lg:text-base">
+            <h1 className="text-white font-semibold text-xs lg:text-base md:text-base">
               {SlideData.Title}
             </h1>
           </div>
-          <p className="font-thin text-white">{SlideData.Description}</p>
-          <div className="grid grid-cols-2 items-start gap-4 text-primary">
+          <p className="font-thin text-white md:w-52">{SlideData.Description}</p>
+          <div className="grid grid-cols-2 lg:grid-cols-2 md:grid-cols-4 items-start gap-4 md:mt-4 lg:mt-0 text-primary">
             {SlideData.Tech.map((data, index) => (
               <div
                 className={cn(
@@ -91,7 +91,7 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
                   alt="tech-icons"
                   width={40}
                   height={40}
-                  className="w-6 h-4 block lg:hidden"
+                  className="w-6 h-4 md:w-8 md:h-6 block lg:hidden"
                 />
                 <h2 className="hidden lg:block text-[0.7rem] lg:text-base">
                   {" "}

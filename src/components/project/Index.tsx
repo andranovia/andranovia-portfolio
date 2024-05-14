@@ -16,7 +16,7 @@ const Project = () => {
 
         ProjectLink: "https://github.com/andranovia/smknusa-frontend",
 
-        SlideStyle: "-bottom-10 lg:right-[10%] top-[14%]",
+        SlideStyle: "-bottom-10 lg:right-[10%] top-[14%] md:top-[24%]",
         Tech: [
           {
             Name: "Next.Js",
