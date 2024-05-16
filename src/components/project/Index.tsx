@@ -111,7 +111,7 @@ const Project = () => {
           <div className="hidden absolute pointer-events-none inset-0 z-10 lg:flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_70%,black)]"></div>
           <div className="sticky top-0  h-full lg:h-screen flex justify-center items-center overflow-hidden ">
             <div className="relative w-screen">
-              <div className="flex flex-col w-full px-2 lg:flex-row justify-center items-center gap-2">
+              <div className="flex flex-col w-full px-2 md:flex-row lg:flex-row justify-center items-center gap-2">
                 <ProjectSidebar />
 
                 <div className="bg-primary w-full lg:w-[50%] h-[30rem] rounded-3xl  ">

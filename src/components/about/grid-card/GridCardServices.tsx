@@ -25,7 +25,7 @@ const GridCardServices = () => {
   };
 
   useEffect(() => {
-    isMobile || isTablet &&
+    isMobile || isTablet 
       isInView &&
       hoverControls.start("hover", {
         delay: isInView && 1.2,
