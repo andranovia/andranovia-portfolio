@@ -24,10 +24,11 @@ export default function Home() {
     <>
       <LayoutApp>
         <div className="relative bg-white pb-20 rounded-b-xl ">
-          <div id="Hero" className="p-3 overflow-hidden  lg:h-[55vw]">
+          <div className="overflow-hidden">
+          <div id="Hero" className="p-3   relative">
             <Hero />
           </div>
-          <div className="relative bottom-0 overflow-hidden lg:-mt-20">
+          <div className="relative bottom-0 overflow-hidden ">
     
             <div id="About">
               <About />
@@ -35,7 +36,7 @@ export default function Home() {
             </div>
     
             <SkillMarquee />
-          </div>
+          </div></div>
           <div id="Project">
             <Project />
           </div>

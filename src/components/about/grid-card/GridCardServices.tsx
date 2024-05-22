@@ -56,7 +56,7 @@ const GridCardServices = () => {
           backgroundSize: "100%",
         },
       }}
-      className="w-full bg-100% flex flex-col justify-end border-2   h-[11.5rem] rounded-lg  "
+      className="w-full bg-100% flex cursor-pointer flex-col justify-end border-2   h-[11.5rem] rounded-lg  "
     >
       <div className="flex relative justify-center gap-4 items-center w-full overflow-hidden">
         <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center   bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,white)]"></div>

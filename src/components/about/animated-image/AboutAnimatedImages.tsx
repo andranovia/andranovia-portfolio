@@ -32,33 +32,33 @@ const AboutAnimatedImages = () => {
   const images = [
     {
       img: "/img/myselves/image-1.jpg",
-   
+      style: "md:max-w-80 lg:max-w-none  md:left-[6%] lg:left-0",
       y: y,
     },
     {
       img: "/img/myselves/image-2.jpg",
   
       y: yTwo,
-      style: " lg:-left-[36%] md:-left-[22%]",
+      style: " lg:-left-[36%] md:-left-[32%] lg:top-0 md:-top-[4%] md:max-w-72 lg:max-w-none  ",
     },
     {
       img: "/img/myselves/image-3.jpg",
  
       y: yThree,
-      style: "lg:top-[27%] lg:-left-[20%]  md:top-[44%] md:-left-[14%]",
+      style: "lg:top-[27%] lg:-left-[20%] md:max-w-72 lg:max-w-none  md:top-[34%] md:-left-[20%]",
     },
     {
       img: "/img/myselves/image-4.jpg",
    
       y: yFour,
-      style: " lg:left-[36%] lg:top-20  md:left-[22%] md:top-14  ",
+      style: " lg:left-[36%] lg:top-20  md:left-[38%] md:top-14 md:max-w-52 lg:max-w-none",
     },
     {
       img: "/img/myselves/image-5.jpg",
    
       y: yFive,
       style:
-        " lg:left-[10%]  lg:top-[24%] left-10 -top-[14rem] max-w-40  md:left-[10%] md:mt-20 ",
+        " lg:left-[8%]  lg:top-[26%] left-10 -top-[14rem] md:max-w-40 lg:max-w-40  md:left-[10%] md:top-[45%] ",
     },
   ];
   const startIndex = 0;
