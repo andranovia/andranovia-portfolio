@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
         </AnimatePresence>
       </div>
       <div className="w-full flex justify-center  items-center font-semibold ">
-        <div className="w-full relative flex justify-center left-12 z-50">
+        <div className="w-full relative flex justify-center lg:left-0 left-12 z-50">
           <motion.div
             animate={{ y: show ? 1 : -110, opacity: show ? 1 : 1 }}
             className="hidden lg:block"

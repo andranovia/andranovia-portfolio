@@ -52,7 +52,7 @@ const SkillMarquee = () => {
 
   return (
     <>
-      <div className="relative  w-screen my-20 lg:my-32">
+      <div className="relative  w-screen my-10 lg:my-32">
         <div className="flex flex-col gap-10 justify-center items-center ">
           <Marquee autoFill={true} speed={10}>
             <div className="flex flex-col  justify-center items-center ">

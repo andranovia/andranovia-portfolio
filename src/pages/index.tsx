@@ -6,7 +6,7 @@ import About from "@/components/about/Index";
 import SkillMarquee from "@/components/marquee/skill-marquee/Index";
 import Project from "@/components/project/Index";
 import Faq from "@/components/faq/Index";
-import HeroImages from "@/components/hero-images/Index";
+
 
 export default function Home() {
   useEffect(() => {
@@ -23,14 +23,15 @@ export default function Home() {
   return (
     <>
       <LayoutApp>
-        <div className="relative bg-white pb-20 rounded-b-xl">
-          <div id="Hero" className="p-3">
+        <div className="relative bg-white pb-20 rounded-b-xl ">
+          <div id="Hero" className="p-3 overflow-hidden  lg:h-[55vw]">
             <Hero />
           </div>
-          <div className="relative bottom-0 overflow-hidden ">
-          <HeroImages />
+          <div className="relative bottom-0 overflow-hidden lg:-mt-20">
+    
             <div id="About">
               <About />
+            
             </div>
     
             <SkillMarquee />

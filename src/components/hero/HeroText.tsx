@@ -26,29 +26,14 @@ const HeroText = () => {
   }, [textControls]);
 
   return (
-    <div className="flex flex-col mx-10 my-10 lg:my-0  lg:w-fit w-72 h-full lg:h-[36.5rem]  lg:mt-10   text-white">
-      <motion.div
-        variants={variants}
-        className="h-full lg:mx-10 bg-white mix-blend-difference absolute z-40 font-thin text-center pointer-events-none"
-        animate={cursorVariant}
-        transition={spring}
-        initial={["default", "initial"]}
-      >
-        <motion.div
-          animate={{
-            y: cursorVariant === "hover" ? 80 : 0,
-          }}
-          className=" text-black h-full "
-        >
-          andranovia
-        </motion.div>
-      </motion.div>
+    <div className="flex flex-col mx-10 mb-10 lg:mb-0  lg:w-fit w-72 h-full lg:h-[36.5rem]  lg:mt-10    text-white">
+    
 
       <div
         ref={ref}
         onMouseEnter={() => textHover()}
         onMouseLeave={() => textHoverLeave()}
-        className="mt-6 h-full"
+        className="lg:mt-6 h-full"
       >
         <div className="flex flex-col gap-10">
           <motion.div
@@ -62,7 +47,7 @@ const HeroText = () => {
             }}
             initial="hidden"
             animate={textControls}
-            className="flex flex-col lg:items-center lg:gap-8  relative z-10 mt-10  cursor-pointer"
+            className="flex flex-col  lg:items-center lg:gap-8 z-40  relative  mt-10  "
           >
             <HeroAnimatedText charDelay={0.04}  />
        

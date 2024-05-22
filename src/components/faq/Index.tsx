@@ -37,7 +37,7 @@ const Faq = () => {
   return (
     <>
       <div className="w-full px-[10%] flex flex-col items-center  mt-[20%] lg:mt-[10%] ">
-      <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
+        <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
             <div className="flex justify-center flex-col gap-10 md:flex-row lg:flex-row items-center lg:gap-4 mt-20 md:mt-0 lg:mt-0 text-lg h-full w-fit">
               <div className="bg-gradient-to-r from-white to-black md:rotate-0 rotate-90 lg:rotate-0 w-[4rem] lg:w-[10rem] rounded-md h-1"></div>
@@ -69,7 +69,10 @@ const Faq = () => {
                   initial="hidden"
                   animate={TextControls}
                 >
-                  <AnimatedTextLetter text="Frequently Asked!" charDelay={0.2} />
+                  <AnimatedTextLetter
+                    text="Frequently Asked!"
+                    charDelay={0.2}
+                  />
                 </motion.div>
               </div>
             </div>
