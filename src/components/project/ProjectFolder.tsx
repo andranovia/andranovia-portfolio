@@ -39,7 +39,7 @@ const ProjectFolder = ({ children, LinkRef, HostRef }: ProjectFolderProps) => {
             initial={"initial"}
             animate={hoverControls}
             variants={{ initial: { y: 0 }, animate: { y: -60 } }}
-            className="flex justify-center absolute items-center   bg-zinc-800 p-2 rounded-md gap-4"
+            className="flex justify-center absolute items-center   bg-white p-2 rounded-md gap-4"
           >
             <ProjectLink LinkRef={LinkRef} HostRef={HostRef}/>
           </motion.div>

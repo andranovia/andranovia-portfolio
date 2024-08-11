@@ -52,7 +52,7 @@ const SkillMarquee = () => {
 
   return (
     <>
-      <div className="relative  w-screen my-10 lg:my-32">
+      <div className="relative  w-full max-w-fit  mt-32 mb-0">
         <div className="flex flex-col gap-10 justify-center items-center ">
           <Marquee autoFill={true} speed={10}>
             <div className="flex flex-col  justify-center items-center ">
@@ -60,6 +60,7 @@ const SkillMarquee = () => {
                 {skillDataRowOne.map((skill, index) => (
                   <div key={index} className="flex justify-center items-center">
                     <SkillMarqueeItem
+                       className="bg-opacity-85"
                       key={index}
                       img={skill.img}
                       text={skill.text}
@@ -83,6 +84,7 @@ const SkillMarquee = () => {
                 {skillDataRowTwo.map((skill, index) => (
                   <div key={index} className="flex justify-center items-center">
                     <SkillMarqueeItem
+                    className="rounded-b-none"
                       key={index}
                       img={skill.img}
                       text={skill.text}

@@ -36,10 +36,10 @@ const Faq = () => {
 
   return (
     <>
-      <div className="w-full px-[10%] flex flex-col items-center  mt-[20%] lg:mt-[10%] ">
+      <div className="w-full flex flex-col items-center  mt-[20%] lg:mt-[10%] font-arcane">
         <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
           <div className="w-1/4" ref={ref}>
-            <div className="flex justify-center flex-col gap-10 md:flex-row lg:flex-row items-center lg:gap-4 mt-20 md:mt-0 lg:mt-0 text-lg h-full w-fit">
+            <div className="flex justify-center flex-col xl:gap-10 gap-4 md:flex-row lg:flex-row items-center lg:gap-4 mt-20 md:mt-0 lg:mt-0 text-lg h-full w-fit">
               <div className="bg-gradient-to-r from-white to-black md:rotate-0 rotate-90 lg:rotate-0 w-[4rem] lg:w-[10rem] rounded-md h-1"></div>
               <Image
                 src={
@@ -54,7 +54,7 @@ const Faq = () => {
           </div>
           <div className=" flex justify-start flex-col lg:mx-14 mx-4 gap-4  text-primary lg:w-full">
             <div className="flex justify-start w-full items-start gap-4 ">
-              <div className=" font-semibold text-4xl lg:text-5xl  lg:whitespace-nowrap ">
+              <div className=" font-semibold text-3xl lg:text-5xl  lg:whitespace-nowrap ">
                 <motion.div
                   variants={{
                     hidden: { opacity: 1 },
@@ -70,13 +70,13 @@ const Faq = () => {
                   animate={TextControls}
                 >
                   <AnimatedTextLetter
-                    text="Frequently Asked!"
+                    text="Fre. Asked!"
                     charDelay={0.2}
                   />
                 </motion.div>
               </div>
             </div>
-            <h1 className=" text-lg">
+            <h1 className="text-sm 1xl:text-lg">
               Slightly some things about me or my life.
             </h1>
           </div>

@@ -46,7 +46,7 @@ const AnimatedTextLetter = ({ text, charDelay }: props) => {
               },
             },
           }}
-          className="inline-block   lg:w-[1.8ch]  font-thin"
+          className="inline-block  w-[1ch]  1xl:w-[1.2ch]  font-thin"
         >
           {char}
           <span className="lg:hidden">&nbsp;</span>

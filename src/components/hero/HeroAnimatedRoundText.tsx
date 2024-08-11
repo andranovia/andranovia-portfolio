@@ -24,7 +24,7 @@ const HeroAnimatedRoundText = () => {
   }, []);
 
   return (
-    <div className="flex -ml-3 lg:-m-0 justify-start items-start">
+    <div className="flex -ml-3 lg:-m-0 justify-start items-start  font-arcane">
       {" "}
       <div
         className={
@@ -38,7 +38,7 @@ const HeroAnimatedRoundText = () => {
             stiffness: 100,
             duration: 1,
           }}
-          className="bg-white p-2 bg-cover overflow-hidden  lg:right-2 z-20  w-32 h-32 md:w-[18vw] md:h-[18vw] lg:w-[30vw] lg:h-[30vw] rounded-full  flex items-center text-gray-900 justify-center text-lg  lg:text-6xl    "
+          className="bg-primary p-2 bg-cover overflow-hidden  lg:right-2 z-20  w-32 h-32 md:w-[12rem] md:h-[12rem] 1xl:w-[28rem] 1xl:h-[28rem] rounded-full  flex items-center text-white justify-center text-sm sm:text-lg lg:text-2xl 1xl:text-5xl    "
         >
           <div ref={circleTypeRef} id="textCircular">
             <div className={"flex items-center justify-center w-full   "}>

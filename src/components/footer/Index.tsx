@@ -35,11 +35,11 @@ const Footer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </motion.div>
       <motion.div
         style={{ y }}
-        className="bg-primary overflow-hidden flex flex-col items-center"
+        className="bg-primary overflow-hidden flex flex-col items-center "
         ref={footerRef}
       >
         <Marquee autoFill>
-          <div className="flex justify-center items-center ">
+          <div className="flex justify-center items-center font-arcane ">
             <h1 className="lg:text-[14rem] font-semibold text-white">
               ANDRANOVIA
             </h1>
@@ -52,7 +52,7 @@ const Footer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             />
           </div>
         </Marquee>
-        <div className="px-[10%] mt-10 w-full flex flex-col lg:flex-row justify-start gap-[14%] items-start">
+        <div className="px-[10%] mt-10 w-full flex flex-col 1xl:flex-row justify-between gap-10 lg:gap-24 items-start">
           <div className="flex flex-col items-start gap-4 text-3xl font-thin text-gray-300 pb-4">
             {socialData.map((text, index) => (
               <React.Fragment key={index}>

@@ -38,14 +38,14 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
     <motion.div
       ref={ref}
       style={{ scale: scale, rotate }}
-      className={`w-4/5 lg:w-[30%] p-4 h-[20rem] absolute z-40 overflow-hidden flex justify-center lg:items-start items-center lg:justify-start gap-6 -bottom-10 rounded-3xl bg-zinc-800 bg-opacity-90 backdrop-blur-lg ${SlideData.SlideStyle}`}
+      className={`lg:max-w-[560px] xl:w-[30%] p-4 h-[20rem] absolute z-40 overflow-hidden flex justify-center lg:items-start items-center lg:justify-start gap-6 -bottom-10 rounded-3xl bg-white bg-opacity-90 backdrop-blur-lg ${SlideData.SlideStyle}`}
     >
       <motion.div
         style={{
           opacity,
           y,
         }}
-        className="flex  items-start lg:items-start md:items-center lg:justify-start md:justify-center lg:gap-6 md:gap-20  gap-6 "
+        className="flex  items-start lg:items-start md:items-center lg:justify-start md:justify-center   gap-6 "
       >
         <div
           className={`w-fit h-full lg:h-full md:h-[30rem] overflow-hidden rounded-lg flex justify-center  flex-col items-center `}
@@ -65,18 +65,18 @@ const ProjectSlide = ({ SlideData }: ProjectSlideProps) => {
           <div className="flex items-center gap-2  lg:gap-4 ">
             <Image
               src={
-                "https://img.icons8.com/material-outlined/24/FFFFFF/folder-invoices--v1.png"
+                "https://img.icons8.com/material-outlined/24/folder-invoices--v1.png"
               }
               alt=""
               width={20}
               height={20}
               className="w-4 h-4"
             />
-            <h1 className="text-white font-semibold text-xs lg:text-base md:text-base">
+            <h1 className="text-primary font-semibold text-xs lg:text-base md:text-base ">
               {SlideData.Title}
             </h1>
           </div>
-          <p className="font-thin text-white md:w-52">{SlideData.Description}</p>
+          <p className="font-thin text-primary md:w-52">{SlideData.Description}</p>
           <div className="grid grid-cols-2 lg:grid-cols-2 md:grid-cols-4 items-start gap-4 md:mt-4 lg:mt-0 text-primary">
             {SlideData.Tech.map((data, index) => (
               <div

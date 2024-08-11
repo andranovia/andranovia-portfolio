@@ -12,7 +12,7 @@ const HeroAnimatedText = ({ charDelay }: props) => {
 
   return (
     <motion.div
-      className="lg:w-[60rem] md:w-[40rem]  space-y-4 lg:text-center"
+      className="1xl:w-[70rem] lg:w-[42rem] md:w-[30rem] sm:max-w-[321px] md:max-w-fit  space-y-4 md:text-center"
       variants={{
         hidden: { opacity: 0, y: 60 },
         animate: {
@@ -43,7 +43,7 @@ const HeroAnimatedText = ({ charDelay }: props) => {
               },
             },
           }}
-          className="inline-block text-6xl md:text-[6rem]  lg:text-[10rem] 2xl:text-[7rem] "
+          className="inline-block text-5xl xs:text-6xl text-[#201D30] lg:text-[6rem] font-metroPhotograph 1xl:text-[10rem]  "
         >
           {word}
           {wordIndex < text.split(" ").length - 1 && <>&nbsp;</>}

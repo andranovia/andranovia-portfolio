@@ -11,8 +11,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '375px',
+        'sm': '425px',
+        'md': '576px',
+        'lg': '768px',
+        'xl': '1024px',
+        '1xl': '1279.98px',
+        '2xl': '1440px',
+      },
       backgroundColor: {
-        primary: "#191717",
+        primary: "#021526",
         secondary: "#F0ECE5",
         base: "#FFFFFF",
         invertPrimary: "#e6e8e8",
@@ -21,9 +30,24 @@ const config: Config = {
         "100%": "100%",
       },
       textColor: {
-        primary: "#191717",
+        primary: "#201D30",
         secondary: "#F0ECE5",
       },
+      fontFamily: {
+        metroPhotograph: ["MetroPhotograph", "sans-serif"],
+        arcane: ["Arcane Nine", "sans-serif"],
+        bebasNeue: ["Bebas Neue", "sans-serif"],
+      },
+      maxWidth: {
+
+        'base-content':'300px', 
+        'xs-content': '320px',
+        'sm-content': '352px',
+        'md-content': '512px',
+        'lg-content': '648px',
+        'xl-content': '992px',
+        'max-container': '1512px',
+      }
     },
   },
   plugins: [

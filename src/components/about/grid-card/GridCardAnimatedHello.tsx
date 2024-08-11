@@ -29,7 +29,7 @@ const GridCardAnimatedHello = () => {
   ];
   return (
     <React.Fragment>
-      <div className="bg-base h-40 lg:w-[65%] overflow-hidden w-full rounded-lg  ">
+      <div className="bg-base h-40 1xl:w-[65%] overflow-hidden w-full rounded-lg  col-span-2 1xl:col-span-1">
         <motion.div className="relative border  rounded-md flex lg:justify-start    items-center h-full  lg:px-10 px-6 w-full text-start">
           <div className="absolute bg-gradient-to-b from-white to-transparent z-20 top-0 left-0 w-full rounded-b-md h-10"></div>
           <div className="w-2/3">

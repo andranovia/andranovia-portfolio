@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import { debounce } from "lodash";
 import { Link } from "react-scroll";
 
 const NavbarLink = dynamic(() => import("./NavbarLink"), {
@@ -64,7 +63,7 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="w-full lg:h-12 lg:fixed sm:right-0 sm:left-0 lg:pt-10 top-10  flex justify-center text-black z-50  ">
-      <div className="fixed w-[18rem] bottom-4 lg:hidden overflow-hidden pt-52 z-50 rounded-lg">
+      <div className="fixed w-full max-w-[18rem] xs:max-w-xs-content sm:max-w-sm-content bottom-4 lg:hidden overflow-hidden pt-52 z-50 rounded-lg">
         <div className="relative z-40 shadow-2xl overflow-y-hidden  bg-white rounded-full flex justify-between items-center gap-20 p-2">
           <h1 className="text-center mr-20 pl-4">MENU</h1>
           <button onClick={() => handleOpenDropdown()}>
@@ -80,7 +79,7 @@ const Navbar: React.FC = () => {
         </div>
         <AnimatePresence>
           {showDropdown && (
-            <div className="absolute left-5 shadow-xl ">
+            <div className="absolute left-5 shadow-xl w-[16rem] xs:w-[18rem] sm:w-[20rem]">
               <motion.div
                 initial="initial"
                 animate="animate"
@@ -98,7 +97,7 @@ const Navbar: React.FC = () => {
                   restDelta: 0.001,
                   restSpeed: 0.001,
                 }}
-                className="w-[14rem] flex justify-center items-center mt-14 z-20 rounded-b-[10px] rounded-r-[10px] bg-white py-4  overflow-hidden"
+                className="w-full xs:max-w-xs-content sm:max-w-sm-content flex justify-center items-center mt-14 z-20 rounded-b-[10px] rounded-r-[10px] bg-white py-4  overflow-hidden"
               >
                 <div className="flex justify-start px-4 items-center gap-4  w-full  py-2">
                   <div className="flex flex-col gap-4 items-start justify-center w-full">

@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: "MetroPhotograph";
+  src: url("../../public/fonts/MetroPhotograph-DemoVersion-Regular.otf");
+}
+
+@font-face {
+  font-family: "Arcane Nine";
+  src: url("../../public/fonts/Arcane\ Nine.otf");
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../../public/fonts/BebasNeue-Regular.ttf");
+}
+
 @layer utilities {
     .animation-delay-2000 {
       animation-delay: 2s;

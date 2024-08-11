@@ -6,7 +6,7 @@ const ProjectSidebar = () => {
 
   return (
     <>
-      <div className="bg-primary w-full lg:w-[20%] md:h-[30rem] lg:h-[30rem] rounded-3xl">
+      <div className="bg-primary w-full  lg:w-[70%] xl:w-[20%] lg:h-[24rem] xl:h-[30rem] rounded-3xl">
         <div className="p-6 flex flex-col gap-6">
           <div className="flex gap-4">
             <Image
@@ -18,15 +18,15 @@ const ProjectSidebar = () => {
             />
             <h3 className="font-semibold text-white text-md">Andranovia</h3>
           </div>
-          <div className="flex items-center gap-4 bg-zinc-800 p-2 rounded-md">
+          <div className="flex items-center gap-4 bg-white px-4 p-2 rounded-md">
             <Image
-              src={"https://img.icons8.com/ios/50/FFFFFF/pin--v1.png"}
+              src={"https://img.icons8.com/ios/50/pin--v1.png"}
               alt=""
               width={20}
               height={20}
               className="w-4 h-4"
             />
-            <h3 className="font-thin text-white text-md">Pinned</h3>
+            <h3 className="font-thin text-primary text-md">Pinned</h3>
           </div>
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-4  p-2 rounded-md">

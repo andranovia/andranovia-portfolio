@@ -57,7 +57,7 @@ const FaqCard = ({ data }: FaqCardProps) => {
         className=" w-full px-10 flex lg:flex-row flex-col justify-between   lg:items-center relative z-40"
       >
         <h1
-          className={`lg:text-2xl text-black font-thin text-lg ${
+          className={`xl:text-2xl text-black font-thin ${
             isHovered ? "text-transparent lg:text-white md:text-white" : "text-black "
           } `}
         >
@@ -75,7 +75,7 @@ const FaqCard = ({ data }: FaqCardProps) => {
                 y: -120,
               },
             }}
-            className=" font-semibold lg:text-3xl"
+            className=" font-semibold text-lg xl:text-3xl"
             transition={transition}
           >
             {data.textMsg}
@@ -124,7 +124,7 @@ const FaqCard = ({ data }: FaqCardProps) => {
         className="w-full h-32 absolute flex justify-end lg:justify-end md:justify-start px-10 lg:pr-20 md:pt-10 items-center lg:pt-0 text-white bg-primary"
       >
         {" "}
-        <p className="lg:w-1/2 text-sm lg:text-base"> {data.textDesc}</p>
+        <p className="lg:w-1/2 text-sm xl:text-base"> {data.textDesc}</p>
       </motion.div>
     </div>
   );

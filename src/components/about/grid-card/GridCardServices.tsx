@@ -11,7 +11,7 @@ import Image from "next/image";
 import useMobileDetect from "@/utils/useMobileDetect";
 
 const GridCardServices = () => {
-  const {isMobile, isTablet} = useMobileDetect();
+  const { isMobile, isTablet } = useMobileDetect();
   const serviceRef = useRef(null);
   const isInView = useInView(serviceRef, { once: true });
   const hoverControls = useAnimation();
@@ -25,8 +25,8 @@ const GridCardServices = () => {
   };
 
   useEffect(() => {
-    isMobile || isTablet 
-      isInView &&
+    isMobile || isTablet
+    isInView &&
       hoverControls.start("hover", {
         delay: isInView && 1.2,
       });
@@ -56,11 +56,11 @@ const GridCardServices = () => {
           backgroundSize: "100%",
         },
       }}
-      className="w-full bg-100% flex cursor-pointer flex-col justify-end border-2   h-[11.5rem] rounded-lg  "
+      className="w-full  bg-100% flex cursor-pointer flex-col justify-end border-2 h-[11rem]  xl:h-[11.5rem] rounded-lg  "
     >
-      <div className="flex relative justify-center gap-4 items-center w-full overflow-hidden">
+      <div className="flex relative justify-center gap-4 items-center h-full w-full overflow-hidden">
         <div className="absolute pointer-events-none inset-0 z-20 flex items-center justify-center   bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,white)]"></div>
-        <motion.div style={{ y }} className="relative -top-[45%]">
+        <motion.div style={{ y }} className="relative -top-[50%] xl:-top-[45%]">
           <Image
             src={"/img/projectImg/project-noirythm-three.png"}
             alt=""
@@ -93,46 +93,47 @@ const GridCardServices = () => {
             height={200}
           />
         </motion.div>
-      </div>
-      <div className="flex justify-center items p-4 absolute z-20">
-        <div className=" flex flex-col lg:flex-row lg:justify-center w-full lg:items-center text-primary ">
-          <div className="flex flex-col w-72 items-start justify-center ">
-            <motion.h1
-              animate={hoverControls}
-              variants={{
-                hover: {
-                  y: -80,
-                },
-                initial: {
-                  y: 0,
-                },
-              }}
-              className="text-lg font-semibold bg-white p-2 rounded-md"
-            >
-              What can I do for you ?
-            </motion.h1>
-            <motion.p
-              animate={hoverControls}
-              variants={{
-                hover: {
-                  y: -60,
-                  visibility: "visible",
-                  opacity: 1,
-                },
-                initial: {
-                  y: 60,
-                  visibility: "hidden",
-                  opacity: 0,
-                },
-              }}
-              initial="initial"
-              className="-mb-10 font-thin bg-white p-2 rounded-md"
-            >
-              Build, make, optimize, improve web application using modern stack
-            </motion.p>
+        <div className="flex justify-center items p-4 absolute left-0 bottom-0 z-20">
+          <div className=" flex flex-col lg:flex-row lg:justify-center w-full lg:items-center text-primary ">
+            <div className="flex flex-col w-72 items-start justify-center ">
+              <motion.h1
+                animate={hoverControls}
+                variants={{
+                  hover: {
+                    y: -80,
+                  },
+                  initial: {
+                    y: 0,
+                  },
+                }}
+                className="text-lg font-semibold bg-white p-2 rounded-md"
+              >
+                What can I do for you ?
+              </motion.h1>
+              <motion.p
+                animate={hoverControls}
+                variants={{
+                  hover: {
+                    y: -60,
+                    visibility: "visible",
+                    opacity: 1,
+                  },
+                  initial: {
+                    y: 60,
+                    visibility: "hidden",
+                    opacity: 0,
+                  },
+                }}
+                initial="initial"
+                className="-mb-10 font-thin bg-white p-2 rounded-md"
+              >
+                Build, make, optimize, improve web application using modern stack
+              </motion.p>
+            </div>
           </div>
         </div>
       </div>
+
     </motion.div>
   );
 };
