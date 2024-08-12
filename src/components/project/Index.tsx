@@ -110,7 +110,7 @@ const Project = () => {
         <div className=" w-full h-full   bg-white  bg-dot-black/[0.4] relative rounded-xl mt-10 lg:mt-0 ">
           <div className="hidden absolute pointer-events-none inset-0 z-10 lg:flex items-center justify-center rounded-xl  bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_70%,black)]"></div>
           <div className="sticky top-0  h-full lg:min-h-[60rem] 1xl:min-h-screen flex justify-center items-center overflow-hidden ">
-            <div className="relative w-screen">
+            <div className="relative w-full">
               <div className="flex flex-col w-full xl:flex-row justify-center items-center gap-2">
                 <ProjectSidebar />
 
