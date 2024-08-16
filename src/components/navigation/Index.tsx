@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { Link } from "react-scroll";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const NavbarLink = dynamic(() => import("./NavbarLink"), {
   ssr: false,
 });
 
 const Navbar: React.FC = () => {
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownControls = useAnimation();
 
@@ -20,23 +19,6 @@ const Navbar: React.FC = () => {
     setShowDropdown(!showDropdown);
   };
 
-  useEffect(() => {
-    const controlNavbar = () => {
-      if (window.scrollY > lastScrollY) {
-        setShow(false);
-      } else {
-        setShow(true);
-      }
-
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", controlNavbar);
-
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, [lastScrollY]);
 
   const linkData = [
     {
@@ -62,8 +44,8 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="w-full lg:h-12 lg:fixed sm:right-0 sm:left-0 lg:pt-10 top-10  flex justify-center text-black z-50  ">
-      <div className="fixed w-full max-w-[18rem] xs:max-w-xs-content sm:max-w-sm-content bottom-4 lg:hidden overflow-hidden pt-52 z-50 rounded-lg">
+    <div className="w-full lg:h-12 lg:fixed sm:right-0 sm:left-0 lg:pt-10 top-10  flex justify-center text-[#021526] z-50  ">
+      {isMobile ? <div className="fixed w-full max-w-[18rem] xs:max-w-xs-content sm:max-w-sm-content bottom-4 lg:hidden overflow-hidden pt-52 z-50 rounded-lg">
         <div className="relative z-40 shadow-2xl overflow-y-hidden  bg-white rounded-full flex justify-between items-center gap-20 p-2">
           <h1 className="text-center mr-20 pl-4">MENU</h1>
           <button onClick={() => handleOpenDropdown()}>
@@ -129,19 +111,20 @@ const Navbar: React.FC = () => {
             </div>
           )}
         </AnimatePresence>
-      </div>
-      <div className="w-full flex justify-center  items-center font-semibold ">
-        <div className="w-full relative flex justify-center lg:left-0 left-12 z-50">
-          <motion.div
-            animate={{ y: show ? 1 : -110, opacity: show ? 1 : 1 }}
-            className="hidden lg:block"
-          >
-            <div className="h-full w-full  shadow-[rgba(0.1,_0.1,_0.1,_0.1)_0px_30px_90px]  bg-white  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-full">
-              <NavbarLink linkData={linkData} />
-            </div>
-          </motion.div>
+      </div> : (
+        <div className="w-full flex justify-center  items-center font-semibold ">
+          <div className="w-full relative flex justify-center lg:left-0 left-12 z-50">
+            <motion.div
+            >
+              <div className="h-full w-full  shadow-[rgba(0.1,_0.1,_0.1,_0.1)_0px_30px_90px]  bg-white  bg-clip-padding backdrop-filter backdrop-blur-sm  rounded-lg">
+                <NavbarLink linkData={linkData} />
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </div>
+
+      )}
+
     </div>
   );
 };

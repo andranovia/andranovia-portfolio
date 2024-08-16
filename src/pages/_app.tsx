@@ -1,3 +1,4 @@
+import { ScrollProvider } from "@/contexts/ActiveSectionContext";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -17,8 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <title>Andranovia - Portfolio</title>
       </Head>
-
+      <ScrollProvider>
       <Component {...pageProps} />
+      </ScrollProvider>
     </>
   );
 }

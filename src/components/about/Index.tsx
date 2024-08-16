@@ -7,14 +7,12 @@ import GridCardAnimatedPhone from "./grid-card/GridCardAnimatedPhone";
 import GridCardAnimatedHello from "./grid-card/GridCardAnimatedHello";
 import AboutImages from "./animated-image/Index";
 import { useMediaQuery } from "react-responsive";
-import useMobileDetect from "@/utils/useMobileDetect";
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const TextControls = useAnimation();
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
-
   useEffect(() => {
     isInView && TextControls.start("animate");
   }, [isInView, TextControls]);
@@ -22,7 +20,7 @@ const About = () => {
   return (
     <>
      <AboutImages/>
-      <div className="relative max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content 1xl:max-w-max-container flex justify-center items-center lg:w-screen mt-0 xl:p-8 font-arcane text-primary">
+      <div  className="relative max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content 1xl:max-w-max-container flex justify-center items-center lg:w-screen mt-0 xl:p-8 font-arcane text-primary">
         <div className="xl:w-[80%] w-full flex flex-col  items-center  sm:justify-start  ">
           <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
             <div className="w-1/4" ref={ref}>

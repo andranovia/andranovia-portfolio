@@ -7,9 +7,11 @@ import SkillMarquee from "@/components/marquee/skill-marquee/Index";
 import Project from "@/components/project/Index";
 import Faq from "@/components/faq/Index";
 import { ClientOnly } from "@/utils/isClient";
+import { useScrollContext } from "@/contexts/ActiveSectionContext";
 
 
 export default function Home() {
+  const { sectionRefs } = useScrollContext();
   useEffect(() => {
     const lenis = new Lenis();
 
@@ -26,12 +28,12 @@ export default function Home() {
       <LayoutApp>
         <div className="relative bg-white pb-20 rounded-b-xl flex flex-col items-center">
           <div className="overflow-hidden flex flex-col items-center w-full">
-            <div id="Hero" className="p-3 relative max-w-max-container">
+            <div id="Hero" className="p-3 relative max-w-max-container" ref={sectionRefs[0]}>
               <Hero />
             </div>
-            <div className="relative bottom-0 flex flex-col items-center overflow-hidden bg-primary w-full rounded-md pt-24 xs:pt-36 md:pt-0 1xl:pt-52">
+            <div  id="About" ref={sectionRefs[1]} className="relative bottom-0 flex flex-col items-center  bg-primary w-full rounded-md pt-24 xs:pt-36 md:pt-0 1xl:pt-52">
 
-              <div id="About" className=" relative flex flex-col items-center">
+              <div  className=" relative flex flex-col items-center" >
                 <ClientOnly>
                 <About />
                 </ClientOnly>
@@ -41,10 +43,10 @@ export default function Home() {
               <SkillMarquee />
             </div>
           </div>
-          <div id="Project" className="pt-20 w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-fit xl:max-w-xl-content 1xl:max-w-max-container">
+          <div id="Project" ref={sectionRefs[2]} className="pt-20 w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-fit xl:max-w-xl-content 1xl:max-w-max-container">
             <Project />
           </div>
-          <div id="FAQ" className="w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content ">
+          <div id="FAQ" ref={sectionRefs[3]} className="w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content ">
             <Faq />
           </div>
         </div>
