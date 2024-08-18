@@ -43,7 +43,7 @@ const HeroAnimatedText = ({ charDelay }: props) => {
               },
             },
           }}
-          className="inline-block text-5xl xs:text-6xl text-[#201D30] lg:text-[6rem] font-arcane 1xl:text-[10rem]  "
+          className="inline-block text-[44px] leading-10 xs:text-[3.2rem] xs:leading-[3.2rem] sm:text-6xl text-[#201D30] lg:text-[6rem] font-arcane 1xl:text-[10rem]  "
         >
           {word}
           {wordIndex < text.split(" ").length - 1 && <>&nbsp;</>}

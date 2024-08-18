@@ -43,7 +43,7 @@ export default function Home() {
               <SkillMarquee />
             </div>
           </div>
-          <div id="Project" ref={sectionRefs[2]} className="pt-20 w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-fit xl:max-w-xl-content 1xl:max-w-max-container">
+          <div id="Project" ref={sectionRefs[2]} className="pt-20 w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-full xl:max-w-xl-content 1xl:max-w-max-container">
             <Project />
           </div>
           <div id="FAQ" ref={sectionRefs[3]} className="w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content ">
