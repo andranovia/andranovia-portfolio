@@ -1,24 +1,11 @@
 import React, { useEffect, useRef} from "react";
-import { motion, useAnimation } from "framer-motion";
-import HeroAnimatedText from "./HeroAnimatedText";
-import useMobileDetect from "@/utils/useMobileDetect";
-
-
+import { useAnimation } from "framer-motion";
+import { Signature } from "../animated/SignatureText";
 
 const HeroText = () => {
-  const {isMobile, isTablet} = useMobileDetect();
-  // const [cursorVariant, setCursorVariant] = useState("default");
-  // const variants = useVariants(ref);
 
   const ref = useRef(null);
 
-  // function textHover() {
-  //   !isMobile && !isTablet ? setCursorVariant("hover") : null;
-  // }
-
-  // function textHoverLeave() {
-  //   setCursorVariant("default");
-  // }
   const textControls = useAnimation();
 
   useEffect(() => {
@@ -26,34 +13,22 @@ const HeroText = () => {
   }, [textControls]);
 
   return (
-    <div className="flex flex-col mx-10 mb-10 lg:mb-0  md:w-fit  h-[16rem] xs:h-[18rem] md:h-[16rem] lg:h-[26rem] 1xl:h-[36.5rem]  lg:mt-10  ">
-    
-  
+    <div className="flex flex-col  md:w-fit  h-[16rem] xs:h-[18rem] md:h-[16rem] lg:h-[26rem] 1xl:h-[36.5rem] relative -rotate-[5deg] -ml-10">
       <div
         ref={ref}
-        // onMouseEnter={() => textHover()}
-        // onMouseLeave={() => textHoverLeave()}
-        className="lg:mt-6 h-full"
+        className=" h-full flex flex-col justify-center items-center"
       >
         <div className="flex flex-col gap-10">
-          <motion.div
-            variants={{
-              hidden: {
-                opacity: 0,
-              },
-              animate: {
-                opacity: 1,
-              },
-            }}
-            initial="hidden"
-            animate={textControls}
-            className="flex flex-col   lg:items-center lg:gap-8 z-40  relative  mt-10  "
-          >
-            <HeroAnimatedText charDelay={0.04}  />
-       
-          </motion.div>
+            <Signature text="Good morrow !" fontSize={120} duration={0.2} className="relative -mt-20" color="#303841" lastSpecial={true} />
         </div>
-       
+      </div>
+      <div
+        ref={ref}
+        className=" absolute bottom-32"
+      >
+        <div className="flex flex-col gap-10">
+          <Signature text="Prithee, what brings thee here?" fontSize={48} duration={0.2} className="relative -mt-40" color="#303841" />
+        </div>
       </div>
     </div>
   );

@@ -21,12 +21,12 @@ const AboutAnimatedImages = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], [isMobile ? -50 : -200, -10]);
   const yTwo = useTransform(scrollYProgress, [0, 1], [isMobile ? 50 : 200, 1]);
-  const yThree = useTransform(scrollYProgress, [0, 1], [isMobile ? 100 :400, 30]);
-  const yFour = useTransform(scrollYProgress, [0, 1], [isMobile ? 40 :100, 1]);
+  const yThree = useTransform(scrollYProgress, [0, 1], [isMobile ? 100 : 400, 30]);
+  const yFour = useTransform(scrollYProgress, [0, 1], [isMobile ? 40 : 100, 1]);
   const yFive = useTransform(
     scrollYProgress,
     [0, 1],
-    [isMobile ? 100 :500, 40]
+    [isMobile ? 100 : 500, 40]
   );
 
   const rotate = useTransform(scrollYProgress, [0, 1], [-3, 3]);

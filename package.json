@@ -20,6 +20,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "next": "latest",
     "next-google-fonts": "^2.2.0",
+    "opentype.js": "^2.0.0",
     "react": "latest",
     "react-dom": "latest",
     "react-fast-marquee": "^1.6.3",

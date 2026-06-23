@@ -12,17 +12,19 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        'xs': '375px',
-        'sm': '425px',
-        'md': '576px',
-        'lg': '768px',
-        'xl': '1024px',
-        '1xl': '1279.98px',
-        '2xl': '1440px',
+        xs: "375px",
+        sm: "425px",
+        md: "576px",
+        lg: "768px",
+        xl: "1024px",
+        "1xl": "1279.98px",
+        "2xl": "1440px",
       },
       backgroundColor: {
-        primary: "#021526",
+        white: "#F5F5F5",
+        primary: "#FFFAF0",
         secondary: "#F0ECE5",
+        special: "#FF5722",
         base: "#FFFFFF",
         invertPrimary: "#e6e8e8",
       },
@@ -30,24 +32,28 @@ const config: Config = {
         "100%": "100%",
       },
       textColor: {
-        primary: "#201D30",
+        white: "#F5F5F5",
+        base: "#303841",
+        primary: "#303841",
         secondary: "#F0ECE5",
+        special: "#FF5722",
       },
       fontFamily: {
         metroPhotograph: ["MetroPhotograph", "sans-serif"],
+        caveat: ["Caveat", "sans-serif"],
         arcane: ["Arcane Nine", "sans-serif"],
         bebasNeue: ["Bebas Neue", "sans-serif"],
       },
-      maxWidth: {
-
-        'base-content':'300px', 
-        'xs-content': '320px',
-        'sm-content': '352px',
-        'md-content': '512px',
-        'lg-content': '648px',
-        'xl-content': '992px',
-        'max-container': '1512px',
-      }
+      maxWidth: ({ theme }: any) => ({
+        ...theme("spacing"),
+        "base-content": "300px",
+        "xs-content": "320px",
+        "sm-content": "352px",
+        "md-content": "512px",
+        "lg-content": "648px",
+        "xl-content": "992px",
+        "max-container": "1512px",
+      }),
     },
   },
   plugins: [
@@ -57,21 +63,24 @@ const config: Config = {
         {
           "bg-grid": (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,
             )}")`,
           }),
           "bg-grid-small": (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,
             )}")`,
           }),
           "bg-dot": (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`,
             )}")`,
           }),
         },
-        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+        {
+          values: flattenColorPalette(theme("backgroundColor")),
+          type: "color",
+        },
       );
     },
   ],
@@ -80,7 +89,7 @@ const config: Config = {
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
   );
 
   addBase({

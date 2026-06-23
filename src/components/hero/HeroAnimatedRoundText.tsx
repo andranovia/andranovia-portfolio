@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import CircleType from "circletype";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const HeroAnimatedRoundText = () => {
   const circleTypeRef = useRef<HTMLDivElement>(null);
@@ -24,13 +25,22 @@ const HeroAnimatedRoundText = () => {
   }, []);
 
   return (
-    <div className="flex -ml-3 lg:-m-0 justify-start items-start  font-arcane">
+    <div className="flex -ml-3 lg:-m-0 justify-start items-start font-metroPhotograph">
       {" "}
       <div
         className={
-          " flex items-center top-1 lg:top-0 left-0   relative  justify-center text-center "
+          " flex items-center top-1 lg:top-0 left-0 justify-center text-center relative"
         }
       >
+        <div className="absolute left-0 top-0 ">
+          <Image src="/img/hero/wax-seal.png" alt="wax" width={600} height={600} />
+
+        </div>
+        <div className="absolute left-0 top-0 ">
+          <Image src="/img/assets/logo.svg" alt="logo" width={500} height={500} className="invert -mt-2" />
+
+        </div>
+
         <motion.div
           transition={{
             type: "spring",
@@ -38,7 +48,7 @@ const HeroAnimatedRoundText = () => {
             stiffness: 100,
             duration: 1,
           }}
-          className="bg-primary p-2 bg-cover overflow-hidden  lg:right-2 z-20  w-32 h-32 md:w-[12rem] md:h-[12rem] 1xl:w-[28rem] 1xl:h-[28rem] rounded-full  flex items-center text-white justify-center text-sm sm:text-lg lg:text-2xl 1xl:text-5xl    "
+          className=" p-2  lg:right-2 z-20  w-32 h-32 md:w-[12rem] md:h-[12rem] 1xl:w-[28rem] 1xl:h-[28rem] rounded-full  flex items-center text-base justify-center text-sm sm:text-lg lg:text-2xl 1xl:text-4xl  text-white  "
         >
           <div ref={circleTypeRef} id="textCircular">
             <div className={"flex items-center justify-center w-full   "}>
@@ -54,7 +64,7 @@ const HeroAnimatedRoundText = () => {
                   className=" p-2 w-full  z-20 relative "
                 >
                   <p className="block ">
-                  look -&gt;Around -&gt; <span className="lg:block hidden">look -&gt; Around -&gt; </span>
+                  Behold -&gt;<span className="lg:block hidden">Behold -&gt;</span>Behold -&gt;
                   </p>
                 </motion.div>
               </div>

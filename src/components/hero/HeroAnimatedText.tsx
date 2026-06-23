@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 interface props {
   charDelay: number;
+  text: string;
+  textStyle: string;  
 }
 
-const HeroAnimatedText = ({ charDelay }: props) => {
-
-  const text = 'We should know each other'
+const HeroAnimatedText = ({ charDelay, text, textStyle }: props) => {
 
 
   return (
@@ -23,7 +23,7 @@ const HeroAnimatedText = ({ charDelay }: props) => {
             damping: 8,
             stiffness: 100,
             staggerChildren: charDelay,
-            duration: 1,
+            duration: 4,
           },
         },
       }}
@@ -43,9 +43,13 @@ const HeroAnimatedText = ({ charDelay }: props) => {
               },
             },
           }}
-          className="inline-block text-[44px] leading-10 xs:text-[3.2rem] xs:leading-[3.2rem] sm:text-6xl text-[#201D30] lg:text-[6rem] font-arcane 1xl:text-[10rem]  "
+          className={textStyle}
         >
-          {word}
+          {word === "!" ? (
+            <span className="text-special">{word}</span>
+          ) : (
+          word
+          )}
           {wordIndex < text.split(" ").length - 1 && <>&nbsp;</>}
         </motion.div>
       ))}

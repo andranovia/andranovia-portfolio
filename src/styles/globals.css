@@ -14,6 +14,11 @@
 }
 
 @font-face {
+  font-family: "Caveat";
+  src: url("../../public/fonts/Caveat-VariableFont_wght.ttf");
+}
+
+@font-face {
   font-family: "Bebas Neue";
   src: url("../../public/fonts/BebasNeue-Regular.ttf");
 }
