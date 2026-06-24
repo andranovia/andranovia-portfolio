@@ -14,11 +14,13 @@ const config: Config = {
       screens: {
         xs: "375px",
         sm: "425px",
+        ms: "500px",
         md: "576px",
         lg: "768px",
         xl: "1024px",
         "1xl": "1279.98px",
         "2xl": "1440px",
+        "3xl": "1441px",
       },
       backgroundColor: {
         white: "#F5F5F5",

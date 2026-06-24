@@ -3,7 +3,7 @@ import CircleType from "circletype";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const HeroAnimatedRoundText = () => {
+const AboutAnimatedRoundText = () => {
   const circleTypeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,16 +29,15 @@ const HeroAnimatedRoundText = () => {
       {" "}
       <div
         className={
-          " flex items-center top-1 lg:top-0 left-0 justify-center text-center relative"
+          " flex items-center  top-1 lg:top-0 left-0 justify-center text-center relative w-[13rem] ms:w-[16rem] md:w-[18rem] 1xl:w-auto"
         }
       >
-        <div className="absolute left-0 top-0 ">
+        <div className="absolute left-0 -top-10 ms:-top-16 md:-top-12 1xl:top-0 ">
           <Image src="/img/hero/wax-seal.png" alt="wax" width={600} height={600} />
 
         </div>
-        <div className="absolute left-0 top-0 ">
-          <Image src="/img/assets/logo.svg" alt="logo" width={500} height={500} className="invert -mt-2" />
-
+        <div className="absolute ms:left-4 md:left-0 1xl:left-6 -top-9 ms:-top-11 md:-top-12 1xl:top-6 ">
+          <Image src="/img/assets/logo.svg" alt="logo" width={500} height={500} className="invert -mt-2 w-[14rem] md:w-auto" />
         </div>
 
         <motion.div
@@ -48,7 +47,7 @@ const HeroAnimatedRoundText = () => {
             stiffness: 100,
             duration: 1,
           }}
-          className=" p-2  lg:right-2 z-20  w-32 h-32 md:w-[12rem] md:h-[12rem] 1xl:w-[28rem] 1xl:h-[28rem] rounded-full  flex items-center text-base justify-center text-sm sm:text-lg lg:text-2xl 1xl:text-4xl  text-white  "
+          className=" p-2  lg:right-2 z-20  w-32 h-32 md:w-[12rem] md:h-[12rem] 1xl:w-[28rem] 1xl:h-[28rem] rounded-full  flex items-center justify-center text-lg ms:text-xl md:text-2xl 1xl:text-4xl  text-white  "
         >
           <div ref={circleTypeRef} id="textCircular">
             <div className={"flex items-center justify-center w-full   "}>
@@ -64,7 +63,7 @@ const HeroAnimatedRoundText = () => {
                   className=" p-2 w-full  z-20 relative "
                 >
                   <p className="block ">
-                  Behold -&gt;<span className="lg:block hidden">Behold -&gt;</span>Behold -&gt;
+                  Behold -&gt;<span className="">Behold -&gt;</span>Behold -&gt;
                   </p>
                 </motion.div>
               </div>
@@ -76,4 +75,4 @@ const HeroAnimatedRoundText = () => {
   );
 };
 
-export default HeroAnimatedRoundText;
+export default AboutAnimatedRoundText;
