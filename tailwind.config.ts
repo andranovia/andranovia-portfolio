@@ -23,11 +23,11 @@ const config: Config = {
         "3xl": "1441px",
       },
       backgroundColor: {
-        white: "#F5F5F5",
-        primary: "#F0E9B6",
-        secondary: "#F0ECE5",
+        white: "#FFFAF3",
+        primary: "#f4ebd0",
+        secondary: "#C9996B",
         special: "#FF5722",
-        base: "#FFFFFF",
+        base: "#2c1e12",
         invertPrimary: "#e6e8e8",
       },
       backgroundSize: {
@@ -37,7 +37,7 @@ const config: Config = {
         white: "#F5F5F5",
         base: "#303841",
         primary: "#303841",
-        secondary: "#F0ECE5",
+        secondary: "#cfc3a0",
         special: "#FF5722",
       },
       fontFamily: {
@@ -45,6 +45,7 @@ const config: Config = {
         caveat: ["Caveat", "sans-serif"],
         arcane: ["Arcane Nine", "sans-serif"],
         bebasNeue: ["Bebas Neue", "sans-serif"],
+        blackFlag: ["Black Flag", "sans-serif"],
       },
       maxWidth: ({ theme }: any) => ({
         ...theme("spacing"),

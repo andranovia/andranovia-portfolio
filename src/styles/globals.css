@@ -23,6 +23,29 @@
   src: url("../../public/fonts/BebasNeue-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Black Flag";
+  src: url("../../public/fonts/BlackFlag.ttf");
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg))
+      translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+  }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg))
+      translateY(calc(var(--radius) * 1px))
+      rotate(calc((var(--angle) * -1deg) - 360deg));
+  }
+}
+
+@layer utilities {
+  .animate-orbit {
+    animation: orbit calc(var(--duration) * 1s) linear infinite;
+  }
+}
+
 @layer utilities {
     .animation-delay-2000 {
       animation-delay: 2s;

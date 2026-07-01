@@ -125,7 +125,7 @@ const AboutAnimatedImages = () => {
         )
       }
 
-      )})
+      )}
     </React.Fragment>
   );
 };

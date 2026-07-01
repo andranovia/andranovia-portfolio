@@ -29,17 +29,17 @@ const GridCardAnimatedHello = () => {
   ];
   return (
     <React.Fragment>
-      <div className="bg-base h-40 1xl:w-[65%] overflow-hidden w-full rounded-lg  col-span-2 1xl:col-span-1">
-        <motion.div className="relative border  rounded-md flex lg:justify-start    items-center h-full  lg:px-10 px-6 w-full text-start">
-          <div className="absolute bg-gradient-to-b from-white to-transparent z-20 top-0 left-0 w-full rounded-b-md h-10"></div>
-          <div className="w-2/3">
-            <h1 className="font-semibold">Hi There.</h1>
-            <p className="text-sm w-40">
+      <div className="bg-white h-40 1xl:w-[65%] overflow-hidden w-full rounded-sm  col-span-2 1xl:col-span-1">
+        <motion.div className="relative  rounded-md flex lg:justify-start    items-center h-full  lg:px-10 px-6 w-full text-start">
+          <div className="absolute bg-gradient-to-b from-[#fffaf3] to-transparent z-20 top-0 left-0 w-full rounded-b-md h-10"></div>
+          <div className="w-2/3 relative z-30">
+            <h1 className="font-semibold text-special">Hi There.</h1>
+            <p className="text-sm w-40 text-primary ">
               Programmers learn language dont they?
             </p>
           </div>
 
-          <div className="flex justify-center absolute flex-col items-center  h-36 overflow-hidden -right-8 lg:-right-12  w-48 text-4xl">
+          <div className="flex justify-center absolute flex-col items-center  h-36 overflow-hidden -right-8 lg:-right-20  w-48 text-4xl">
             <Marquee
               autoFill={true}
               speed={25}
@@ -56,7 +56,7 @@ const GridCardAnimatedHello = () => {
               ))}
             </Marquee>
           </div>
-          <div className="absolute bg-gradient-to-b from-transparent to-white z-20 bottom-0 left-0 w-full rounded-t-md h-full"></div>
+          <div className="absolute bg-gradient-to-b from-transparent to-[#fffaf3] z-20 bottom-0 left-0 w-full rounded-t-md h-full"></div>
         </motion.div>
       </div>
     </React.Fragment>
