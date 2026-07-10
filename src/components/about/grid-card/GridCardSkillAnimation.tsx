@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from "react"
-import CircleType from "circletype";
+'use client'
+
+import React from "react"
+
 import { cn } from "@/utils/cn"
 import Image from "next/image"
+import { useMediaQuery } from "react-responsive"
 
 type OrbitingCirclesProps = React.HTMLAttributes<HTMLDivElement> & {
   className?: string
@@ -28,6 +31,7 @@ function OrbitingCircles({
   ...props
 }: OrbitingCirclesProps) {
   const calculatedDuration = duration / speed
+
 
   const svgSize = radius * 2 + 4;
   return (
@@ -60,7 +64,7 @@ function OrbitingCircles({
           </defs>
 
           <circle
-            className="stroke-black/20 stroke-[2px] dark:stroke-white/20"
+            className="stroke-black stroke-[4px] dark:stroke-white"
             cx={svgSize / 2}
             cy={svgSize / 2}
             r={radius}
@@ -98,52 +102,30 @@ function OrbitingCircles({
 
 export function GridCardSkillAnimation() {
 
- const circleTypeRef = useRef<HTMLDivElement>(null);
-
-useEffect(() => {
-  if (!circleTypeRef.current) return;
-
-  const circleInstance = new CircleType(circleTypeRef.current);
-  return () => {
-    // circleInstance.destroy(); 
-  };
-}, []);
-
-
+  const isMobile = useMediaQuery({ query: "(max-width: 575px)" });
   return (
-    <div className="relative ">
-      <div className="relative flex h-[500px] w-[500px] flex-col items-center justify-center overflow-hidden">
-        <OrbitingCircles >
-          <Image src="/img/techLogo/react.svg" alt="" width={30} height={30} />
-          <Image src="/img/techLogo/tailwindcss.svg" alt="" width={30} height={30} />
-          <Image src="/img/techLogo/react-query.svg" alt="" width={30} height={30} />
-          <Image src="/img/techLogo/redux.svg" alt="" width={30} height={30} />
-          <Image src="/img/techLogo/zustand.svg" alt="" width={30} height={30} />
-          <Image src="/img/techLogo/supabase.svg" alt="" width={30} height={30} />
-          <Image src="/img/techLogo/motion.svg" alt="" width={30} height={30} />
-          <Image src="/img/techLogo/prisma.svg" alt="" width={30} height={30} />
-
-        </OrbitingCircles>
-        <OrbitingCircles iconSize={20} radius={40} reverse speed={2}>
-          <Image src="/img/techLogo/nextjs.png" alt="" width={50} height={50} />
-          <Image src="/img/techLogo/typescript.svg" alt="" width={25} height={25} />
-        </OrbitingCircles>
-      </div>
-      <div className="absolute p-2  top-[33%] left-[21%] !font-blackFlag"
-      >
-        <div ref={circleTypeRef} id="textCircular-2">
-          <div className={"flex items-center justify-center  "}>
-            <div ref={circleTypeRef} >
-              <div
-                className=" p-2 w-full  z-20 relative "
-              >
-                <p className="block ">
-                  Behold -&gt;<span className="">Behold -&gt;</span>Behold -&gt;
-                </p>
-              </div>
+    <div className="mt-20 flex justify-center items-center">
+      <h3></h3>
+      <div className="relative ">
+        <div className="absolute -top-36 -left-16 flex h-[500px] w-[500px] flex-col items-center justify-center overflow-hidden">
+          <OrbitingCircles radius={isMobile ? 140 : 160}>
+            <Image src="/img/techLogo/react.svg" alt="" width={35} height={35} className="p-1.5 bg-black rounded-full w-9 h-9" />
+            <Image src="/img/techLogo/tailwindcss.svg" alt="" width={35} height={35} className="p-1.5 bg-black rounded-full w-9 h-9" />
+            <Image src="/img/techLogo/react-query.svg" alt="" width={35} height={35} className="p-1.5 bg-black rounded-full w-9 h-9" />
+            <Image src="/img/techLogo/redux.svg" alt="" width={35} height={35} className="p-1.5 bg-black rounded-full w-9 h-9" />
+            <Image src="/img/techLogo/zustand.svg" alt="" width={35} height={35} className="p-1.5 bg-black rounded-full w-9 h-9" />
+            <Image src="/img/techLogo/supabase.svg" alt="" width={35} height={35} className="p-2 bg-black rounded-full w-9 h-9" />
+            <Image src="/img/techLogo/motion.svg" alt="" width={35} height={35} className="p-1 bg-black rounded-full w-9 h-9" />
+            <div className=" bg-black rounded-full w-9 h-9">
+              <Image src="/img/techLogo/prisma.svg" alt="" width={35} height={35} className="invert p-1.5" />
             </div>
-          </div>
+          </OrbitingCircles>
+          <OrbitingCircles iconSize={20} radius={40} reverse speed={2}>
+            <Image src="/img/techLogo/nextjs.png" alt="" width={35} height={35} className=" bg-black rounded-full w-9 h-9" />
+            <Image src="/img/techLogo/typescript.svg" alt="" width={25} height={25} className="p-1.5 bg-black rounded-full w-9 h-9" />
+          </OrbitingCircles>
         </div>
+        <Image src="/img/about/circular-text.png" alt="" width={300} height={300} className="relative -top-12 left-9" />
       </div>
     </div>
   )

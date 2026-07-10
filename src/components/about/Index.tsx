@@ -11,7 +11,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true });
   const TextControls = useAnimation();
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
-  const isMobile = useMediaQuery({ query: "(max-width: 425px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 424px)" });
 
   useEffect(() => {
     isInView && TextControls.start("animate");
@@ -27,7 +27,7 @@ const About = () => {
   }, [isMobile, isTablet]);
 
 
-  
+
 
   return (
     <>
@@ -61,52 +61,63 @@ const About = () => {
           </div>
 
 
-          <div className="container flex flex-col mt-10 1xl:mt-20 gap-6">
-            <div className="flex justify-center items-center gap-4 ">
-              <div className="h-[2px] flex-1 bg-base rounded-md" />
-              <p>Chapter  II</p>
+          <div className="container flex flex-col gap-0 mt-16 md:mt-10 ">
+            <div className="flex justify-center items-center gap-4 mb-6 ">
+              <div className="flex-1 h-[2px] bg-base rounded-md" />
+              <p>Chapter II</p>
             </div>
-            <div className="-left-6 relative">
-              <Image src="/img/about/q.png" alt="" width={120} height={120} className="float-left top-2 relative -right-10" />
-              <Image src="/img/about/owl.png" alt="" width={200} height={400} className="float-right top-0 relative -mr-16" />
-              <p className="font-blackFlag leading-10 relative -right-10 1xl:-right-8">
-                uem antem quaa unte ecemantes uuta mate reurt Sed pellentesque volutpat nisl, sit amet vulputate mi porttitor vel. Integer in nisl nisi. Nullam fermentum feugiat sodales. Proin eget lacinia urna. Aliquam scelerisque efficitur vestibulum. Maecenas dignissim id leo nec aliquam. Donec sapien velit, vulputate quis scelerisque eget, tempus a nunc. Suspendisse suscipit ligula at euismod suscipit.
+
+            <div className="relative -left-[4vw] xs:-left-6">
+              <Image
+                src="/img/about/q.png"
+                alt=""
+                width={120}
+                height={120}
+                className="relative float-left top-2 -right-2 xs:-right-0 lg:-right-10  w-[100px] sm:w-auto"
+              />
+              <Image
+                src="/img/about/owl.png"
+                alt=""
+                width={230}
+                height={400}
+                className="absolute float-right top-0 -right-32 md:-right-28 lg:-right-10 xl:right-0 -mr-6 md:-mr-[30%] 1xl:-mr-20 w-[13rem] md:w-[20rem] 1xl:w-[17rem]"
+              />
+              <p className="relative -right-2 xs:-right-0 lg:-right-10 1xl:-right-8 mb-10 max-w-[calc(100%-30px)] md:max-w-fit lg:max-w-[calc(100%-100px)] 1xl:max-w-[calc(100%-200px)] font-blackFlag text-[10px] sm:text-xs !leading-6 md:text-base md:!leading-10">
+                uem antem quaa unte ecemantes uuta mate reurt Sed pellentesque volutpat nisl, sit amet vulputate mi porttitor vel. Integer in nisl nisi. Nullam fermentum feugiat sodales. Proin eget lacinia urna. Aliquam scelerisque efficitur vestibulum. Maecenas dignissim id leo nec aliquam. Integer in nisl nisi. Nullam fermentum feugiat sodales. Proin eget lacinia urna. Aliquam scelerisque efficitur vestibulum. Maecenas dignissim id leo nec aliquam. Donec velit, vulputate quis scelerisque eget, tempus a nunc.
               </p>
-                  <GridCardSkillAnimation/>
             </div>
 
-           
-
-
-
-
-            {/* <div className="md:grid grid-cols-2 1xl:flex justify-center  items-center  gap-10  ">
-              {isTablet ? <GridCardAnimatedHello /> : null}
-              <div className="flex flex-col justify-center w-full h-full 1xl:w-1/2 sm:items-end items-center gap-4">
-                <div className=" w-full rounded-xl">
-                  <div className="font-semibold text-2xl     rounded-xl items-start flex flex-col 1xl:flex-row justify-center  text-center sm:text-start gap-4 pt-2">
-                    {!isTablet ? <GridCardAnimatedHello /> : null}
-
-                    {/* <div className="flex relative justify-center text-start  bg-white flex-col items-center border w-full 1xl:w-1/3 1xl:h-40 py-6 rounded-lg gap-2 ">
-                      <div className="flex justify-center items-center gap-4 1xl:gap-2">
-                        <h1 className="font-semi bold text-5xl ">2</h1>
-                        <div className="flex-col font-thin">
-                          <h2>Years</h2>
-                          <h3>Experience</h3>
-                        </div>
-                      </div>
-                      <p className="1xl:text-xs text-base font-thin w-1/2 1xl:w-32 ">
-                        Not that much init? but im still 17 years old!
-                      </p>
-                    </div>
-                  </div>
+            <div className="flex justify-center relative -top-8 md:-top-0 left-[1px] xs:-left-2">
+              <Image
+                src="/img/about/text.png"
+                alt=""
+                width={600}
+                height={400}
+                className="absolute hidden 1xl:flex -top-16 -left-2 mt-8 w-[275px] min-w-[275px] object-cover"
+              />
+              <div className="relative -left-[25px] 1xl:left-0">
+                <div className="relative md:float-left -top-4 1xl:-top-10 2xl:-top-6 -left-4 1xl:-left-12 -ml-20 lg:ml-0 1xl:ml-[26%] w-[20rem]">
+                  <GridCardSkillAnimation />
                 </div>
-                <GridCardServices />
+                <Image
+                  src="/img/about/knot.png"
+                  alt=""
+                  width={230}
+                  height={400}
+                  className="absolute float-right -top-[4.9rem] md:-top-20 lg:-top-10 xl:top-[3vw] 2xl:top-[5.6rem] -right-[8.2rem] md:-right-[7.1rem] lg:-right-10 xl:right-0 -mr-[1.8rem] md:-mr-[31%] 1xl:-mr-[4.3rem] w-[13rem] md:w-[20rem] 1xl:w-[17.5rem]"
+                />
+                <Image
+                  src="/img/about/knot.png"
+                  alt=""
+                  width={230}
+                  height={400}
+                  className="absolute float-right top-[42%] -right-[8.2rem] -mr-[1.7rem] w-[13rem] md:hidden"
+                />
+                <p className="relative -top-7 -right-2 md:-right-6 1xl:-right-0 max-w-[calc(100%-30px)] md:max-w-[calc(100%-50px)] lg:max-w-[calc(100%-100px)] 1xl:max-w-[calc(100%-200px)] font-blackFlag text-[10px] sm:text-xs !leading-6 md:text-base md:!leading-10 md:text-right">
+                  uem antem quaa unte ecemantes uuta mate reurt Sed pellentesque volutpat nisl, sit amet vulputate mi porttitor vel. Integer in nisl nisi. Nullam fermentum feugiat sodales. Proin eget lacinia urna. Aliquam scelerisque efficitur vestibulum.
+                </p>
               </div>
-              {/* <div className="1xl:w-1/2 md:h-full">
-                <GridCardAnimatedPhone />
-              </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
