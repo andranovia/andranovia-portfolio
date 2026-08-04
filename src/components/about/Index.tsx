@@ -31,8 +31,7 @@ const About = () => {
 
   return (
     <>
-
-      <div className="relative md:mt-40 1xl:mt-4 max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content 1xl:max-w-max-container flex justify-center items-center lg:w-screen mt-0 xl:p-8 font-caveat text-primary">
+      <div className="relative md:mb-40 mt-0 md:mt-32 1xl:mt-0 max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content 1xl:max-w-max-container flex justify-center items-center lg:w-screen xl:p-8 font-caveat text-primary">
         <div className="xl:w-[80%] w-full flex flex-col  items-center  sm:justify-start  ">
           <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
             <div className="w-1/4 " ref={ref}>
@@ -80,7 +79,7 @@ const About = () => {
                 alt=""
                 width={230}
                 height={400}
-                className="absolute float-right top-0 -right-32 md:-right-28 lg:-right-10 xl:right-0 -mr-6 md:-mr-[30%] 1xl:-mr-20 w-[13rem] md:w-[20rem] 1xl:w-[17rem]"
+                className="absolute float-right top-0 -right-32 md:-right-28 lg:-right-10 xl:right-0 -mr-6 md:-mr-[30%] 1xl:-mr-20 w-[13rem] md:w-[20rem] 1xl:w-[16rem]"
               />
               <p className="relative -right-2 xs:-right-0 lg:-right-10 1xl:-right-8 mb-10 max-w-[calc(100%-30px)] md:max-w-fit lg:max-w-[calc(100%-100px)] 1xl:max-w-[calc(100%-200px)] font-blackFlag text-[10px] sm:text-xs !leading-6 md:text-base md:!leading-10">
                 uem antem quaa unte ecemantes uuta mate reurt Sed pellentesque volutpat nisl, sit amet vulputate mi porttitor vel. Integer in nisl nisi. Nullam fermentum feugiat sodales. Proin eget lacinia urna. Aliquam scelerisque efficitur vestibulum. Maecenas dignissim id leo nec aliquam. Integer in nisl nisi. Nullam fermentum feugiat sodales. Proin eget lacinia urna. Aliquam scelerisque efficitur vestibulum. Maecenas dignissim id leo nec aliquam. Donec velit, vulputate quis scelerisque eget, tempus a nunc.
@@ -104,7 +103,7 @@ const About = () => {
                   alt=""
                   width={230}
                   height={400}
-                  className="absolute float-right -top-[4.9rem] md:-top-20 lg:-top-10 xl:top-[3vw] 2xl:top-[5.6rem] -right-[8.2rem] md:-right-[7.1rem] lg:-right-10 xl:right-0 -mr-[1.8rem] md:-mr-[31%] 1xl:-mr-[4.3rem] w-[13rem] md:w-[20rem] 1xl:w-[17.5rem]"
+                  className="absolute float-right -top-[4.9rem] md:-top-20 lg:-top-10 xl:top-[3vw] 1xl:top-[1rem] -right-[8.2rem] md:-right-[7.1rem] lg:-right-10 xl:right-0 -mr-[1.8rem] md:-mr-[31%] 1xl:-mr-[4.3rem] w-[13rem] md:w-[20rem] 1xl:w-[16.5rem]"
                 />
                 <Image
                   src="/img/about/knot.png"
@@ -113,7 +112,7 @@ const About = () => {
                   height={400}
                   className="absolute float-right top-[42%] -right-[8.2rem] -mr-[1.7rem] w-[13rem] md:hidden"
                 />
-                <p className="relative -top-7 -right-2 md:-right-6 1xl:-right-0 max-w-[calc(100%-30px)] md:max-w-[calc(100%-50px)] lg:max-w-[calc(100%-100px)] 1xl:max-w-[calc(100%-200px)] font-blackFlag text-[10px] sm:text-xs !leading-6 md:text-base md:!leading-10 md:text-right">
+                <p className="relative -top-7 -right-5 xs:-right-2 md:-right-6 1xl:-right-0 max-w-[calc(100%-30px)] md:max-w-[calc(100%-50px)] lg:max-w-[calc(100%-100px)] 1xl:max-w-[calc(100%-200px)] font-blackFlag text-[10px] sm:text-xs !leading-6 md:text-base md:!leading-10 md:text-right">
                   uem antem quaa unte ecemantes uuta mate reurt Sed pellentesque volutpat nisl, sit amet vulputate mi porttitor vel. Integer in nisl nisi. Nullam fermentum feugiat sodales. Proin eget lacinia urna. Aliquam scelerisque efficitur vestibulum.
                 </p>
               </div>

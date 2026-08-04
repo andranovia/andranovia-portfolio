@@ -38,7 +38,7 @@ const config: Config = {
         base: "#303841",
         primary: "#303841",
         secondary: "#cfc3a0",
-        special: "#FF5722",
+        special: "#892913",
       },
       fontFamily: {
         metroPhotograph: ["MetroPhotograph", "sans-serif"],

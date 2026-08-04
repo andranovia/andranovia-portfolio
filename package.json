@@ -22,6 +22,7 @@
     "next-google-fonts": "^2.2.0",
     "opentype.js": "^2.0.0",
     "react": "latest",
+    "react-curved-text": "^3.0.1",
     "react-dom": "latest",
     "react-fast-marquee": "^1.6.3",
     "react-icons": "^5.0.1",

@@ -54,11 +54,9 @@ export default function Home() {
                   <About />
                 </ClientOnly>
               </div>
-
-              <SkillMarquee />
             </div>
           </div>
-          <div
+          {/* <div
             id="Project"
             ref={sectionRefs[2]}
             className="w-full bg-white relative flex flex-col items-center"
@@ -66,8 +64,8 @@ export default function Home() {
             <div className="pt-20 w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-full xl:max-w-xl-content 1xl:max-w-max-container">
               <Project />
             </div>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             id="FAQ"
             ref={sectionRefs[3]}
             className="w-full bg-white relative flex flex-col items-center"
@@ -76,7 +74,7 @@ export default function Home() {
               <Faq />
             </div>
 
-          </div>
+          </div> */}
         </div>
       </LayoutApp>
     </>

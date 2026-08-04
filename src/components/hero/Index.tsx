@@ -6,7 +6,7 @@ import { ClientOnly } from "@/utils/isClient";
 function Hero() {
 
   return (
-    <div className="bg-white h-[40rem] 1xl:h-[50rem]  lg:overflow-visible  lg:mt-0  rounded-xl relative flex flex-col justify-start lg:justify-center  items-center  font-bold  ">
+    <div className="bg-white h-[40rem] 1xl:h-[50rem]  overflow-hidden  lg:mt-0  rounded-xl relative flex flex-col justify-start lg:justify-center  items-center  font-bold  ">
       <div className="bg-white  absolute pointer-events-none inset-0 z-10 flex items-center justify-center rounded-xl    [mask-image:radial-gradient(ellipse_at_center,transparent_70%,black)]"></div>
       <div className="h-[24rem] ms:h-[28rem] md:h-[36rem] lg:h-[40rem] -mt-32 relative w-screen flex flex-col items-center justify-center">
         <ClientOnly>
