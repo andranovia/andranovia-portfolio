@@ -7,7 +7,7 @@ interface props {
   textStyle: string;  
 }
 
-const HeroAnimatedText = ({ charDelay, text, textStyle }: props) => {
+const AnimatedTextWord = ({ charDelay, text, textStyle }: props) => {
 
 
   return (
@@ -57,5 +57,5 @@ const HeroAnimatedText = ({ charDelay, text, textStyle }: props) => {
   );
 };
 
-export default HeroAnimatedText;
-HeroAnimatedText.displayName = "HeroAnimatedText";
+export default AnimatedTextWord;
+AnimatedTextWord.displayName = "AnimatedTextWord";

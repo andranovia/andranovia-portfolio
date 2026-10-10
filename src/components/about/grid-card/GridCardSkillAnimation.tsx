@@ -64,7 +64,7 @@ function OrbitingCircles({
           </defs>
 
           <circle
-            className="stroke-black stroke-[4px] dark:stroke-white"
+            className="stroke-black stroke-[4px]"
             cx={svgSize / 2}
             cy={svgSize / 2}
             r={radius}

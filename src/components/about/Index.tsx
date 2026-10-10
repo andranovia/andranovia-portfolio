@@ -31,6 +31,7 @@ const About = () => {
 
   return (
     <>
+      <AboutImages />
       <div className="relative md:mb-40 mt-0 md:mt-32 1xl:mt-0 max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content 1xl:max-w-max-container flex justify-center items-center lg:w-screen xl:p-8 font-caveat text-primary">
         <div className="xl:w-[80%] w-full flex flex-col  items-center  sm:justify-start  ">
           <div className="w-full flex flex-col-reverse  justify-start md:flex-row lg:flex-row  sm:mx-0 items-center">
@@ -120,7 +121,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <AboutImages />
+
     </>
   );
 };

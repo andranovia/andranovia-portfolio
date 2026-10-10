@@ -9,9 +9,10 @@ function LayoutApp({ children }: any) {
         {/* <ClientOnly>
           <Navbar />
         </ClientOnly> */}
-        <main className="bg-primary ">
+        {/* <main className="bg-primary ">
           <Footer>{children}</Footer>
-        </main>
+        </main> */}
+        {children}
       </div>
   );
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ReactCurvedText from "react-curved-text";
 
 interface AnimatedImage {
   src: string;
@@ -49,7 +48,7 @@ const animatedImages: AnimatedImage[] = [
 
 const AboutImages = () => {
   return (
-    <div className="relative flex flex-col max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content 1xl:max-w-max-container w-full xl:w-[80%] mb-32 xl:px-8">
+    <div className="relative flex flex-col max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content 1xl:max-w-max-container w-full xl:w-[80%] my-32 xl:px-8">
 
       <div className="flex items-center">
         <Image
@@ -57,15 +56,15 @@ const AboutImages = () => {
           alt="Letter Border"
           width={250}
           height={100}
-          className="w-[20rem]"
+          className="w-[20rem] -mb-8"
         />
-        <div className="flex flex-col font-blackFlag text-[#0F3040] gap-10 text-5xl -ml-14 -mt-8">
+        <div className="flex flex-col font-blackFlag text-[#0F3040] gap-10 text-5xl -ml-14 ">
           <h2>The</h2>
           <h2 className="relative -ml-10">ool's <span className="text-[#A08963]">J</span>ourney</h2>
         </div>
       </div>
       <div className="grid grid-cols-3 justify-center items-center font-caveat text-3xl">
-        <p className="text-right relative -right-28 w-[20rem]">begin, as one always must, at zero. Not because there is nothing to say, but because everything worth telling starts before the first step is taken — before the bag is packed, before the road is chosen, before anyone can tell you it's a foolish thing to do</p>
+        <p className="text-right relative -right-28 w-[20rem]">Begin, as one always must, at zero. Not because there is nothing to say, but because everything worth telling starts before the first step is taken, before the bag is packed, before the road is chosen, and before anyone can tell you it's a foolish thing to do.</p>
         <div className="flex justify-center items-center">
 
           <Image
@@ -97,8 +96,7 @@ const AboutImages = () => {
           ))}
 
         </div>
-        <p className="text-left -ml-14 w-[20rem]">I have made a habit of walking toward the edge of what I know. Some would call it recklessness. I've come to think of it as the only honest way to learn anything — by not yet knowing what happens next, and choosing to go and find out anyway.</p>
-
+        <p className="text-left -ml-14 w-[20rem]">I have made a habit of walking toward the edge of what I know. Some would call it recklessness. I've come to think of it as the only honest way to learn anything. By not yet knowing what happens next, and choosing to go and find out anyway.</p>
       </div>
     </div>
   );

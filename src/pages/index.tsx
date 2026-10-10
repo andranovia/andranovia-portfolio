@@ -8,7 +8,8 @@ import Project from "@/components/project/Index";
 import Faq from "@/components/faq/Index";
 import { ClientOnly } from "@/utils/isClient";
 import { useScrollContext } from "@/contexts/ActiveSectionContext";
-import AboutAnimatedRoundText from "@/components/about/AboutAnimatedRoundText";
+import AboutAnimatedRoundText from "@/components/hero/HeroWaxSeal";
+import NoiseGrain from "@/components/about/NoiseGrain";
 
 export default function Home() {
   const { sectionRefs } = useScrollContext();
@@ -26,55 +27,35 @@ export default function Home() {
   return (
     <>
       <LayoutApp>
-        <div className="relative bg-white pb-20 rounded-b-xl flex flex-col items-center">
+        <div className="relative bg-white  rounded-b-xl flex flex-col items-center">
           <div className="overflow-hidden flex flex-col items-center w-full">
             <div
               id="Hero"
-              className="p-3 relative max-w-max-container"
+              className="relative z-20 bg-white"
               ref={sectionRefs[0]}
             >
               <div className="w-full flex flex-col items-center ">
-                <div className="fixed w-full left-0 ">
+                <div className=" w-full left-0 ">
                   <Hero />
                 </div>
-                <div className="h-[16rem] xs:h-[18rem] ms:h-[24rem] md:h-[30rem] lg:h-[40rem] " />
-
               </div>
             </div>
-            <div
-              id="About"
-              ref={sectionRefs[1]}
-              className="relative bottom-0 flex flex-col items-center  bg-primary w-full rounded-md pt-24 xs:pt-36 md:pt-0 1xl:pt-52 1xl:mt-32"
-            >
-              <div className=" relative flex flex-col items-center">
-                <div className="absolute pointer-events-none -top-[10rem] xs:-top-[13rem] ms:-top-[14rem] md:-top-[5.5rem] 1xl:-top-[26rem] ">
-                  <AboutAnimatedRoundText />
+            <div className="isolate bg-gradient-to-b from-white  to-[#f4ebd0]  w-full overflow-hidden">
+              <NoiseGrain/>
+              <div
+                id="About"
+                ref={sectionRefs[1]}
+                className="relative bottom-0 flex flex-col items-center"
+              >
+                <div className=" relative flex flex-col items-center">
+
+                  <ClientOnly>
+                    <About />
+                  </ClientOnly>
                 </div>
-                <ClientOnly>
-                  <About />
-                </ClientOnly>
               </div>
             </div>
           </div>
-          {/* <div
-            id="Project"
-            ref={sectionRefs[2]}
-            className="w-full bg-white relative flex flex-col items-center"
-          >
-            <div className="pt-20 w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-full xl:max-w-xl-content 1xl:max-w-max-container">
-              <Project />
-            </div>
-          </div> */}
-          {/* <div
-            id="FAQ"
-            ref={sectionRefs[3]}
-            className="w-full bg-white relative flex flex-col items-center"
-          >
-            <div className="w-full max-w-base-content xs:max-w-xs-content sm:max-w-sm-content md:max-w-md-content lg:max-w-lg-content xl:max-w-xl-content ">
-              <Faq />
-            </div>
-
-          </div> */}
         </div>
       </LayoutApp>
     </>
